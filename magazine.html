@@ -680,6 +680,7 @@ html[data-mode="dark"] .tsw-moon{ opacity:1; color:#9fc6ff; }
     var fa = lang === "fa";
     html.lang = fa ? "fa" : "en";
     html.dir = fa ? "rtl" : "ltr";
+    document.title = fa ? "مجلهٔ نکسوس — مجلهٔ سخت‌افزار" : "NEXUS MAG — the hardware magazine";
     document.querySelectorAll("[data-fa]").forEach(function (el) {
       if (el.dataset.en === undefined) el.dataset.en = el.innerHTML;
       el.innerHTML = fa ? el.dataset.fa : el.dataset.en;

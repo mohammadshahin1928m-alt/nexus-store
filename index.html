@@ -4349,6 +4349,9 @@ html[dir="rtl"] .search-in::placeholder{ text-align:right; }
     html.classList.add("lang-switching");
     html.dir = l === "fa" ? "rtl" : "ltr";
     html.lang = l === "fa" ? "fa" : "en";
+    document.title = l === "fa"
+      ? "نکسوس — فروشگاه سخت‌افزار، قطعات و سیستم‌های رایانه‌ای"
+      : "NEXUS — Computer Hardware, Components & PC Parts";
     orig.forEach(function (v, node) {
       var key = v.trim().replace(/\s+/g, " ");
       var tr = l === "fa" ? FA[key] : null;
