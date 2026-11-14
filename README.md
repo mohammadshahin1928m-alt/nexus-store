@@ -10,11 +10,12 @@ A bilingual (English / Persian) hardware storefront and magazine. Static HTML, C
 
 | File | Description |
 |---|---|
-| `index.html` | Store: hero, 5 shelf groups, 21 subcategories, 26 product cards, filters, compare, cart, AI assistant. **Self-contained** — all CSS, fonts, images and video inlined as `data:` URIs. |
+| `index.html` | Store: hero, 5 shelf groups, 21 subcategories, 26 product cards, filters, compare, cart, AI assistant. **Linked assets** (~160 KB HTML + `assets/`) — fast first load, images load lazily, CSS cached separately. |
 | `magazine.html` | NEXUS MAG: 13 news cards + 9 briefs, Persian/English switch. |
 | `story.html?id=<slug>` | Article reader. Slugs: `zen6`, `socket`, `ddr6`, `handheld`, `lpddr6`, … |
 | `404.html` | Redirects unknown paths back to the store. |
-| `index.source.html` | Editable source of the store (linked assets instead of inlined). Edit this, then rebuild. |
+| `index.source.html` | Editable source of the store. Same as `index.html`; edit this one, then rebuild. |
+| `standalone.html` | Optional single-file bundle of the store: every image, font and video inlined as `data:` URI (~6 MB). Works offline from a USB stick, but slow on mobile networks. |
 
 ## Run locally · اجرای محلی
 
@@ -27,14 +28,14 @@ Opening `index.html` directly from disk also works, but a local server is recomm
 
 ## Editing · ویرایش
 
-`index.html` is a generated bundle (~6 MB). To change the store:
+To change the store:
 
 1. Edit `index.source.html` and/or `assets/store.css`.
-2. Rebuild the single-file bundle:
+2. Rebuild:
    ```bash
    python3 ../build_single2.py
    ```
-3. Copy the result over `index.html`.
+   This refreshes `index.html` (linked, deployed) and regenerates `standalone.html` (single file).
 
 `magazine.html` and `story.html` are hand-written and can be edited directly.
 
