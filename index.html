@@ -2695,6 +2695,49 @@ html[dir="rtl"] .search-in::placeholder{ text-align:right; }
   .aa-head{ align-items:flex-start; }
 }
 
+/* ============================================================
+   mobile polish pass 4 — bigger hero product, perfectly round
+   assistant button on phones
+   ============================================================ */
+@media (max-width:720px){
+  /* taller product band so the graphics card reads bigger on a phone */
+  .hero-slides{
+    aspect-ratio:16 / 9.6;
+    margin:6px 0 0;
+  }
+  .hero-slide img,
+  .hero-slide.gpu img{
+    max-width:96% !important;
+    max-height:94% !important;
+  }
+  /* assistant button: a true 56px circle, icon centred */
+  .ai-fab{
+    width:56px !important;
+    height:56px !important;
+    min-width:56px;
+    min-height:56px;
+    padding:0 !important;
+    gap:0;
+    border-radius:50% !important;
+    display:grid !important;
+    place-items:center;
+    justify-content:center;
+    align-content:center;
+  }
+  .ai-fab .fab-orb{
+    width:46px; height:46px; flex:0 0 46px;
+    margin:0;
+  }
+  .ai-fab .ai-fab-t,
+  .ai-fab .fab-txt,
+  .ai-fab .fab-go{ display:none !important; }
+  /* the round button must step aside while the panel is open */
+  body:has(.ai-panel.open) .ai-fab{ display:none !important; }
+}
+@media (max-width:400px){
+  .hero-slides{ aspect-ratio:16 / 10.2; }
+}
+
   </style>
 </head>
 <body>
