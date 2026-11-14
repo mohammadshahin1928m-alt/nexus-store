@@ -1,0 +1,677 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Story — NEXUS MAG</title>
+<meta name="description" content="NEXUS MAG story">
+<link rel="icon" href="assets/logo-nexus.svg">
+<link rel="stylesheet" href="assets/fonts.css?v=1">
+<style>
+:root{
+  --brand:#0b63ce; --brand-d:#0a52ab; --navy:#0a1a2e;
+  --ink:#0d1b2a; --muted:#5b6b80; --bg:#e9eef7; --card:#fff; --line:#d7e0ee;
+  --font:"Inter","Estedad","B Yekan",system-ui,sans-serif;
+}
+html[data-mode="dark"]{ --ink:#e8eefb; --muted:#9aabc4; --bg:#080f1c; --card:#0e1a2b; --line:#1d2c42; --brand:#4d9cf7; }
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(circle at 10% -8%,rgba(11,99,206,.09),transparent 45%);
+  background-attachment:fixed;
+}
+html[lang="fa"] body{font-family:"Estedad","B Yekan","Vazirmatn",Tahoma,sans-serif;font-size:106%}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:820px;margin:0 auto;padding:0 24px}
+.wide{max-width:1180px;margin:0 auto;padding:0 24px}
+
+/* header */
+.hd{position:sticky;top:0;z-index:40;backdrop-filter:blur(18px);background:color-mix(in srgb,var(--card) 80%,transparent);border-bottom:1px solid var(--line)}
+html[data-mode="dark"] .hd{background:rgba(8,15,28,.8)}
+.hd .wide{display:flex;align-items:center;gap:18px;height:66px}
+.logo{display:flex;align-items:center;gap:8px}
+.logo svg{width:34px;height:34px}
+.logo b{font-size:18px;letter-spacing:.06em;font-weight:800}
+.logo b span{color:var(--brand)}
+.hd nav{display:flex;gap:18px;font-size:13.5px;font-weight:600;color:var(--muted);margin-inline-start:10px}
+.hd nav a:hover,.hd nav a.on{color:var(--ink)}
+.spacer{margin-inline-start:auto}
+.tbtn{border:1px solid var(--line);background:var(--card);color:var(--ink);height:34px;padding:0 12px;border-radius:9px;font:inherit;font-size:12.5px;font-weight:700;cursor:pointer}
+/* pills */
+
+.flag{ width:17px; height:12px; border-radius:2.5px; flex:0 0 auto; box-shadow:0 0 0 1px rgba(9,20,40,.18); background-size:100% 100%; background-repeat:no-repeat; }
+.flag-ir{ background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 20'><rect width='30' height='6.67' fill='%23239f40'/><rect y='6.67' width='30' height='6.67' fill='%23fff'/><rect y='13.33' width='30' height='6.67' fill='%23da0000'/><circle cx='15' cy='10' r='2.1' fill='none' stroke='%23da0000' stroke-width='.9'/></svg>"); }
+.flag-gb{ background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'><rect width='60' height='30' fill='%23012169'/><path d='M0 0l60 30M60 0L0 30' stroke='%23fff' stroke-width='6'/><path d='M0 0l60 30M60 0L0 30' stroke='%23C8102E' stroke-width='2.6'/><path d='M30 0v30M0 15h60' stroke='%23fff' stroke-width='10'/><path d='M30 0v30M0 15h60' stroke='%23C8102E' stroke-width='6'/></svg>"); }
+.tbtn{ display:inline-flex; align-items:center; gap:7px; height:36px; padding:0 11px 0 8px; border-radius:999px; transition:border-color .2s, transform .2s; }
+.tbtn:hover{ border-color:var(--brand); transform:translateY(-1px); }
+
+
+/* article */
+.crumbs{padding:26px 0 0;font-size:12px;color:var(--muted);letter-spacing:.04em}
+.crumbs a:hover{color:var(--brand)}
+.kicker{display:inline-flex;align-items:center;gap:9px;margin-top:22px;font-size:11px;font-weight:800;letter-spacing:.2em;color:var(--brand);text-transform:uppercase}
+.kicker::before{content:"";width:22px;height:2px;background:var(--brand)}
+h1{margin:14px 0 0;font-size:clamp(30px,4.6vw,54px);line-height:1.08;letter-spacing:-.03em}
+.dek{margin:16px 0 0;font-size:clamp(16px,1.6vw,19px);color:var(--muted);max-width:60ch}
+.byline{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:22px 0 0;font-size:12.5px;color:var(--muted)}
+.byline .av{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#2b7bff,#8a5bff);display:grid;place-items:center;color:#fff;font-size:11px;font-weight:800}
+.byline .dot{width:3px;height:3px;border-radius:50%;background:var(--muted)}
+.hero{margin:26px 0 0;border-radius:18px;overflow:hidden;background:#0b1220;aspect-ratio:16/9}
+.hero img{width:100%;height:100%;object-fit:cover}
+.credit{margin:8px 0 0;font-size:11px;color:var(--muted)}
+.body{padding:30px 0 0;font-size:16.5px}
+.body p{margin:0 0 18px}
+.body h2{margin:34px 0 12px;font-size:22px;letter-spacing:-.02em}
+.body li{margin:0 0 9px}
+.box{
+  margin:26px 0;padding:20px 22px;border-radius:14px;border:1px solid var(--line);
+  background:var(--card);border-inline-start:3px solid var(--brand);
+}
+.box h4{margin:0 0 8px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--brand)}
+.box p{margin:0 0 8px;font-size:14px}
+.box p:last-child{margin:0}
+.src{margin:30px 0 0;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.src a{color:var(--brand);font-weight:700}
+.rel{margin:44px 0 0;padding-top:26px;border-top:1px solid var(--line)}
+.rel h3{margin:0 0 14px;font-size:13px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+.rel a{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line);font-weight:600}
+.rel a:hover{color:var(--brand)}
+.rel img{width:74px;height:48px;object-fit:cover;border-radius:8px;flex-shrink:0}
+#prog{
+  position:fixed; top:0; left:0; height:2px; width:0%; z-index:60;
+  background:linear-gradient(90deg,#0b63ce,#8a5bff);
+  transition:width .12s linear; will-change:width;
+}
+html[dir="rtl"] #prog{ left:auto; right:0; background:linear-gradient(270deg,#0b63ce,#8a5bff); }
+footer{margin:56px 0 0;padding:30px 0 46px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+footer .wide{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* ---------- reading page 2.0 ---------- */
+hero, .hero{ }
+.hero{ position:relative; }
+.hero::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(180deg,rgba(6,14,26,0) 55%,rgba(6,14,26,.28));
+}
+.body{ font-size:17px; line-height:1.78; }
+.body > p:first-of-type{ font-size:18.5px; color:var(--ink); }
+html[dir="ltr"] .body > p:first-of-type::first-letter{
+  float:left; font-size:56px; line-height:.86; font-weight:800; padding:6px 10px 0 0;
+  color:var(--brand); letter-spacing:-.02em;
+}
+.body h2{ position:relative; padding-inline-start:16px; }
+.body h2::before{
+  content:""; position:absolute; inset-inline-start:0; top:.28em; bottom:.28em; width:3px;
+  border-radius:3px; background:linear-gradient(180deg,#2b7bf3,#8a5bff);
+}
+.pull{
+  margin:34px 0; padding:26px 28px; border-radius:16px;
+  background:linear-gradient(135deg,rgba(11,99,206,.09),rgba(138,91,255,.09));
+  border:1px solid rgba(11,99,206,.18);
+  font-size:clamp(19px,2.2vw,24px); font-weight:800; letter-spacing:-.02em; line-height:1.4;
+  position:relative;
+}
+.pull::before{
+  content:"”"; position:absolute; top:-6px; inset-inline-start:18px;
+  font-size:64px; line-height:1; color:rgba(11,99,206,.22); font-family:Georgia,serif;
+}
+.author-card{
+  margin:36px 0 0; padding:18px 20px; border-radius:16px;
+  border:1px solid var(--line); background:var(--card);
+  display:flex; gap:14px; align-items:center;
+}
+.author-card .av{ width:44px; height:44px; border-radius:50%; background:linear-gradient(135deg,#2b7bff,#8a5bff); display:grid; place-items:center; color:#fff; font-weight:800; font-size:13px; flex:0 0 auto; }
+.author-card b{ display:block; font-size:14px; }
+.author-card span{ font-size:12.5px; color:var(--muted); }
+.share{ display:flex; gap:8px; margin:22px 0 0; flex-wrap:wrap; }
+.share button, .share a{
+  display:inline-flex; align-items:center; gap:7px; height:36px; padding:0 13px;
+  border-radius:9px; border:1px solid var(--line); background:var(--card); color:var(--ink);
+  font:inherit; font-size:12.5px; font-weight:700; cursor:pointer; text-decoration:none;
+  transition:border-color .2s, color .2s, transform .2s;
+}
+.share button:hover, .share a:hover{ border-color:var(--brand); color:var(--brand); transform:translateY(-1px); }
+.share svg{ width:14px; height:14px; }
+
+@media(max-width:700px){ .hd nav{display:none} .wrap{padding:0 18px} }
+
+/* ---------- icon-only day / night switch ---------- */
+.tbtn.theme-sw{ background:transparent; border:0; padding:0; width:auto; }
+.tsw{
+  position:relative; width:62px; height:33px; border-radius:999px;
+  display:flex; align-items:center; justify-content:space-between; padding:0 9px;
+  background:linear-gradient(135deg,#e8effb,#d9e4f5);
+  border:1px solid var(--line); box-shadow:inset 0 1px 2px rgba(9,26,54,.12);
+  transition:background .35s, border-color .35s;
+}
+.tsw svg{ color:#8b9cb8; transition:color .3s,opacity .3s; z-index:2; }
+.tsw .tsw-sun{ color:#8a5a00; }
+.tsw-moon{ opacity:.55; }
+.tsw-knob{
+  position:absolute; top:3px; left:3px; width:27px; height:27px; border-radius:50%;
+  background:radial-gradient(circle at 34% 28%, #fff6cf, #ffd35c 52%, #eda32f);
+  box-shadow:0 2px 8px rgba(214,140,15,.55), inset 0 0 0 1px rgba(255,255,255,.55);
+  transition:transform .35s cubic-bezier(.34,1.56,.64,1), background .4s, box-shadow .4s;
+}
+html[data-mode="dark"] .tsw{ background:linear-gradient(135deg,#122238,#0a1523); border-color:rgba(120,180,255,.22); }
+html[data-mode="dark"] .tsw-knob{
+  transform:translateX(29px);
+  background:radial-gradient(circle at 34% 28%, #24384f, #0a1020 58%, #03060b);
+  box-shadow:0 4px 14px rgba(0,0,0,.9), 0 0 0 1.5px rgba(160,210,255,.45), inset 0 0 12px rgba(60,140,255,.22);
+}
+html[data-mode="dark"] .tsw-sun{ opacity:.4; }
+html[data-mode="dark"] .tsw-moon{ opacity:1; color:#9fc6ff; }
+.theme-sw:hover .tsw{ border-color:var(--brand); }
+
+
+/* icons are placed exactly under the knob centres */
+.tsw{ padding:0 !important; }
+.tsw .tsw-sun, .tsw .tsw-moon{
+  position:absolute; top:3px; width:27px; height:27px; display:grid; place-items:center;
+  pointer-events:none;
+}
+.tsw .tsw-sun{ left:3px; }
+.tsw .tsw-moon{ left:32px; }   /* 3 + 29 travel */
+
+</style>
+</head>
+<body>
+<div id="prog" aria-hidden="true"></div>
+<header class="hd">
+  <div class="wide">
+    <a class="logo" href="index.html">
+      <svg viewBox="0 0 48 48"><defs><linearGradient id="nxl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3d9bff"/><stop offset=".55" stop-color="#0b63ce"/><stop offset="1" stop-color="#083f86"/></linearGradient></defs><path d="M24 3.2 42.4 13.6v20.8L24 44.8 5.6 34.4V13.6z" fill="url(#nxl)"/><path d="M17 33.5V15l14 18V15" fill="none" stroke="#fff" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="34.5" cy="12.4" r="3.1" fill="#badcff"/></svg>
+      <b>NE<span>XUS</span></b>
+    </a>
+    <nav>
+      <a href="index.html" data-fa="فروشگاه">Store</a>
+      <a href="magazine.html" class="on" data-fa="مجله">Magazine</a>
+    </nav>
+    <span class="spacer"></span>
+    <button class="tbtn" id="langBtn" type="button">FA</button>
+    <button class="tbtn theme-sw" id="modeBtn" type="button" aria-label="Switch to dark mode"><span class="tsw" aria-hidden="true">
+  <svg class="tsw-sun" viewBox="0 0 24 24" width="15" height="15"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><g stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4L17 7M7 17l-1.6 1.6"/></g></svg>
+  <svg class="tsw-moon" viewBox="0 0 24 24" width="15" height="15"><path d="M20.5 14.2A8.6 8.6 0 0 1 9.8 3.5 8.6 8.6 0 1 0 20.5 14.2z" fill="currentColor"/></svg>
+  <span class="tsw-knob"></span>
+</span></button>
+  </div>
+</header>
+
+<main class="wrap" id="article"></main>
+
+<footer>
+  <div class="wide">
+    <span data-fa="© ۲۰۲۶ نکسوس — تحریریهٔ مجله">© 2026 NEXUS — magazine desk</span>
+    <span><a href="magazine.html" data-fa="بازگشت به مجله ←">← Back to the magazine</a></span>
+  </div>
+</footer>
+<script>
+var S = {
+"ram-450": {
+  img:"assets/dc.webp", credit:"Server memory — Kingston",
+  cat:{en:"Memory market",fa:"بازار حافظه"},
+  title:{en:"RAM is up 450%, and it has repriced every part on this page",
+         fa:"رم ۴۵۰٪ گران شده — و قیمت هر قطعهٔ این صفحه را عوض کرده"},
+  dek:{en:"A 16Gb DDR5 chip went from $8.70 to $48 in under a year. That is not a sale cycle, it is a supply shock — and it is not finished.",
+       fa:"یک تراشهٔ ۱۶ گیگابیتی DDR5 در کمتر از یک سال از ۸.۷ دلار به ۴۸ دلار رسیده. این چرخهٔ تخفیف نیست، شوک عرضه است — و تمام نشده."},
+  author:{en:"NEXUS Desk",fa:"تحریریهٔ نکسوس"}, initials:"NX",
+  date:{en:"Nov 12, 2026",fa:"۱۲ نوامبر ۲۰۲۶"}, read:{en:"5 min read",fa:"۵ دقیقه مطالعه"},
+  lede:{en:"Contract pricing for a single 16-gigabit DDR5 chip moved from $8.70 in October 2025 to roughly $48 by September 2026 — about a 450% rise in eleven months. Nothing else in a PC has moved like that since the crypto years, and this time the cause is not gamers.",
+        fa:"قیمت قرارداد یک تراشهٔ ۱۶ گیگابیتی DDR5 از ۸.۷ دلار در اکتبر ۲۰۲۵ به حدود ۴۸ دلار در سپتامبر ۲۰۲۶ رسید — رشدی حدود ۴۵۰ درصد در یازده ماه. هیچ قطعهٔ دیگری در کامپیوتر از دوران ماینینگ چنین جهشی نداشته، با این تفاوت که این بار مقصر گیمرها نیستند."},
+  sections:[
+    {h:{en:"What actually happened",fa:"چه اتفاقی افتاد"},
+     p:[{en:"AI data centres pulled DRAM capacity away from consumer lines. Wafer starts moved to high-bandwidth memory and server modules, where the margin is an order of magnitude better than a two-stick desktop kit. Consumer DDR5 did not get more expensive because it got better — it got scarce.",
+         fa:"مراکز دادهٔ هوش مصنوعی ظرفیت DRAM را از خطوط مصرف‌کننده کشیدند. ظرفیت تولید به حافظهٔ پهن‌باند و ماژول‌های سروری رفت، جایی که حاشیهٔ سود چند برابر یک کیت دسکتاپ دو‌ماژولی است. DDR5 مصرفی گران نشد چون بهتر شد؛ گران شد چون کمیاب شد."}]},
+    {h:{en:"What it costs on the shelf",fa:"قیمت روی قفسه"},
+     p:[{en:"A 32GB DDR5-6000 kit that sat around $100–120 in mid-2025 is now listed near $350 and often sold out. DRAM revenue overall is up roughly 369% year over year, which tells you this is industry-wide, not one brand being greedy.",
+         fa:"کیت ۳۲ گیگابایتی DDR5-6000 که در میانهٔ ۲۰۲۵ حدود ۱۰۰ تا ۱۲۰ دلار بود، حالا نزدیک ۳۵۰ دلار است و اغلب ناموجود. درآمد کل DRAM حدود ۳۶۹ درصد سال‌به‌سال رشد کرده — یعنی ماجرا کل صنعت است، نه طمع یک برند."}]}
+  ],
+  box:{h:{en:"What we would do",fa:"پیشنهاد ما"},
+       items:[{en:"Buy the capacity you will use in the next two years, not the maximum.",fa:"همان ظرفیتی را بخر که دو سال آینده لازم داری، نه بیشترین مقدار."},
+              {en:"32GB is still the sane target for gaming; 64GB only pays off in editing and VMs.",fa:"برای بازی ۳۲ گیگابایت هنوز منطقی است؛ ۶۴ گیگابایت فقط در تدوین و ماشین مجازی جواب می‌دهد."},
+              {en:"Check the kit price the day you order — these move weekly now.",fa:"قیمت کیت را روز سفارش چک کن؛ حالا هفتگی جابه‌جا می‌شود."}]},
+  src:{label:"TechRadar — memory price surge", url:"https://www.techradar.com/pro/memory-price-skyrockets-as-demand-for-ai-data-centers-drives-369-percent-year-over-year-surge"},
+  related:["shortage-2027","ssd-prices","rtx-super"]
+},
+
+"gta6": {
+  img:"assets/gta6.webp", credit:"Vice City — Rockstar Games",
+  cat:{en:"Games",fa:"بازی"},
+  title:{en:"GTA VI pre-loads are live — one week to the biggest launch of the decade",
+         fa:"پیش‌بارگیری GTA VI باز شد — یک هفته تا بزرگ‌ترین عرضهٔ دهه"},
+  dek:{en:"The download opened on November 12 for a November 19 launch. On an ordinary connection, today is the last sensible day to start.",
+       fa:"دانلود از ۱۲ نوامبر برای انتشار ۱۹ نوامبر باز شد. با اینترنت معمولی، امروز آخرین روز منطقی برای شروع است."},
+  author:{en:"NEXUS Desk",fa:"تحریریهٔ نکسوس"}, initials:"NX",
+  date:{en:"Nov 12, 2026",fa:"۱۲ نوامبر ۲۰۲۶"}, read:{en:"3 min read",fa:"۳ دقیقه مطالعه"},
+  lede:{en:"Rockstar has opened pre-loads for Grand Theft Auto VI ahead of its November 19 release. It is the first entry in the series in thirteen years, and the only major title still standing on that date — most publishers moved out of the way months ago.",
+        fa:"راک‌استار پیش‌بارگیری GTA VI را پیش از انتشار ۱۹ نوامبر باز کرد. این اولین نسخهٔ سری پس از سیزده سال است و تنها عنوان بزرگی که در آن تاریخ باقی مانده — بیشتر ناشرها ماه‌ها پیش کنار رفتند."},
+  sections:[
+    {h:{en:"Start the download now, not on launch night",fa:"همین حالا دانلود کن، نه شب انتشار"},
+     p:[{en:"Pre-load data is usually the full client, encrypted until launch. That means once it unlocks you are patching, not downloading. On a 50 Mbps line a modern AAA install is measured in hours, and launch-night throttling is real.",
+         fa:"دادهٔ پیش‌بارگیری معمولاً کلاینت کامل است و تا لحظهٔ انتشار رمزنگاری می‌ماند؛ یعنی هنگام باز شدن فقط پچ می‌گیری، نه دانلود. با اینترنت ۵۰ مگابیت، نصب یک بازی AAA مدرن چند ساعت طول می‌کشد و افت سرعت شب انتشار واقعی است."}]},
+    {h:{en:"The PC question",fa:"پرسش رایانهٔ شخصی"},
+     p:[{en:"A PC version has not been announced. If your plan is to play on desktop, the honest expectation is a later release — which is why a machine specced today for the console build is the safe bet, not the maximum one.",
+         fa:"نسخهٔ PC هنوز معرفی نشده. اگر برنامه‌ات بازی روی دسکتاپ است، انتظار واقع‌بینانه انتشار دیرتر است؛ به همین دلیل سیستمی که امروز برای نسخهٔ کنسولی بسته می‌شود انتخاب امن است، نه قوی‌ترین سیستم."}]}
+  ],
+  box:{h:{en:"Before you buy anything",fa:"قبل از خرید"},
+       items:[{en:"Storage first: a modern AAA install is 100GB+ before patches.",fa:"اول فضای ذخیره‌سازی: نصب AAA مدرن پیش از پچ‌ها هم بالای ۱۰۰ گیگابایت است."},
+              {en:"Pre-loads and day-one patches want headroom — keep 15% of the drive free.",fa:"پیش‌بارگیری و پچ روز اول جا می‌خواهند — ۱۵٪ درایو را خالی نگه دار."},
+              {en:"A stable 60 fps needs a GPU from this generation, not the last flagship.",fa:"۶۰ فریم پایدار به کارت این نسل نیاز دارد، نه فلگ‌شیپ نسل قبل."}]},
+  src:{label:"GameWatcher — GTA 6 release guide", url:"https://www.gamewatcher.com/grand-theft-auto-6/guides/release-date-confirmed-november-2026-platforms-pre-orders-trailers"},
+  related:["steam-machine","rtx-super","ram-450"]
+},
+
+"steam-machine": {
+  img:"assets/steam.webp", credit:"Steam Machine — Valve",
+  cat:{en:"Hardware",fa:"سخت‌افزار"},
+  title:{en:"The Steam Machine costs $1,049, and Valve named the reason out loud",
+         fa:"استیم ماشین ۱۰۴۹ دلار شد — و والو خودش دلیل را گفت"},
+  dek:{en:"Component cost, not ambition. The same memory crunch that tripled desktop RAM prices reached the living room.",
+       fa:"هزینهٔ قطعات، نه بلندپروازی. همان بحران حافظه که قیمت رم دسکتاپ را چند برابر کرد، به اتاق نشیمن هم رسید."},
+  author:{en:"NEXUS Desk",fa:"تحریریهٔ نکسوس"}, initials:"NX",
+  date:{en:"Jun 2026 · updated Nov 2026",fa:"ژوئن ۲۰۲۶ · به‌روزرسانی نوامبر ۲۰۲۶"}, read:{en:"4 min read",fa:"۴ دقیقه مطالعه"},
+  lede:{en:"Valve's living-room PC arrived at $1,049 for the 512GB model and $1,349 for 2TB, with a UK price of £879. The company pointed at component costs — a polite way of saying that memory and storage pricing had rewritten the plan.",
+        fa:"رایانهٔ اتاق نشیمن والو با ۱۰۴۹ دلار برای مدل ۵۱۲ گیگابایت و ۱۳۴۹ دلار برای ۲ ترابایت عرضه شد؛ در بریتانیا ۸۷۹ پوند. خود شرکت به هزینهٔ قطعات اشاره کرد — تعبیر مؤدبانهٔ این واقعیت که قیمت حافظه و ذخیره‌سازی نقشه را از نو نوشته است."},
+  sections:[
+    {h:{en:"Why the box costs what a laptop did",fa:"چرا قیمتش اندازهٔ یک لپ‌تاپ شد"},
+     p:[{en:"A console build that used to pencil out at console money now carries RAM and NAND at prices nobody planned for. The release date moved twice before launch, each time citing supply. That is the same pattern we saw with the RTX 50 refresh.",
+         fa:"سیستمی که قبلاً با پول یک کنسول جمع می‌شد، حالا رم و NAND را با قیمتی می‌خرد که کسی پیش‌بینی نکرده بود. تاریخ عرضه پیش از انتشار دو بار جابه‌جا شد و هر بار به تأمین اشاره کرد؛ همان الگویی که در تازه‌سازی RTX 50 دیدیم."}]},
+    {h:{en:"Is it still worth it",fa:"هنوز می‌ارزد؟"},
+     p:[{en:"For a plug-and-play 4K box with SteamOS, yes — if you value the form factor. For raw frames per dollar, a small desktop with an off-the-shelf GPU still wins, and you can upgrade it in two years.",
+         fa:"برای یک جعبهٔ ۴K آمادهٔ اتصال با SteamOS بله — اگر اندازه و سادگی برایت ارزش دارد. اما در نسبت فریم به دلار، یک دسکتاپ کوچک با کارت گرافیک معمولی هنوز جلوتر است و دو سال بعد هم قابل ارتقاست."}]}
+  ],
+  box:{h:{en:"The takeaway",fa:"جمع‌بندی"},
+       items:[{en:"Consoles are no longer insulated from memory prices.",fa:"کنسول‌ها دیگر از قیمت حافظه در امان نیستند."},
+              {en:"If you were waiting for a price cut, this cycle is moving the other way.",fa:"اگر منتظر کاهش قیمت بودی، این چرخه در جهت مخالف حرکت می‌کند."},
+              {en:"A build-it-yourself desktop is the flexible answer this year.",fa:"دسکتاپ خودساخته امسال پاسخ منعطف‌تری است."}]},
+  src:{label:"BBC — Steam Machine launch price", url:"https://www.bbc.co.uk/news/articles/c0kyzk2p255o"},
+  related:["ram-450","rtx-super","gta6"]
+},
+
+"rtx-super": {
+  img:"assets/rtx.webp", credit:"GeForce RTX 5090 — Nvidia",
+  cat:{en:"Graphics",fa:"کارت گرافیک"},
+  title:{en:"The RTX 50 Super refresh is on ice, and GDDR7 is the reason",
+         fa:"تازه‌سازی RTX 50 Super روی یخ رفت — و مقصر GDDR7 است"},
+  dek:{en:"Nvidia reportedly paused the mid-cycle refresh as memory supply tightened. The card that was supposed to be the obvious upgrade simply is not coming.",
+       fa:"انویدیا ظاهراً تازه‌سازی میان‌نسلی را با تنگ‌شدن عرضهٔ حافظه متوقف کرده. کارتی که قرار بود ارتقای بدیهی باشد، نمی‌آید."},
+  author:{en:"NEXUS Desk",fa:"تحریریهٔ نکسوس"}, initials:"NX",
+  date:{en:"Jan 2026 · updated Jul 2026",fa:"ژانویه ۲۰۲۶ · به‌روزرسانی ژوئیه ۲۰۲۶"}, read:{en:"4 min read",fa:"۴ دقیقه مطالعه"},
+  lede:{en:"Reports through the year describe a Super refresh that has slipped from delayed to effectively shelved, with cards built around GDDR7 sitting unsold because the memory itself became the expensive part. Nvidia has separately confirmed RTX 50 supply pressure tied to the memory crisis.",
+        fa:"گزارش‌های سال نشان می‌دهد تازه‌سازی Super از تأخیر به تعلیق رسیده؛ کارت‌هایی که حول GDDR7 ساخته شده‌اند، چون خود حافظه گران شده، روی دست مانده‌اند. انویدیا جداگانه فشار عرضهٔ RTX 50 را به بحران حافظه مرتبط دانسته است."},
+  sections:[
+    {h:{en:"What a missing refresh means for buyers",fa:"نبودِ این تازه‌سازی برای خریدار چه معنایی دارد"},
+     p:[{en:"Normally a Super card resets the price ladder eighteen months in. Without it, current cards keep their launch pricing longer, and the second-hand market carries more of the upgrade demand — which is exactly what we are seeing.",
+         fa:"معمولاً کارت Super پس از هجده ماه نردبان قیمت را بازنشانی می‌کند. بدون آن، کارت‌های فعلی بیشتر با قیمت عرضه می‌مانند و بازار دست‌دوم بخش بیشتری از تقاضای ارتقا را می‌برد — دقیقاً همان چیزی که می‌بینیم."}]},
+    {h:{en:"So what do you actually buy",fa:"پس واقعاً چه بخریم"},
+     p:[{en:"If you are on a 30-series card and play at 1440p, this is the cycle where the 9070 XT and the 5070 Ti class make sense at current prices. If you already own a 40-series, waiting one more generation is the cheaper decision.",
+         fa:"اگر کارت سری ۳۰ داری و ۱۴۴۰p بازی می‌کنی، همین چرخه جایی است که کلاس ۹۰۷۰ XT و ۵۰۷۰ Ti با قیمت فعلی منطقی می‌شود. اگر سری ۴۰ داری، صبر برای یک نسل دیگر تصمیم ارزان‌تری است."}]}
+  ],
+  box:{h:{en:"Watch these numbers",fa:"این عددها را بپا"},
+       items:[{en:"VRAM matters more than the badge in 2026 — 16GB is the floor for new AAA.",fa:"در ۲۰۲۶ حافظهٔ گرافیکی از نام مدل مهم‌تر است — ۱۶ گیگابایت کف بازی‌های AAA جدید است."},
+              {en:"Price per frame, not sticker price, is the honest comparison.",fa:"مقایسهٔ درست، قیمت به ازای هر فریم است نه قیمت روی جعبه."},
+              {en:"Check seller stock the day you buy; listings vanish fast.",fa:"روز خرید موجودی فروشنده را چک کن؛ آگهی‌ها سریع غیب می‌شوند."}]},
+  src:{label:"PCMag — RTX 50 Super pause", url:"https://www.pcmag.com/news/nvidia-reportedly-hits-pause-delays-rtx-50-super-gpus-heres-why"},
+  related:["ram-450","ssd-prices","steam-machine"]
+},
+
+"ssd-prices": {
+  img:"assets/nvme.webp", credit:"NVMe M.2 drive",
+  cat:{en:"Storage",fa:"ذخیره‌سازی"},
+  title:{en:"NAND is following DRAM up, and SSDs are the next receipt you will not like",
+         fa:"NAND هم دنبال DRAM می‌رود — و SSD صورت‌حساب بعدی است"},
+  dek:{en:"NAND makers have been pushing contract prices up by 50–75%. Enterprise drives moved first; client drives are next in line.",
+       fa:"تولیدکنندگان NAND قیمت قرارداد را ۵۰ تا ۷۵ درصد بالا برده‌اند. درایوهای سازمانی اول حرکت کردند؛ نوبت درایوهای مصرفی است."},
+  author:{en:"NEXUS Desk",fa:"تحریریهٔ نکسوس"}, initials:"NX",
+  date:{en:"Nov 2026",fa:"نوامبر ۲۰۲۶"}, read:{en:"4 min read",fa:"۴ دقیقه مطالعه"},
+  lede:{en:"Memory makers have been raising NAND selling prices sharply, and enterprise SSD contract pricing was projected to climb by more than half quarter over quarter into 2026. Consumer drives follow with a lag — that lag is running out.",
+        fa:"تولیدکنندگان حافظه قیمت فروش NAND را به‌شدت بالا برده‌اند و پیش‌بینی می‌شد قیمت قرارداد SSD سازمانی در ورود به ۲۰۲۶ بیش از پنجاه درصد در یک فصل رشد کند. درایوهای مصرفی با تأخیر دنبال می‌کنند — و آن تأخیر دارد تمام می‌شود."},
+  sections:[
+    {h:{en:"Why storage and memory move together",fa:"چرا حافظه و ذخیره‌سازی با هم حرکت می‌کنند"},
+     p:[{en:"Both are fab-capacity products. When AI servers absorb wafers, the same shortage shows up twice: once in RAM kits, once in SSDs. There is no separate factory to call.",
+         fa:"هر دو محصول ظرفیت فب هستند. وقتی سرورهای هوش مصنوعی ویفر را می‌بلعند، کمبود دو بار خودش را نشان می‌دهد: یک بار در کیت رم، یک بار در SSD. کارخانهٔ جداگانه‌ای هم نیست که زنگ بزنی."}]},
+    {h:{en:"Buy capacity, not speed",fa:"ظرفیت بخر، نه سرعت"},
+     p:[{en:"A Gen4 drive at a sane price beats a Gen5 drive you overpay for: game loads barely move, and thermals are friendlier. Put the saved money into capacity — the thing that actually runs out.",
+         fa:"یک درایو Gen4 با قیمت منطقی از Gen5 گران‌قیمت بهتر است: زمان لود بازی تقریباً تغییر نمی‌کند و دمایش هم آرام‌تر است. پول ذخیره‌شده را بگذار روی ظرفیت — همان چیزی که واقعاً تمام می‌شود."}]}
+  ],
+  box:{h:{en:"Sensible buys right now",fa:"خریدهای منطقی الان"},
+       items:[{en:"2TB Gen4 as the system drive; add a second 2TB before prices move again.",fa:"۲ ترابایت Gen4 به‌عنوان درایو سیستم؛ پیش از حرکت بعدی قیمت، دومی را اضافه کن."},
+              {en:"A heatsink is not optional on Gen5 — throttling looks like a slow drive.",fa:"روی Gen5 هیت‌سینک اختیاری نیست — افت حرارتی شبیه کندی درایو به نظر می‌رسد."},
+              {en:"DRAM-less drives are fine for game libraries, not for boot.",fa:"درایوهای بدون DRAM برای کتابخانهٔ بازی خوب‌اند، برای بوت نه."}]},
+  src:{label:"PCMag — SSD prices climb on NAND supply", url:"https://me.pcmag.com/en/news/33357/ssd-storage-prices-to-climb-as-ai-demand-meets-tight-nand-supply"},
+  related:["ram-450","shortage-2027","gta6"]
+},
+
+"nova-lake": {
+  img:"assets/intel.webp", credit:"Core Ultra 265KF — Intel",
+  cat:{en:"Processors",fa:"پردازنده"},
+  title:{en:"Intel is putting desktop first again with Nova Lake",
+         fa:"اینتل با Nova Lake دسکتاپ را دوباره اول می‌گذارد"},
+  dek:{en:"Core Ultra 400 is slated for late 2026 with a new socket — and Intel has said the desktop part ships before the data-centre one.",
+       fa:"Core Ultra 400 برای اواخر ۲۰۲۶ با سوکت تازه برنامه‌ریزی شده — و اینتل گفته نسخهٔ دسکتاپ پیش از نسخهٔ سروری می‌آید."},
+  author:{en:"NEXUS Desk",fa:"تحریریهٔ نکسوس"}, initials:"NX",
+  date:{en:"Aug 2026",fa:"اوت ۲۰۲۶"}, read:{en:"4 min read",fa:"۴ دقیقه مطالعه"},
+  lede:{en:"Intel has confirmed Nova Lake for late 2026 and said it will launch on desktop first rather than in servers. Leaks point to a new LGA1954 socket, a much larger core count, and a 22-core tier with extra game cache. Treat the numbers as rumours; treat the socket change as the planning fact.",
+        fa:"اینتل Nova Lake را برای اواخر ۲۰۲۶ تأیید کرده و گفته اول روی دسکتاپ می‌آید، نه سرور. نشت‌ها از سوکت تازهٔ LGA1954، تعداد هستهٔ بیشتر و نسخه‌ای ۲۲ هسته‌ای با کش بازی خبر می‌دهند. عددها را شایعه بدان؛ تغییر سوکت را واقعیتی که برنامه‌ریزی‌ات را عوض می‌کند."},
+  sections:[
+    {h:{en:"The socket is the real story",fa:"داستان اصلی همان سوکت است"},
+     p:[{en:"A new socket means a new board and, usually, new memory tuning rules. If you are building this winter and plan to upgrade in 2027, buy the cheapest board that meets your needs — not the flagship one you will replace.",
+         fa:"سوکت تازه یعنی مادربرد تازه و معمولاً قواعد تنظیم حافظهٔ تازه. اگر این زمستان سیستم می‌بندی و قصد ارتقا در ۲۰۲۷ داری، ارزان‌ترین بوردی را بخر که نیازت را برمی‌آورد، نه فلگ‌شیپی که عوضش می‌کنی."}]},
+    {h:{en:"Cores are not frames",fa:"هسته، فریم نیست"},
+     p:[{en:"High core counts help renders and compiles. Games still care about cache, memory latency and a handful of fast cores. A 22-core part with game cache is interesting precisely because it addresses the second case, not the first.",
+         fa:"تعداد بالای هسته در رندر و کامپایل کمک می‌کند. بازی هنوز به کش، تأخیر حافظه و چند هستهٔ سریع کار دارد. نسخهٔ ۲۲ هسته‌ای با کش بازی دقیقاً به همین دلیل جالب است، نه به‌خاطر رندر."}]}
+  ],
+  box:{h:{en:"If you are building now",fa:"اگر همین حالا سیستم می‌بندی"},
+       items:[{en:"Do not buy a flagship board for a socket that is about to be replaced.",fa:"برای سوکتی که در شرف تعویض است، بورد فلگ‌شیپ نخر."},
+              {en:"Spend on the GPU and storage; CPUs age more gracefully.",fa:"پول را روی کارت گرافیک و ذخیره‌سازی بگذار؛ پردازنده آرام‌تر پیر می‌شود."},
+              {en:"Keep the case and PSU — they survive two builds.",fa:"کیس و پاور را نگه دار — از دو سیستم جان سالم به در می‌برند."}]},
+  src:{label:"ExtremeTech — Nova Lake desktop first", url:"https://www.extremetech.com/computing/intel-says-it-will-launch-nova-lake-on-desktop-first-not-data-center"},
+  related:["rtx-super","ram-450","steam-machine"]
+},
+
+"shortage-2027": {
+  img:"assets/dc.webp", credit:"Server memory — Kingston",
+  cat:{en:"Supply",fa:"عرضه"},
+  title:{en:"A memory CEO says the 2027 shortage will be worse. Plan accordingly",
+         fa:"مدیر یک شرکت حافظه می‌گوید کمبود ۲۰۲۷ بدتر است. بر همان اساس برنامه بچین"},
+  dek:{en:"If the shortage runs another two years, the cheapest upgrade path stops being “wait for the next generation”.",
+       fa:"اگر کمبود دو سال دیگر ادامه داشته باشد، ارزان‌ترین مسیر ارتقا دیگر «صبر کن تا نسل بعد» نیست."},
+  author:{en:"NEXUS Desk",fa:"تحریریهٔ نکسوس"}, initials:"NX",
+  date:{en:"Nov 10, 2026",fa:"۱۰ نوامبر ۲۰۲۶"}, read:{en:"3 min read",fa:"۳ دقیقه مطالعه"},
+  lede:{en:"On an earnings call this week a memory-industry chief executive warned that 2027 supply will be tighter than 2026, citing the same contract figures everyone else is quoting: $8.70 to $48 for a 16Gb DDR5 die in about a year.",
+        fa:"در تماس مالی این هفته، مدیر یک شرکت حافظه هشدار داد عرضهٔ ۲۰۲۷ از ۲۰۲۶ تنگ‌تر خواهد بود و همان عددهایی را نقل کرد که همه نقل می‌کنند: از ۸.۷ به ۴۸ دلار برای یک دای DDR5 شانزده‌گیگابیتی در حدود یک سال."},
+  sections:[
+    {h:{en:"What changes in your plan",fa:"در برنامه‌ات چه عوض می‌شود"},
+     p:[{en:"When prices are expected to rise for two more years, “buy later” is not a strategy. The rational move is to buy the configuration you need at the best price you can verify today, and to over-provision storage slightly rather than memory.",
+         fa:"وقتی انتظار می‌رود قیمت‌ها دو سال دیگر بالا برود، «بعداً می‌خرم» استراتژی نیست. حرکت منطقی این است که پیکربندی لازم را با بهترین قیمتی که امروز می‌توانی راستی‌آزمایی کنی بخری و کمی بیشتر روی ذخیره‌سازی سرمایه‌گذاری کنی، نه روی رم."}]},
+    {h:{en:"What we tell customers",fa:"به مشتری‌ها چه می‌گوییم"},
+     p:[{en:"Lock the build now with a fixed quote, keep the PSU and case from your old machine, and put the difference into a GPU you will still be happy with in 2028.",
+         fa:"همین حالا سیستم را با قیمت قطعی ببند، پاور و کیس سیستم قبلی را نگه دار، و تفاوت قیمت را بگذار روی کارتی که در ۲۰۲۸ هم راضی‌ات کند."}]}
+  ],
+  box:{h:{en:"Three rules for a shortage year",fa:"سه قانون سال کمبود"},
+       items:[{en:"Verify price and stock on the day you order.",fa:"قیمت و موجودی را روز سفارش بررسی کن."},
+              {en:"Buy capacity before speed, every time.",fa:"هر بار، ظرفیت را قبل از سرعت بخر."},
+              {en:"Keep one upgrade path open: GPU and storage.",fa:"یک مسیر ارتقا را باز نگه دار: کارت گرافیک و ذخیره‌سازی."}]},
+  src:{label:"Yahoo Finance — memory CEO warns on 2027", url:"https://finance.yahoo.com/technology/articles/memory-chip-ceo-warns-2027-163159125.html"},
+  related:["ram-450","ssd-prices","rtx-super"]
+}
+,
+"last-of-us": {
+  img:"assets/tlou.webp", credit:"The Last of Us Part II — Naughty Dog",
+  cat:{en:"Games",fa:"بازی"},
+  title:{en:"Two Last of Us projects are in the works. Neither one is Part III",
+         fa:"دو پروژهٔ آخرین بازمانده در ساخت است. هیچ‌کدام Part III نیست"},
+  dek:{en:"Naughty Dog marked The Last of Us Day by confirming two early-stage projects in the universe — while the TV series moves on without the studio at the wheel.",
+       fa:"ناتی داگ روز آخرین بازمانده را با تأیید دو پروژهٔ ابتدایی در این دنیا گرامی داشت — در حالی که سریال تلویزیونی بدون حضور استودیو جلو می‌رود."},
+  author:{en:"NEXUS Desk",fa:"تحریریهٔ نکسوس"}, initials:"NX",
+  date:{en:"Sep 2026 · updated Nov 2026",fa:"سپتامبر ۲۰۲۶ · به‌روزرسانی نوامبر ۲۰۲۶"}, read:{en:"5 min read",fa:"۵ دقیقه مطالعه"},
+  lede:{en:"On September 26 — The Last of Us Day — Naughty Dog's studio head said the team is working on “a couple” of new projects set in The Last of Us universe. Both are described as very early. That phrasing matters: it is the difference between a game you can pre-order and a pitch that survived a review.",
+        fa:"در ۲۶ سپتامبر — روز آخرین بازمانده — سرپرست استودیوی ناتی داگ گفت تیم روی «چند» پروژهٔ تازه در دنیای The Last of Us کار می‌کند. هر دو در مرحلهٔ بسیار ابتدایی توصیف شده‌اند. همین عبارت مهم است: تفاوت میان بازی‌ای که می‌توانی پیش‌سفارش کنی و ایده‌ای که از جلسهٔ بازبینی جان سالم به در برده."},
+  sections:[
+    {h:{en:"What was actually said",fa:"واقعاً چه گفته شد"},
+     p:[{en:"The confirmation came as part of the franchise's annual fan day, and it was deliberately vague: two projects, same universe, early stages. No platforms, no dates, no names. Earlier remarks from Neil Druckmann had already lowered expectations for a numbered Part III, and nothing this year reversed that.",
+         fa:"این تأیید در روز سالانهٔ طرفداران مجموعه منتشر شد و عامدانه مبهم بود: دو پروژه، همان دنیا، مرحلهٔ ابتدایی. بدون پلتفرم، بدون تاریخ، بدون نام. اظهارات پیشین نیل دراکمن هم انتظار برای Part III شماره‌دار را پایین آورده بود و امسال چیزی آن را برنگرداند."}]},
+    {h:{en:"The show is now a separate machine",fa:"سریال حالا ماشین جدایی است"},
+     p:[{en:"HBO's adaptation continues, but Druckmann has confirmed the studio has no creative role in the coming season. That is not a crisis — it is a handover. The games and the show now answer to different rooms, which is exactly why a TV season can arrive years before a game does.",
+         fa:"اقتباس HBO ادامه دارد، اما دراکمن تأیید کرده استودیو در فصل پیش‌رو نقش خلاقانه ندارد. این بحران نیست؛ انتقال مسئولیت است. بازی‌ها و سریال حالا به اتاق‌های متفاوتی جواب می‌دهند و دقیقاً به همین دلیل یک فصل تلویزیونی می‌تواند سال‌ها پیش از یک بازی برسد."}]},
+    {h:{en:"What this means for your machine",fa:"این برای سیستم تو چه معنایی دارد"},
+     p:[{en:"Nothing yet — and that is the honest answer. A project in early stage needs no upgrade. What it does mean is that the next Last of Us, whenever it lands, will target hardware that exists then, not now. Buying today for a game without a date is how people end up with a 2019 build waiting for a 2023 title.",
+         fa:"هنوز هیچ — و این صادقانه‌ترین پاسخ است. پروژه‌ای در مرحلهٔ ابتدایی ارتقای سیستم نمی‌خواهد. معنایش این است که آخرین بازماندهٔ بعدی، هر وقت بیاید، سخت‌افزار همان روز را هدف می‌گیرد نه امروز را. خرید امروز برای بازی‌ای که تاریخ ندارد، همان مسیری است که آدم را با سیستم ۲۰۱۹ منتظر عنوان ۲۰۲۳ نگه می‌دارد."}]}
+  ],
+  quote:{en:"A teaser is not a release date. A confirmation is not a build.",
+         fa:"تیزر تاریخ انتشار نیست. تأیید، نسخهٔ قابل اجرا نیست."},
+  box:{h:{en:"If you are replaying Part II now",fa:"اگر حالا Part II را دوباره بازی می‌کنی"},
+       items:[{en:"It is a 2020 PS4 title — a mid-range card of this generation runs it at 1440p comfortably.",fa:"عنوانی از ۲۰۲۰ برای PS4 است — یک کارت میان‌ردهٔ این نسل راحت در ۱۴۴۰p اجرایش می‌کند."},
+              {en:"The PC port wants 8GB of VRAM minimum for stable frame times.",fa:"نسخهٔ PC برای زمان فریم پایدار حداقل ۸ گیگابایت VRAM می‌خواهد."},
+              {en:"An SSD matters more than the GPU here — streaming hitches are storage, not shading.",fa:"اینجا SSD از کارت گرافیک مهم‌تر است — گیر کردن‌های استریمینگ از ذخیره‌سازی است نه سایه‌زنی."}]},
+  src:{label:"Console Creatures — The Last of Us Day 2026", url:"https://www.consolecreatures.com/naughty-dog-the-last-of-us-day-2026-news/"},
+  related:["gta6","steam-machine","nova-lake"]
+},
+
+"zen6": {
+  img:"assets/n-zen6.webp", credit:"Processor die — NEXUS lab",
+  cat:{en:"CPUs",fa:"پردازنده"},
+  title:{en:"AMD confirms Zen 6 on 2nm — and Zen 7 already exists on paper",
+         fa:"ای‌ام‌دی زن ۶ روی ۲ نانومتر را تأیید کرد — و زن ۷ هم روی کاغذ وجود دارد"},
+  dek:{en:"A smaller node, more IPC, a wider AI block. What AMD has actually confirmed, and what it has not.",
+       fa:"نود کوچک‌تر، IPC بیشتر، بلوک هوش مصنوعی پهن‌تر. آنچه ای‌ام‌دی واقعاً تأیید کرده و آنچه نه."},
+  author:{en:"NEXUS Desk",fa:"تحریریهٔ نکسوس"}, initials:"NX",
+  date:{en:"Nov 2025 · updated Nov 2026",fa:"نوامبر ۲۰۲۵ · به‌روزرسانی نوامبر ۲۰۲۶"}, read:{en:"5 min read",fa:"۵ دقیقه مطالعه"},
+  lede:{en:"AMD has put Zen 6 on TSMC's 2nm process and confirmed it will bring higher IPC, better efficiency and a bigger AI block. The company also named Zen 7 — which tells you more about the roadmap's confidence than any benchmark leak.", fa:"ای‌ام‌دی زن ۶ را روی فرایند ۲ نانومتری TSMC گذاشته و تأیید کرده که IPC بیشتر، بازدهی بهتر و بلوک هوش مصنوعی بزرگ‌تر خواهد داشت. شرکت نام زن ۷ را هم برده — که از هر بنچمارک لو رفته‌ای بیشتر دربارهٔ اطمینان نقشهٔ راه می‌گوید."},
+  sections:[
+    {h:{en:"What is confirmed",fa:"چه چیزی تأیید شده"},
+     p:[{en:"Three things, and only three: the node (2nm), the direction (more IPC plus efficiency), and the fact that server parts ship first. AMD has not published core counts, clocks, socket names or a desktop date. Every number you have seen beyond that is a rumour wearing a spec sheet.",fa:"سه چیز و فقط سه چیز: نود (۲ نانومتر)، جهت حرکت (IPC و بازدهی بیشتر) و این واقعیت که قطعات سروری اول عرضه می‌شوند. ای‌ام‌دی تعداد هسته، فرکانس، نام سوکت یا تاریخ دسکتاپ را منتشر نکرده. هر عدد دیگری که دیده‌ای، شایعه‌ای با لباس دیتاشیت است."}]},
+    {h:{en:"Why 2nm is not automatically faster",fa:"چرا ۲ نانومتر خودبه‌خود سریع‌تر نیست"},
+     p:[{en:"A smaller node buys transistors or power, and you have to spend that budget somewhere. AMD is spending part of it on an AI block that desktop gamers will barely touch. That is the same trade the last two generations made, and it is why IPC gains arrive in single digits while efficiency gains look larger.",fa:"نود کوچک‌تر یا ترانزیستور می‌دهد یا توان، و باید آن بودجه را جایی خرج کنی. ای‌ام‌دی بخشی از آن را در بلوک هوش مصنوعی خرج می‌کند که گیمر دسکتاپ تقریباً لمسش نمی‌کند. همین معامله‌ای است که دو نسل قبل هم شد و دلیلش هم این است که رشد IPC یک‌رقمی می‌آید و رشد بازدهی بزرگ‌تر به نظر می‌رسد."}]}
+  ],
+  quote:{en:"A node announcement is a budget announcement, not a frame-rate announcement.",fa:"اعلام نود، اعلام بودجه است نه اعلام فریم‌ریت."},
+  src:{label:"TechPowerUp — AMD confirms Zen 6 and Zen 7", url:"https://www.techpowerup.com/342820/amd-confirms-zen-6-2-nm-and-zen-7-with-efficiency-upgrades-and-new-ai-features"},
+  related:["olympic-ridge","nova-lake","ram-450"]
+},
+
+"olympic-ridge": {
+  img:"assets/n-socket.webp", credit:"AM5 socket — NEXUS lab",
+  cat:{en:"CPUs",fa:"پردازنده"},
+  title:{en:"Ryzen “Olympic Ridge” slips to 2027 — AM5 gets one more year",
+         fa:"رایزن «المپیک ریج» به ۲۰۲۷ افتاد — AM5 یک سال دیگر زنده می‌ماند"},
+  dek:{en:"Roadmap slides now point the Zen 6 desktop launch at 2027. If that holds, the board you buy today has a longer life than you planned.",
+       fa:"اسلایدهای نقشهٔ راه حالا عرضهٔ دسکتاپ زن ۶ را ۲۰۲۷ نشان می‌دهند. اگر درست باشد، مادربردی که امروز می‌خری عمری طولانی‌تر از برنامه‌ات دارد."},
+  author:{en:"NEXUS Desk",fa:"تحریریهٔ نکسوس"}, initials:"NX",
+  date:{en:"Feb 2026",fa:"فوریه ۲۰۲۶"}, read:{en:"4 min read",fa:"۴ دقیقه مطالعه"},
+  lede:{en:"Leaked roadmap material puts the next Ryzen desktop line — the one following today's AM5 chips — in 2027 rather than 2026. Nothing is official, but the direction has been consistent across several leaks this year.", fa:"مواد لو رفته از نقشهٔ راه، خط بعدی رایزن دسکتاپ — همان که پس از تراشه‌های امروز AM5 می‌آید — را ۲۰۲۷ می‌گذارد نه ۲۰۲۶. هیچ‌چیز رسمی نیست، اما جهت در چند نشتی امسال یکسان بوده."},
+  sections:[
+    {h:{en:"Why a delay is good news",fa:"چرا تأخیر خبر خوبی است"},
+     p:[{en:"A platform that stays current for one more year is a platform you can buy into without regret. If the next socket is 2027, an AM5 board bought now still gets new CPUs through the period you would normally own the machine.",fa:"پلتفرمی که یک سال بیشتر به‌روز بماند، پلتفرمی است که بدون پشیمانی می‌توانی واردش شوی. اگر سوکت بعدی ۲۰۲۷ باشد، مادربرد AM5 که امروز می‌خری تا همان دوره‌ای که معمولاً سیستم را نگه می‌داری، CPU تازه می‌گیرد."}]},
+    {h:{en:"What to do with that",fa:"با این اطلاعات چه کنیم"},
+     p:[{en:"Buy the board, not the flagship chip. A mid-range AM5 board plus a mid-range CPU costs less than one halo part, and both survive the wait. Save the top-end money for the generation that actually changes the socket.",fa:"مادربرد بخر، نه تراشهٔ پرچم‌دار. یک برد AM5 میان‌رده با یک CPU میان‌رده از یک قطعهٔ های‌اند کمتر است و هر دو از این انتظار جان سالم به در می‌برند. پول رده‌بالا را برای نسلی نگه دار که واقعاً سوکت را عوض می‌کند."}]}
+  ],
+  box:{h:{en:"If you are building this winter",fa:"اگر این زمستان سیستم می‌بندی"},
+       items:[{en:"Pick the board by rear I/O and VRM, not by the box's marketing tier.",fa:"مادربرد را بر اساس پورت‌های پشت و VRM انتخاب کن، نه ردهٔ تبلیغاتی جعبه."},
+              {en:"DDR5-6000 CL30 remains the sane price/performance point.",fa:"DDR5-6000 CL30 هنوز نقطهٔ منطقی قیمت به کارایی است."},
+              {en:"Skip the flagship CPU; the gap to mid-range is smaller than the price gap.",fa:"از CPU پرچم‌دار بگذر؛ فاصله‌اش با میان‌رده از فاصلهٔ قیمتش کمتر است."}]},
+  src:{label:"TechPowerUp forums — Olympic Ridge to 2027", url:"https://www.techpowerup.com/forums/threads/amd-next-gen-ryzen-olympic-ridge-zen-6-delayed-to-2027.346588/"},
+  related:["zen6","nova-lake","ram-450"]
+},
+
+"ddr6-2027": {
+  img:"assets/n-ddr6.webp", credit:"DDR5 modules — NEXUS lab",
+  cat:{en:"Memory",fa:"حافظه"},
+  title:{en:"DDR6 heads for 2027 mass production — DDR5 is not done yet",
+         fa:"DDR6 به تولید انبوه ۲۰۲۷ می‌رسد — ولی DDR5 هنوز تمام نشده"},
+  dek:{en:"Memory makers are finalising DDR6 prototypes for a 2027 ramp, while AI demand keeps DDR5 lines full. Both standards will be sold side by side for years.",
+       fa:"سازندگان حافظه نمونه‌های DDR6 را برای جهش تولید ۲۰۲۷ نهایی می‌کنند، در حالی که تقاضای هوش مصنوعی خطوط DDR5 را پر نگه داشته. هر دو استاندارد سال‌ها کنار هم فروخته می‌شوند."},
+  author:{en:"NEXUS Desk",fa:"تحریریهٔ نکسوس"}, initials:"NX",
+  date:{en:"Jul 2025 · updated Nov 2026",fa:"جولای ۲۰۲۵ · به‌روزرسانی نوامبر ۲۰۲۶"}, read:{en:"4 min read",fa:"۴ دقیقه مطالعه"},
+  lede:{en:"DDR6 is not a 2026 purchase and it will not make your current kit obsolete on launch day. Reports put prototype finalisation now and mass adoption around 2027, with the first volume going to servers rather than desktops.", fa:"DDR6 خرید ۲۰۲۶ نیست و کیت فعلی‌ات را روز عرضه منسوخ نمی‌کند. گزارش‌ها نهایی‌سازی نمونه را حالا و فراگیری انبوه را حدود ۲۰۲۷ می‌دانند، با حجم اولیه برای سرورها نه دسکتاپ."},
+  sections:[
+    {h:{en:"The pattern repeats",fa:"الگو تکرار می‌شود"},
+     p:[{en:"Every memory generation arrives in servers first: that is where the platform cost of a new standard is easiest to justify. Desktop boards follow a year or two later, and the first consumer kits carry a premium that makes them a bad buy for anyone who is not benchmarking for a living.",fa:"هر نسل حافظه اول در سرورها می‌آید: همان‌جا که توجیه هزینهٔ پلتفرم تازه ساده‌تر است. مادربردهای دسکتاپ یکی دو سال بعد می‌رسند و اولین کیت‌های مصرفی چنان گران‌اند که برای هر کسی جز بنچمارک‌گیر حرفه‌ای خرید بدی هستند."}]},
+    {h:{en:"What it means for a 2026 build",fa:"برای سیستم ۲۰۲۶ چه معنایی دارد"},
+     p:[{en:"Nothing changes. DDR5 is the standard for every current socket, prices are being driven by supply rather than generation change, and waiting for DDR6 means waiting through a shortage you can already see.",fa:"هیچ چیزی عوض نمی‌شود. DDR5 استاندارد هر سوکت فعلی است، قیمت‌ها را عرضه تعیین می‌کند نه تغییر نسل، و انتظار برای DDR6 یعنی انتظار در میان کمبودی که همین حالا می‌بینی."}]}
+  ],
+  src:{label:"TrendForce — DDR6 mass adoption in 2027", url:"https://www.trendforce.com/news/2025/07/23/news-ddr6-set-for-2027-mass-adoption-as-memory-giants-reportedly-finalize-prototype-designs/"},
+  related:["ram-450","shortage-2027","zen6"]
+},
+
+"lpddr6": {
+  img:"assets/n-lpddr6.webp", credit:"LPDDR package — NEXUS lab",
+  cat:{en:"Memory",fa:"حافظه"},
+  title:{en:"LPDDR6 is now a published standard — phones get the bandwidth first",
+         fa:"LPDDR6 استاندارد رسمی شد — پهنای باند اول به گوشی‌ها می‌رسد"},
+  dek:{en:"JEDEC's JESD209-6 widens the bus and splits it into sub-channels. The target is on-device AI, and the first devices are phones, not laptops.",
+       fa:"استاندارد JESD209-6 گذرگاه را پهن‌تر و به زیرکانال تقسیم می‌کند. هدف هوش مصنوعی روی دستگاه است و اولین دستگاه‌ها گوشی‌اند، نه لپ‌تاپ."},
+  author:{en:"NEXUS Desk",fa:"تحریریهٔ نکسوس"}, initials:"NX",
+  date:{en:"2025 · updated Nov 2026",fa:"۲۰۲۵ · به‌روزرسانی نوامبر ۲۰۲۶"}, read:{en:"3 min read",fa:"۳ دقیقه مطالعه"},
+  lede:{en:"JEDEC has published the LPDDR6 standard. The headline is bandwidth, the mechanism is a wider bus split into sub-channels, and the reason is local inference — models running on the device instead of a data centre.", fa:"JEDEC استاندارد LPDDR6 را منتشر کرده. تیتر، پهنای باند است؛ سازوکار، گذرگاه پهن‌ترِ تقسیم‌شده به زیرکانال؛ و دلیلش استنتاج محلی — مدل‌هایی که روی خود دستگاه اجرا می‌شوند نه در مرکز داده."},
+  sections:[
+    {h:{en:"Why sub-channels matter",fa:"چرا زیرکانال مهم است"},
+     p:[{en:"Splitting the bus lets the controller talk to one portion while another idles, which saves power on small workloads and adds parallelism on large ones. For a phone running an assistant locally, that is a better trade than peak bandwidth alone.",fa:"تقسیم گذرگاه اجازه می‌دهد کنترلر با یک بخش حرف بزند در حالی که بقیه بی‌کارند؛ در بار کم مصرف کم می‌شود و در بار سنگین موازی‌کاری اضافه. برای گوشی‌ای که دستیار را محلی اجرا می‌کند، این معاملهٔ بهتری از پهنای باند اوج تنهاست."}]},
+    {h:{en:"Desktop relevance: low, for now",fa:"ربطش به دسکتاپ: کم، فعلاً"},
+     p:[{en:"LPDDR is soldered, low-power memory. It shows up in mini PCs and thin laptops, not in a board with DIMM slots. The standard tells you where the industry expects AI workloads to live — and that is not a tower under a desk.",fa:"LPDDR حافظهٔ کم‌مصرفِ روی‌برد است. در مینی‌پی‌سی‌ها و لپ‌تاپ‌های نازک دیده می‌شود، نه در بردی با اسلات DIMM. این استاندارد می‌گوید صنعت انتظار دارد بار کاری هوش مصنوعی کجا زندگی کند — و آنجا برجی زیر میز نیست."}]}
+  ],
+  src:{label:"JEDEC — LPDDR6 standard release", url:"https://www.jedec.org/news/pressreleases/jedec%C2%AE-releases-new-lpddr6-standard-enhance-mobile-and-ai-memory-performance"},
+  related:["ddr6-2027","ram-450","ssd-prices"]
+},
+
+"switch2-17m": {
+  img:"assets/n-handheld.webp", credit:"Handheld console — NEXUS lab",
+  cat:{en:"Games",fa:"بازی"},
+  title:{en:"Switch 2 passes 17.3 million units — faster than any console before it",
+         fa:"سوییچ ۲ از ۱۷.۳ میلیون دستگاه گذشت — سریع‌تر از هر کنسول قبلی"},
+  dek:{en:"17.37 million units since June 2025, and Nintendo is closing on its own forecast a quarter early. What that says about the hardware market.",
+       fa:"۱۷.۳۷ میلیون دستگاه از ژوئن ۲۰۲۵ و نینتندو یک فصل زودتر به پیش‌بینی خودش نزدیک شده. این دربارهٔ بازار سخت‌افزار چه می‌گوید."},
+  author:{en:"NEXUS Desk",fa:"تحریریهٔ نکسوس"}, initials:"NX",
+  date:{en:"Feb 2026",fa:"فوریه ۲۰۲۶"}, read:{en:"4 min read",fa:"۴ دقیقه مطالعه"},
+  lede:{en:"Nintendo's own numbers put Switch 2 at 17.37 million units since launch, with software selling alongside it. In a year when every other hardware category got more expensive, the cheapest way to play kept selling.", fa:"اعداد خود نینتندو سوییچ ۲ را از زمان عرضه ۱۷.۳۷ میلیون دستگاه نشان می‌دهد، همراه با فروش نرم‌افزار. در سالی که هر دستهٔ سخت‌افزاری گران‌تر شد، ارزان‌ترین راه بازی کردن فروشش را ادامه داد."},
+  sections:[
+    {h:{en:"The pricing argument",fa:"استدلال قیمت"},
+     p:[{en:"A console is a fixed cost with a known frame-rate target. A gaming PC in 2026 is a moving cost: memory and storage prices are the wildest they have been in years. When a GPU alone can cost more than a console, the mass market does the arithmetic for you.",fa:"کنسول هزینهٔ ثابت با هدف فریم‌ریت معلوم است. یک PC گیمینگ در ۲۰۲۶ هزینهٔ متحرک است: قیمت حافظه و ذخیره‌سازی بی‌ثبات‌ترین حالت چند سال گذشته را دارد. وقتی یک کارت گرافیک تنها می‌تواند از یک کنسول گران‌تر شود، بازار انبوه خودش حساب می‌کند."}]},
+    {h:{en:"What it does not mean",fa:"چه معنایی ندارد"},
+     p:[{en:"It is not evidence that PCs are dying, and console sales have never tracked PC upgrade cycles. It is evidence that the entry price of gaming matters more than the ceiling — a lesson the DIY market keeps relearning every shortage.",fa:"این شاهد مردن PC نیست و فروش کنسول هرگز با چرخهٔ ارتقای PC هم‌مسیر نبوده. شاهد این است که قیمت ورود به بازی بیشتر از سقف کارایی مهم است — درسی که بازار اسمبل هر کمبودی دوباره یاد می‌گیرد."}]}
+  ],
+  box:{h:{en:"If you want both",fa:"اگر هر دو را می‌خواهی"},
+       items:[{en:"A console plus a cheap desktop beats one expensive machine for most households.",fa:"برای بیشتر خانه‌ها، کنسول به‌علاوهٔ یک دسکتاپ ارزان از یک دستگاه گران بهتر است."},
+              {en:"Spend PC budget on storage and RAM first this year — those are the inflated parts.",fa:"امسال بودجهٔ PC را اول روی ذخیره‌سازی و رم بگذار — این‌ها قطعات گران‌شده‌اند."},
+              {en:"Buy the current GPU generation used if warranty transfers where you live.",fa:"اگر گارانتی در کشورت منتقل می‌شود، کارت گرافیک نسل فعلی را دست‌دوم بخر."}]},
+  src:{label:"Nintendo Life — Switch 2 at 17.37 million", url:"https://www.nintendolife.com/news/2026/02/switch-2-storms-towards-its-forecast-target-with-17-37-million-units-sold"},
+  related:["gta6","steam-machine","last-of-us"]
+}
+};
+</script><script>
+(function () {
+  var LKEY="nexus-lang", MKEY="nexus-mode";
+  var html=document.documentElement;
+  var lang="en", mode="light";
+  try{ lang=localStorage.getItem(LKEY)||"en"; mode=localStorage.getItem(MKEY)||"light"; }catch(e){}
+  if(mode==="dark") html.setAttribute("data-mode","dark");
+
+  var id = new URLSearchParams(location.search).get("id");
+  var s = S[id] || S["ram-450"];
+
+  function t(o){ return o ? (o[lang] || o.en) : ""; }
+  function el(tag, cls, txt){ var n=document.createElement(tag); if(cls) n.className=cls; if(txt!=null) n.textContent=txt; return n; }
+
+  function render(){
+    var art=document.getElementById("article");
+    art.innerHTML="";
+    document.title = t(s.title) + " — NEXUS MAG";
+
+    var cr=el("div","crumbs");
+    cr.innerHTML = '<a href="magazine.html">'+(lang==="fa"?"مجله":"Magazine")+'</a> / ' + t(s.cat);
+    art.appendChild(cr);
+
+    var k=el("div","kicker",t(s.cat)); art.appendChild(k);
+    var h1=el("h1",null,t(s.title)); art.appendChild(h1);
+    var d=el("p","dek",t(s.dek)); art.appendChild(d);
+
+    var by=el("div","byline");
+    by.innerHTML = '<span class="av">'+s.initials+'</span><span>'+t(s.author)+'</span><span class="dot"></span><span>'+t(s.date)+'</span><span class="dot"></span><span>'+t(s.read)+'</span>';
+    art.appendChild(by);
+
+    var hero=el("figure","hero");
+    var im=el("img"); im.src=s.img; im.alt=t(s.title); hero.appendChild(im);
+    art.appendChild(hero);
+    art.appendChild(el("p","credit",(lang==="fa"?"عکس: ":"Photo: ")+s.credit));
+
+    var body=el("div","body");
+    body.appendChild(el("p",null,t(s.lede)));
+
+    s.sections.forEach(function(sec){
+      body.appendChild(el("h2",null,t(sec.h)));
+      sec.p.forEach(function(par){ body.appendChild(el("p",null,t(par))); });
+    });
+
+    if (s.quote) {
+      var q = el("div","pull", t(s.quote));
+      body.appendChild(q);
+    }
+
+    if (s.box) {
+      var box=el("div","box");
+      box.appendChild(el("h4",null,t(s.box.h)));
+      (s.box.items||[]).forEach(function(it){
+        var p=el("p",null,"— "+t(it)); box.appendChild(p);
+      });
+      body.appendChild(box);
+    }
+
+    var src=el("p","src");
+    src.innerHTML = (lang==="fa"?"منبع: ":"Source: ") + '<a href="'+s.src.url+'" target="_blank" rel="noopener">'+s.src.label+'</a>';
+    body.appendChild(src);
+
+    art.appendChild(body);
+
+    var au = el("div","author-card");
+    au.innerHTML = '<span class="av">' + s.initials + '</span><div><b>' + t(s.author) + '</b>' +
+                   '<span>' + (lang === "fa" ? "نویسندهٔ نکسوس مگ — تست سخت‌افزار روی میز کار" : "NEXUS Mag — hardware tested on our own bench") + '</span></div>';
+    art.appendChild(au);
+
+    var sh = el("div","share");
+    sh.innerHTML = '<button type="button" id="copyLink">' +
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1-1"/></svg>' +
+      (lang === "fa" ? "کپی لینک" : "Copy link") + '</button>' +
+      '<a href="https://x.com/intent/post?text=' + encodeURIComponent(t(s.title)) + '" target="_blank" rel="noopener">' +
+      '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.1 8.1L23 22h-6.6l-5.2-6.7L5.3 22H2l7.6-8.7L1.4 2H8l4.7 6.2zm-1.1 18h1.7L8.3 3.8H6.5z"/></svg>X</a>' +
+      '<a href="https://t.me/share/url?url=' + encodeURIComponent(location.href) + '" target="_blank" rel="noopener">Telegram</a>';
+    art.appendChild(sh);
+
+    var rel=el("div","rel");
+    rel.appendChild(el("h3",null, lang==="fa"?"بیشتر بخوانید":"Read next"));
+    (s.related||[]).forEach(function(rid){
+      var r=S[rid]; if(!r) return;
+      var a=el("a"); a.href="story.html?id="+rid;
+      var img=el("img"); img.src=r.img; img.alt=""; img.loading="lazy";
+      var sp=el("span",null,t(r.title));
+      a.appendChild(img); a.appendChild(sp); rel.appendChild(a);
+    });
+    art.appendChild(rel);
+
+    var cp = document.getElementById("copyLink");
+    if (cp) cp.addEventListener("click", function () {
+      navigator.clipboard.writeText(location.href).then(function () {
+        cp.lastChild.textContent = lang === "fa" ? " کپی شد" : " Copied";
+      }).catch(function () {});
+    });
+
+    translate();
+  }
+
+  /* swap any element that carries data-fa */
+  function translate(){
+    document.querySelectorAll("[data-fa]").forEach(function(n){
+      if(n.dataset.en===undefined) n.dataset.en=n.innerHTML;
+      n.innerHTML = lang==="fa" ? n.dataset.fa : n.dataset.en;
+    });
+    document.getElementById("langBtn").innerHTML = lang==="fa" ? '<span class="flag flag-gb"></span><b>EN</b>' : '<span class="flag flag-ir"></span><b>فا</b>';
+    var mb = document.getElementById("modeBtn");
+    if (mb) mb.setAttribute("aria-label", html.getAttribute("data-mode")==="dark" ? "Switch to light mode" : "Switch to dark mode");
+    html.lang = lang; html.dir = lang==="fa" ? "rtl" : "ltr";
+  }
+
+  document.getElementById("langBtn").addEventListener("click", function(){
+    lang = lang==="fa" ? "en" : "fa";
+    try{ localStorage.setItem(LKEY, lang); }catch(e){}
+    render();
+  });
+  document.getElementById("modeBtn").addEventListener("click", function(){
+    mode = html.getAttribute("data-mode")==="dark" ? "light" : "dark";
+    if(mode==="dark") html.setAttribute("data-mode","dark"); else html.removeAttribute("data-mode");
+    try{ localStorage.setItem(MKEY, mode); }catch(e){}
+    translate();
+  });
+
+  var prog = document.getElementById("prog");
+  if (prog) {
+    addEventListener("scroll", function () {
+      var h2 = document.documentElement;
+      var max = h2.scrollHeight - innerHeight;
+      prog.style.width = (max > 0 ? Math.min(100, (scrollY / max) * 100) : 0) + "%";
+    }, { passive: true });
+  }
+
+  render();
+})();
+</script></body>
+</html>

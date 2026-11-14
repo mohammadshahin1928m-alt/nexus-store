@@ -1,0 +1,10 @@
+# local build artifacts
+nexus.html
+mobile-shots/
+*.zip
+__pycache__/
+.DS_Store
+Thumbs.db
+
+animation-playbook.md
+serve.py

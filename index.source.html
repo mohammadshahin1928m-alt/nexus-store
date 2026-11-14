@@ -1,0 +1,3113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/svg+xml" href="assets/logo-nexus.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NEXUS — Computer Hardware, Components &amp; PC Parts</title>
+<meta name="description" content="Shop graphics cards, processors, memory, storage, cooling and peripherals. Daily deals, combo savings and 2-day shipping.">
+<link rel="preload" href="assets/fonts/inter-var-lat.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/estedad-400-ar.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts.css?v=1">
+<link rel="stylesheet" href="assets/store.css?v=22">
+</head>
+<body>
+
+<!-- ============ utility bar ============ -->
+<div class="util">
+  <div class="wrap">
+    <div class="util-left">
+      <b>Black November</b><span class="sep">|</span>
+      <span class="hot">Daily Doorbusters</span> — fresh deals drop at 9am PT
+    </div>
+    <div class="util-right">
+      <a href="#deals">Today's Deals</a>
+      <a href="#combos">Combo Builder</a>
+      <a href="magazine.html">Magazine</a>
+      <a href="#">Partners</a>
+      <a href="#" id="supportLink">Support</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ masthead ============ -->
+<header class="mast">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="NEXUS home">
+      <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 48 48"><defs><linearGradient id="nxg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3d9bff"/><stop offset=".55" stop-color="#0b63ce"/><stop offset="1" stop-color="#083f86"/></linearGradient></defs><path d="M24 3.2 42.4 13.6v20.8L24 44.8 5.6 34.4V13.6z" fill="url(#nxg)"/><path d="M17 33.5V15l14 18V15" fill="none" stroke="#fff" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="34.5" cy="12.4" r="3.1" fill="#badcff"/></svg></span>
+      <span class="logo-word">NE<span>XUS</span></span>
+    </a>
+
+    <form class="search" role="search" onsubmit="return false">
+      <select class="search-cat" id="searchCat" aria-label="Category">
+        <option value="all">All</option>
+        <option value="gpu">Graphics Cards</option>
+        <option value="cpu">Processors</option>
+        <option value="mobo">Motherboards</option>
+        <option value="mem">Memory</option>
+        <option value="psu">Power Supplies</option>
+        <option value="ssd">SSDs</option>
+        <option value="hdd">Hard Drives</option>
+        <option value="nas">NAS &amp; Enclosures</option>
+        <option value="usb">USB Flash</option>
+        <option value="cool">CPU Coolers</option>
+        <option value="fan">Case Fans</option>
+        <option value="case">PC Cases</option>
+        <option value="paste">Thermal Paste</option>
+        <option value="kb">Keyboards</option>
+        <option value="mouse">Mice</option>
+        <option value="mon">Monitors</option>
+        <option value="headset">Headsets</option>
+        <option value="pc">Gaming PCs</option>
+        <option value="laptop">Laptops</option>
+        <option value="ws">Workstations</option>
+        <option value="mini">Mini PCs</option>
+      </select>
+      <input class="search-in" id="searchIn" type="search" placeholder="Search GPUs, CPUs, memory, monitors…" autocomplete="off">
+      <button class="search-btn" id="searchBtn" aria-label="Search">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+      </button>
+    </form>
+
+    <div class="mast-actions">
+      <a class="mact" href="#" id="acctBtn">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M4.8 20c.7-3.7 3.7-5.9 7.2-5.9s6.5 2.2 7.2 5.9"/></svg>
+        <b>Account</b>
+      </a>
+      <a class="mact" href="#" id="listsBtn" role="button" aria-label="Lists">
+        <svg viewBox="0 0 24 24"><path d="M4 7h16l-1.3 11.2a2 2 0 0 1-2 1.8H7.3a2 2 0 0 1-2-1.8L4 7Z"/><path d="M9 7V5.5A3 3 0 0 1 15 5.5V7"/></svg>
+        <b>Lists</b>
+        <span class="ld-count" id="listsCount" hidden>0</span>
+      </a>
+      <button class="mact theme-sw" id="modeBtn" aria-label="Switch to dark mode"><span class="tsw" aria-hidden="true">
+  <svg class="tsw-sun" viewBox="0 0 24 24" width="13" height="13"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><g stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4L17 7M7 17l-1.6 1.6"/></g></svg>
+  <svg class="tsw-moon" viewBox="0 0 24 24" width="13" height="13"><path d="M20.5 14.2A8.6 8.6 0 0 1 9.8 3.5 8.6 8.6 0 1 0 20.5 14.2z" fill="currentColor"/></svg>
+  <span class="tsw-knob"></span>
+</span><b class="tsw-txt">Night</b></button><button class="mact" id="cartBtn" aria-label="Cart">
+        <svg viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2.5 3h2.2l2.7 11.2h11l2.1-8H6.2"/></svg>
+        <b>Cart</b>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="lang-btn" id="langBtn"><span class="flag flag-ir"></span><b>فا</b></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ category nav ============ -->
+<nav class="cnav" id="top">
+  <div class="wrap">
+    <a class="first" href="#deals">
+      <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      All Products
+    </a>
+    <a href="#deals" data-cat="grp:parts">Components</a>
+    <a href="#deals" data-cat="grp:storage">Storage</a>
+    <a href="#deals" data-cat="grp:coolcase">Cooling</a>
+    <a href="#deals" data-cat="grp:per">Peripherals</a>
+    <a href="#deals" data-cat="grp:systems">Systems</a>
+    <a href="#deals" data-cat="pc">Gaming PCs</a>
+    <a href="#deals" data-cat="laptop">Laptops</a>
+
+    <div class="mega">
+      <div class="mega-grid">
+        <div>
+          <h5>Components</h5>
+          <ul>
+            <li><a href="#deals" data-cat="gpu">Graphics Cards</a></li>
+            <li><a href="#deals" data-cat="cpu">CPUs / Processors</a></li>
+            <li><a href="#deals" data-cat="mobo">Motherboards</a></li>
+            <li><a href="#deals" data-cat="mem">Memory</a></li>
+            <li><a href="#deals" data-cat="psu">Power Supplies</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Storage</h5>
+          <ul>
+            <li><a href="#deals" data-cat="ssd">SSDs</a></li>
+            <li><a href="#deals" data-cat="hdd">Hard Drives</a></li>
+            <li><a href="#deals" data-cat="nas">NAS &amp; Enclosures</a></li>
+            <li><a href="#deals" data-cat="usb">USB Flash</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Cooling &amp; Cases</h5>
+          <ul>
+            <li><a href="#deals" data-cat="cool">CPU Coolers</a></li>
+            <li><a href="#deals" data-cat="fan">Case Fans</a></li>
+            <li><a href="#deals" data-cat="case">PC Cases</a></li>
+            <li><a href="#deals" data-cat="paste">Thermal Paste</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Peripherals</h5>
+          <ul>
+            <li><a href="#deals" data-cat="kb">Keyboards</a></li>
+            <li><a href="#deals" data-cat="mouse">Mice</a></li>
+            <li><a href="#deals" data-cat="mon">Monitors</a></li>
+            <li><a href="#deals" data-cat="headset">Headsets</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Systems</h5>
+          <ul>
+            <li><a href="#deals" data-cat="pc">Gaming PCs</a></li>
+            <li><a href="#deals" data-cat="laptop">Laptops</a></li>
+            <li><a href="#deals" data-cat="ws">Workstations</a></li>
+            <li><a href="#deals" data-cat="mini">Mini PCs</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <!-- ============ hero ============ -->
+  <section class="hero">
+    <div class="hero-slides" aria-hidden="true">
+      <div class="hero-slide gpu on"><img src="assets/gpu-cut.webp" alt="NVIDIA GeForce RTX 5090 graphics card"></div>
+      <div class="hero-slide"><img src="assets/cut-cpu.webp" alt="Desktop processor with gold contact array"></div>
+      <div class="hero-slide"><img src="assets/cut-monitor.webp" alt="27-inch OLED gaming monitor"></div>
+      <div class="hero-slide"><img src="assets/cut-keyboard.webp" alt="Mechanical keyboard, tenkeyless"></div>
+      <div class="hero-slide"><img src="assets/cut-mouse.webp" alt="Lightweight wireless gaming mouse"></div>
+      <div class="hero-slide"><img src="assets/cut-aio.webp" alt="360mm all-in-one liquid CPU cooler"></div>
+    </div>
+    <div class="hero-in">
+      <p class="hero-kicker">Black November</p>
+      <h1>Up to <em>56% off</em><br>components &amp; storage</h1>
+      <p>GPUs, motherboards, memory and SSDs — the biggest pool of the event. Every card bin-tested before it ships.</p>
+      <div class="hero-cta">
+        <a class="btn btn-orange" href="#deals">Shop all deals</a>
+        <a class="btn btn-white" href="#combos">Build a combo</a>
+      </div>
+    </div>
+    <div class="dots"><i class="on" role="button" tabindex="0" aria-label="Slide 1"></i><i role="button" tabindex="0" aria-label="Slide 2"></i><i role="button" tabindex="0" aria-label="Slide 3"></i><i role="button" tabindex="0" aria-label="Slide 4"></i><i role="button" tabindex="0" aria-label="Slide 5"></i><i role="button" tabindex="0" aria-label="Slide 6"></i></div>
+  </section>
+
+  <!-- ============ event tiles ============ -->
+  <section class="events">
+    <article class="evt">
+      <span class="evt-count">408 ITEMS</span>
+      <h4>Components &amp; Storage</h4>
+      <span class="off">Up to 56% off</span>
+      <p>GPUs, motherboards, memory and SSDs — the biggest pool of the event.</p>
+      <a class="go" href="#deals">Shop the category →</a>
+    </article>
+    <article class="evt">
+      <span class="evt-count">153 ITEMS</span>
+      <h4>Computer Systems</h4>
+      <span class="off">Up to 58% off</span>
+      <p>Prebuilt gaming rigs, laptops and workstations, configured and ready.</p>
+      <a class="go" href="#deals">Shop the category →</a>
+    </article>
+    <article class="evt">
+      <span class="evt-count">157 ITEMS</span>
+      <h4>Computer Peripherals</h4>
+      <span class="off">Up to 60% off</span>
+      <p>Keyboards, mice and headsets from $9.99 — the deepest cuts of the month.</p>
+      <a class="go" href="#deals">Shop the category →</a>
+    </article>
+    <article class="evt">
+      <span class="evt-count">41 ITEMS</span>
+      <h4>Server &amp; Components</h4>
+      <span class="off">Up to 36% off</span>
+      <p>Rackmount, enterprise storage and networking for the home lab.</p>
+      <a class="go" href="#deals">Shop the category →</a>
+    </article>
+  </section>
+
+  <!-- ============ today's deals ============ -->
+  <section class="sec" id="deals">
+    <div class="sec-head">
+      <div>
+        <h2>Today's Deals</h2>
+        <p>Verified prices. Stock counts refreshed every 15 minutes.</p>
+      </div>
+      <div style="display:flex;align-items:center;gap:18px">
+        <div class="timer">Ends in <b id="t-d">40</b>d <b id="t-h">00</b>:<b id="t-m">00</b>:<b id="t-s">00</b></div>
+        <a class="link" href="#">All deals →</a>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px;flex-wrap:wrap">
+      <div class="chips" id="chips">
+        <button class="chip on" data-f="all">All</button>
+        <button class="chip" data-f="grp:parts">Components</button>
+        <button class="chip" data-f="grp:storage">Storage</button>
+        <button class="chip" data-f="grp:coolcase">Cooling &amp; Cases</button>
+        <button class="chip" data-f="grp:per">Peripherals</button>
+        <button class="chip" data-f="grp:systems">Systems</button>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <span style="font-size:12px;color:var(--ink-3)" id="resCount">10 results</span>
+        <select id="sortSel" style="height:32px;border:1px solid var(--line);border-radius:6px;padding:0 8px;background:#fff;font-size:12px">
+          <option value="pop">Sort: Popular</option>
+          <option value="low">Price: low to high</option>
+          <option value="high">Price: high to low</option>
+          <option value="rate">Top rated</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="shop">
+      <!-- filters -->
+      <aside class="filters">
+        <div class="fgroup">
+          <h5>Components</h5>
+          <label><input type="checkbox" class="fcat" value="gpu"><span>Graphics Cards</span><span class="cnt">1</span></label>
+          <label><input type="checkbox" class="fcat" value="cpu"><span>Processors</span><span class="cnt">2</span></label>
+          <label><input type="checkbox" class="fcat" value="mobo"><span>Motherboards</span><span class="cnt">1</span></label>
+          <label><input type="checkbox" class="fcat" value="mem"><span>Memory</span><span class="cnt">2</span></label>
+          <label><input type="checkbox" class="fcat" value="psu"><span>Power Supplies</span><span class="cnt">2</span></label>
+        </div>
+        <div class="fgroup">
+          <h5>Storage</h5>
+          <label><input type="checkbox" class="fcat" value="ssd"><span>SSDs</span><span class="cnt">2</span></label>
+          <label><input type="checkbox" class="fcat" value="hdd"><span>Hard Drives</span><span class="cnt">1</span></label>
+          <label><input type="checkbox" class="fcat" value="nas"><span>NAS &amp; Enclosures</span><span class="cnt">1</span></label>
+          <label><input type="checkbox" class="fcat" value="usb"><span>USB Flash</span><span class="cnt">1</span></label>
+        </div>
+        <div class="fgroup">
+          <h5>Cooling &amp; Cases</h5>
+          <label><input type="checkbox" class="fcat" value="cool"><span>CPU Coolers</span><span class="cnt">2</span></label>
+          <label><input type="checkbox" class="fcat" value="fan"><span>Case Fans</span><span class="cnt">1</span></label>
+          <label><input type="checkbox" class="fcat" value="case"><span>PC Cases</span><span class="cnt">1</span></label>
+          <label><input type="checkbox" class="fcat" value="paste"><span>Thermal Paste</span><span class="cnt">1</span></label>
+        </div>
+        <div class="fgroup">
+          <h5>Peripherals</h5>
+          <label><input type="checkbox" class="fcat" value="kb"><span>Keyboards</span><span class="cnt">1</span></label>
+          <label><input type="checkbox" class="fcat" value="mouse"><span>Mice</span><span class="cnt">1</span></label>
+          <label><input type="checkbox" class="fcat" value="mon"><span>Monitors</span><span class="cnt">1</span></label>
+          <label><input type="checkbox" class="fcat" value="headset"><span>Headsets</span><span class="cnt">1</span></label>
+        </div>
+        <div class="fgroup">
+          <h5>Systems</h5>
+          <label><input type="checkbox" class="fcat" value="pc"><span>Gaming PCs</span><span class="cnt">1</span></label>
+          <label><input type="checkbox" class="fcat" value="laptop"><span>Laptops</span><span class="cnt">1</span></label>
+          <label><input type="checkbox" class="fcat" value="ws"><span>Workstations</span><span class="cnt">1</span></label>
+          <label><input type="checkbox" class="fcat" value="mini"><span>Mini PCs</span><span class="cnt">1</span></label>
+        </div>
+        <div class="fgroup">
+          <h5>Brand</h5>
+          <label><input type="checkbox"><span>ASUS</span><span class="cnt">2</span></label>
+          <label><input type="checkbox"><span>CORSAIR</span><span class="cnt">2</span></label>
+          <label><input type="checkbox"><span>AMD</span><span class="cnt">1</span></label>
+          <label><input type="checkbox"><span>Intel</span><span class="cnt">1</span></label>
+          <label><input type="checkbox"><span>SAMSUNG</span><span class="cnt">1</span></label>
+          <label><input type="checkbox"><span>LIAN LI</span><span class="cnt">1</span></label>
+        </div>
+        <div class="fgroup">
+          <h5>Price</h5>
+          <div class="price-row">
+            <input type="number" placeholder="$ min" id="pmin">
+            <span style="color:#b8bcc3">–</span>
+            <input type="number" placeholder="$ max" id="pmax">
+          </div>
+          <button class="apply" id="applyPrice">Apply</button>
+        </div>
+        <div class="fgroup">
+          <h5>Customer rating</h5>
+          <label><input type="checkbox"><span>4★ &amp; up</span><span class="cnt">8</span></label>
+          <label><input type="checkbox"><span>3★ &amp; up</span><span class="cnt">10</span></label>
+        </div>
+        <div class="fgroup">
+          <h5>Shipping</h5>
+          <label><input type="checkbox"><span>Free shipping</span><span class="cnt">9</span></label>
+          <label><input type="checkbox"><span>In stock</span><span class="cnt">10</span></label>
+        </div>
+      </aside>
+
+      <!-- products -->
+      <div class="pgrid" id="pgrid">
+
+        <article class="pcard" data-cat="gpu" data-price="749.99" data-rate="4.6">
+          <div class="pthumb"><span class="pbadge">-17%</span><img src="assets/gpu.webp" alt="MSI GeForce RTX 5070 Ti graphics card" loading="lazy"></div>
+          <div class="pbody">
+            <span class="pbrand">MSI</span>
+            <a class="pname" href="#">MSI GeForce RTX 5070 Ti 16G VENTUS 3X OC Graphics Card, 16GB GDDR7, DLSS 4</a>
+            <div class="prate"><span class="stars">★★★★★</span> 4.6 (284)</div>
+            <div class="pprice"><b>$749.99</b><s>$899.99</s></div>
+            <div class="promo">Save $150.00</div>
+            <div class="pship">Free 2-day shipping</div>
+            <div class="pactions"><button class="btn btn-orange add">Add to cart</button><button class="btn btn-white cmp" type="button">Compare</button></div>
+          </div>
+        </article>
+
+        <article class="pcard" data-cat="cpu" data-price="589.99" data-rate="4.8">
+          <div class="pthumb"><span class="pbadge best">Best Seller</span><img src="assets/p-cpu-ultra9.webp" alt="Intel Core Ultra 9 285K processor" loading="lazy"></div>
+          <div class="pbody">
+            <span class="pbrand">Intel</span>
+            <a class="pname" href="#">Intel Core Ultra 9 285K — 24-Core (8P+16E) LGA 1851 125W Desktop Processor</a>
+            <div class="prate"><span class="stars">★★★★★</span> 4.8 (642)</div>
+            <div class="pprice"><b>$589.99</b><s>$649.99</s></div>
+            <div class="promo">Save $60.00</div>
+            <div class="pship">Free 2-day shipping</div>
+            <div class="pactions"><button class="btn btn-orange add">Add to cart</button><button class="btn btn-white cmp" type="button">Compare</button></div>
+          </div>
+        </article>
+
+        <article class="pcard" data-cat="cpu" data-price="390.99" data-rate="4.7">
+          <div class="pthumb"><img src="assets/cpu.webp" alt="Intel Core i7-14700K processor" loading="lazy"></div>
+          <div class="pbody">
+            <span class="pbrand">Intel</span>
+            <a class="pname" href="#">Intel Core i7-14700K — 20-Core (8P+12E) LGA 1700 125W Desktop Processor</a>
+            <div class="prate"><span class="stars">★★★★½</span> 4.7 (1,204)</div>
+            <div class="pprice"><b>$390.99</b></div>
+            <div class="pship">Free shipping</div>
+            <div class="pactions"><button class="btn btn-orange add">Add to cart</button><button class="btn btn-white cmp" type="button">Compare</button></div>
+          </div>
+        </article>
+
+        <article class="pcard" data-cat="mem" data-price="124.99" data-rate="4.7">
+          <div class="pthumb"><span class="pbadge">-22%</span><img src="assets/ram.webp" alt="Corsair Vengeance 32GB DDR5 memory kit" loading="lazy"></div>
+          <div class="pbody">
+            <span class="pbrand">CORSAIR</span>
+            <a class="pname" href="#">CORSAIR Vengeance 32GB (2×16GB) DDR5 6000 CL38 Desktop Memory</a>
+            <div class="prate"><span class="stars">★★★★★</span> 4.7 (892)</div>
+            <div class="pprice"><b>$124.99</b><s>$159.99</s></div>
+            <div class="promo">Save $35.00</div>
+            <div class="pship">Free shipping</div>
+            <div class="pactions"><button class="btn btn-orange add">Add to cart</button><button class="btn btn-white cmp" type="button">Compare</button></div>
+          </div>
+        </article>
+
+        <article class="pcard" data-cat="ssd" data-price="169.99" data-rate="4.8">
+          <div class="pthumb"><span class="pbadge best">Best Seller</span><img src="assets/ssd.webp" alt="Samsung 990 PRO 2TB NVMe SSD" loading="lazy"></div>
+          <div class="pbody">
+            <span class="pbrand">SAMSUNG</span>
+            <a class="pname" href="#">SAMSUNG 990 PRO 2TB NVMe PCIe 4.0 M.2 Internal SSD, up to 7450 MB/s</a>
+            <div class="prate"><span class="stars">★★★★★</span> 4.8 (2,431)</div>
+            <div class="pprice"><b>$169.99</b><s>$219.99</s></div>
+            <div class="promo">Save $50.00</div>
+            <div class="pship">Free shipping</div>
+            <div class="pactions"><button class="btn btn-orange add">Add to cart</button><button class="btn btn-white cmp" type="button">Compare</button></div>
+          </div>
+        </article>
+
+        <article class="pcard" data-cat="cool" data-price="279.99" data-rate="4.6">
+          <div class="pthumb"><span class="pbadge">-15%</span><img src="assets/aio.webp" alt="NZXT Kraken Elite 360 RGB liquid cooler" loading="lazy"></div>
+          <div class="pbody">
+            <span class="pbrand">NZXT</span>
+            <a class="pname" href="#">NZXT Kraken Elite 360 RGB — 360mm AIO Liquid Cooler with LCD Display</a>
+            <div class="prate"><span class="stars">★★★★½</span> 4.6 (156)</div>
+            <div class="pprice"><b>$279.99</b><s>$329.99</s></div>
+            <div class="promo">Save $50.00</div>
+            <div class="pship">Free shipping</div>
+            <div class="pactions"><button class="btn btn-orange add">Add to cart</button><button class="btn btn-white cmp" type="button">Compare</button></div>
+          </div>
+        </article>
+
+        <article class="pcard" data-cat="case" data-price="229.99" data-rate="4.9">
+          <div class="pthumb"><img src="assets/case.webp" alt="Lian Li O11 Dynamic EVO XL case" loading="lazy"></div>
+          <div class="pbody">
+            <span class="pbrand">LIAN LI</span>
+            <a class="pname" href="#">LIAN LI O11 Dynamic EVO XL — Tempered Glass Full Tower, Black</a>
+            <div class="prate"><span class="stars">★★★★★</span> 4.9 (74)</div>
+            <div class="pprice"><b>$229.99</b></div>
+            <div class="pship">Free shipping</div>
+            <div class="pactions"><button class="btn btn-orange add">Add to cart</button><button class="btn btn-white cmp" type="button">Compare</button></div>
+          </div>
+        </article>
+
+        <article class="pcard" data-cat="psu" data-price="149.99" data-rate="4.7">
+          <div class="pthumb"><span class="pbadge">-17%</span><img src="assets/psu.webp" alt="Corsair RM1000e power supply" loading="lazy"></div>
+          <div class="pbody">
+            <span class="pbrand">CORSAIR</span>
+            <a class="pname" href="#">CORSAIR RM1000e — 1000W 80 Plus Gold Fully Modular ATX 3.1 PSU</a>
+            <div class="prate"><span class="stars">★★★★½</span> 4.7 (521)</div>
+            <div class="pprice"><b>$149.99</b><s>$179.99</s></div>
+            <div class="promo">Save $30.00</div>
+            <div class="pship">Free shipping</div>
+            <div class="pactions"><button class="btn btn-orange add">Add to cart</button><button class="btn btn-white cmp" type="button">Compare</button></div>
+          </div>
+        </article>
+
+        <article class="pcard" data-cat="mon" data-price="649.99" data-rate="4.5">
+          <div class="pthumb"><span class="pbadge">-35%</span><img src="assets/monitor.webp" alt="LG UltraGear 27 inch OLED gaming monitor" loading="lazy"></div>
+          <div class="pbody">
+            <span class="pbrand">LG</span>
+            <a class="pname" href="#">LG UltraGear 27GS95QE — 27" QHD OLED 240Hz 0.03ms Gaming Monitor</a>
+            <div class="prate"><span class="stars">★★★★½</span> 4.5 (208)</div>
+            <div class="pprice"><b>$649.99</b><s>$999.99</s></div>
+            <div class="promo">Save $350.00</div>
+            <div class="pship">Free shipping</div>
+            <div class="pactions"><button class="btn btn-orange add">Add to cart</button><button class="btn btn-white cmp" type="button">Compare</button></div>
+          </div>
+        </article>
+
+        <article class="pcard" data-cat="kb" data-price="122.99" data-rate="4.4">
+          <div class="pthumb"><span class="pbadge new">New</span><img src="assets/keyboard.webp" alt="MCHOSE Ace68 Turbo keyboard" loading="lazy"></div>
+          <div class="pbody">
+            <span class="pbrand">MCHOSE</span>
+            <a class="pname" href="#">MCHOSE Ace68 Turbo 65% Aluminium Hall Effect Keyboard, 16K Polling</a>
+            <div class="prate"><span class="stars">★★★★½</span> 4.4 (63)</div>
+            <div class="pprice"><b>$122.99</b></div>
+            <div class="pship">Free shipping</div>
+            <div class="pactions"><button class="btn btn-orange add">Add to cart</button><button class="btn btn-white cmp" type="button">Compare</button></div>
+          </div>
+        </article>
+
+
+        <article class="pcard" data-cat="mobo" data-price="399.99" data-rate="4.7">
+          <div class="pthumb"><img src="assets/mobo.webp" alt="ASUS ROG Strix X870E-E motherboard" loading="lazy"></div>
+          <div class="pbody">
+            <span class="pbrand">ASUS</span>
+            <a class="pname" href="#">ASUS ROG Strix X870E-E Gaming WiFi — AM5 ATX, PCIe 5.0, 18+2+2 Power Stages</a>
+            <div class="prate"><span class="stars">★★★★½</span> 4.7 (418)</div>
+            <div class="pprice"><b>$399.99</b></div>
+            <div class="pship">Free shipping</div>
+            <div class="pactions"><button class="btn btn-orange add">Add to cart</button><button class="btn btn-white cmp" type="button">Compare</button></div>
+          </div>
+        </article>
+
+        <article class="pcard" data-cat="mem" data-price="159.99" data-rate="4.6">
+          <div class="pthumb"><span class="pbadge">-14%</span><img src="assets/ram.webp" alt="G.SKILL Trident Z5 RGB memory" loading="lazy"></div>
+          <div class="pbody">
+            <span class="pbrand">G.SKILL</span>
+            <a class="pname" href="#">G.SKILL Trident Z5 RGB 32GB (2×16GB) DDR5 6400 CL32 Desktop Memory</a>
+            <div class="prate"><span class="stars">★★★★½</span> 4.6 (512)</div>
+            <div class="pprice"><b>$159.99</b><s>$185.99</s></div>
+            <div class="promo">Save $26.00</div>
+            <div class="pship">Free shipping</div>
+            <div class="pactions"><button class="btn btn-orange add">Add to cart</button><button class="btn btn-white cmp" type="button">Compare</button></div>
+          </div>
+        </article>
+
+        <article class="pcard" data-cat="ssd" data-price="329.99" data-rate="4.8">
+          <div class="pthumb"><span class="pbadge new">New</span><img src="assets/ssd.webp" alt="WD_BLACK SN850X 4TB SSD" loading="lazy"></div>
+          <div class="pbody">
+            <span class="pbrand">WD_BLACK</span>
+            <a class="pname" href="#">WD_BLACK SN850X 4TB NVMe PCIe 4.0 M.2 SSD — up to 7300 MB/s, with heatsink</a>
+            <div class="prate"><span class="stars">★★★★★</span> 4.8 (1,041)</div>
+            <div class="pprice"><b>$329.99</b></div>
+            <div class="pship">Free 2-day shipping</div>
+            <div class="pactions"><button class="btn btn-orange add">Add to cart</button><button class="btn btn-white cmp" type="button">Compare</button></div>
+          </div>
+        </article>
+
+        <article class="pcard" data-cat="mouse" data-price="159.99" data-rate="4.7">
+          <div class="pthumb"><img src="assets/mouse.webp" alt="Razer Viper V3 Pro mouse" loading="lazy"></div>
+          <div class="pbody">
+            <span class="pbrand">RAZER</span>
+            <a class="pname" href="#">Razer Viper V3 Pro — 54g Wireless Esports Mouse, 8K Polling, Focus Pro 35K</a>
+            <div class="prate"><span class="stars">★★★★½</span> 4.7 (736)</div>
+            <div class="pprice"><b>$159.99</b></div>
+            <div class="pship">Free shipping</div>
+            <div class="pactions"><button class="btn btn-orange add">Add to cart</button><button class="btn btn-white cmp" type="button">Compare</button></div>
+          </div>
+        </article>
+
+        <article class="pcard" data-cat="cool" data-price="189.99" data-rate="4.5">
+          <div class="pthumb"><span class="pbadge">-12%</span><img src="assets/aio.webp" alt="Lian Li Galahad II 360 cooler" loading="lazy"></div>
+          <div class="pbody">
+            <span class="pbrand">LIAN LI</span>
+            <a class="pname" href="#">Lian Li Galahad II Trinity Performance 360 — Liquid CPU Cooler, 3×120mm</a>
+            <div class="prate"><span class="stars">★★★★½</span> 4.5 (289)</div>
+            <div class="pprice"><b>$189.99</b><s>$215.99</s></div>
+            <div class="promo">Save $26.00</div>
+            <div class="pship">Free shipping</div>
+            <div class="pactions"><button class="btn btn-orange add">Add to cart</button><button class="btn btn-white cmp" type="button">Compare</button></div>
+          </div>
+        </article>
+
+        <article class="pcard" data-cat="psu" data-price="299.99" data-rate="4.6">
+          <div class="pthumb"><img src="assets/psu.webp" alt="ASUS ROG Thor 1200W PSU" loading="lazy"></div>
+          <div class="pbody">
+            <span class="pbrand">ASUS</span>
+            <a class="pname" href="#">ASUS ROG Thor 1200W Platinum II — Fully Modular ATX 3.1 PSU, OLED Power Display</a>
+            <div class="prate"><span class="stars">★★★★½</span> 4.6 (204)</div>
+            <div class="pprice"><b>$299.99</b></div>
+            <div class="pship">Free 2-day shipping</div>
+            <div class="pactions"><button class="btn btn-orange add">Add to cart</button><button class="btn btn-white cmp" type="button">Compare</button></div>
+          </div>
+        </article>
+        <article class="pcard" data-cat="hdd" data-price="189.99" data-rate="4.7">
+          <div class="pthumb"><span class="pbadge">-19%</span><img src="assets/p-hdd.webp" alt="Seagate IronWolf Pro 8TB hard drive" loading="lazy"></div>
+          <div class="pbody">
+            <span class="pbrand">SEAGATE</span>
+            <a class="pname" href="#">Seagate IronWolf Pro 8TB — 7200 RPM SATA 6Gb/s 3.5" NAS Hard Drive, 256MB Cache</a>
+            <div class="prate"><span class="stars">★★★★½</span> 4.7 (1,208)</div>
+            <div class="pprice"><b>$189.99</b></div>
+            <div class="pship">Free 2-day shipping</div>
+            <div class="pactions"><button class="btn btn-orange add">Add to cart</button><button class="btn btn-white cmp" type="button">Compare</button></div>
+          </div>
+        </article>
+        <article class="pcard" data-cat="nas" data-price="599.99" data-rate="4.7">
+          <div class="pthumb"><img src="assets/p-nas.webp" alt="Synology DiskStation DS923+ NAS enclosure" loading="lazy"></div>
+          <div class="pbody">
+            <span class="pbrand">SYNOLOGY</span>
+            <a class="pname" href="#">Synology DiskStation DS923+ — 4-Bay NAS Enclosure, AMD Ryzen R1600, 4GB DDR4 ECC</a>
+            <div class="prate"><span class="stars">★★★★½</span> 4.7 (486)</div>
+            <div class="pprice"><b>$599.99</b></div>
+            <div class="pship">Free shipping</div>
+            <div class="pactions"><button class="btn btn-orange add">Add to cart</button><button class="btn btn-white cmp" type="button">Compare</button></div>
+          </div>
+        </article>
+        <article class="pcard" data-cat="usb" data-price="39.99" data-rate="4.6">
+          <div class="pthumb"><span class="pbadge">-20%</span><img src="assets/p-usb.webp" alt="SanDisk Extreme PRO USB flash drive" loading="lazy"></div>
+          <div class="pbody">
+            <span class="pbrand">SANDISK</span>
+            <a class="pname" href="#">SanDisk Extreme PRO 256GB — USB 3.2 Gen 1 Flash Drive, 420 MB/s Read</a>
+            <div class="prate"><span class="stars">★★★★½</span> 4.6 (3,914)</div>
+            <div class="pprice"><b>$39.99</b></div>
+            <div class="pship">Free shipping</div>
+            <div class="pactions"><button class="btn btn-orange add">Add to cart</button><button class="btn btn-white cmp" type="button">Compare</button></div>
+          </div>
+        </article>
+        <article class="pcard" data-cat="fan" data-price="129.99" data-rate="4.5">
+          <div class="pthumb"><span class="pbadge">-13%</span><img src="assets/p-fan.webp" alt="Corsair iCUE LINK QX120 RGB case fans" loading="lazy"></div>
+          <div class="pbody">
+            <span class="pbrand">CORSAIR</span>
+            <a class="pname" href="#">CORSAIR iCUE LINK QX120 RGB — 120mm PWM Case Fan, Triple Pack with Controller</a>
+            <div class="prate"><span class="stars">★★★★½</span> 4.5 (742)</div>
+            <div class="pprice"><b>$129.99</b></div>
+            <div class="pship">Free shipping</div>
+            <div class="pactions"><button class="btn btn-orange add">Add to cart</button><button class="btn btn-white cmp" type="button">Compare</button></div>
+          </div>
+        </article>
+        <article class="pcard" data-cat="paste" data-price="24.99" data-rate="4.9">
+          <div class="pthumb"><img src="assets/p-paste.webp" alt="Thermal Grizzly Kryonaut thermal paste" loading="lazy"></div>
+          <div class="pbody">
+            <span class="pbrand">THERMAL GRIZZLY</span>
+            <a class="pname" href="#">Thermal Grizzly Kryonaut — 12.5 W/mK Thermal Paste, 5.5g Syringe</a>
+            <div class="prate"><span class="stars">★★★★½</span> 4.9 (2,067)</div>
+            <div class="pprice"><b>$24.99</b></div>
+            <div class="pship">Free shipping</div>
+            <div class="pactions"><button class="btn btn-orange add">Add to cart</button><button class="btn btn-white cmp" type="button">Compare</button></div>
+          </div>
+        </article>
+        <article class="pcard" data-cat="headset" data-price="349.99" data-rate="4.6">
+          <div class="pthumb"><span class="pbadge">-12%</span><img src="assets/p-headset.webp" alt="SteelSeries Arctis Nova Pro Wireless headset" loading="lazy"></div>
+          <div class="pbody">
+            <span class="pbrand">STEELSERIES</span>
+            <a class="pname" href="#">SteelSeries Arctis Nova Pro Wireless — ANC Gaming Headset, Dual Battery, 2.4GHz + BT</a>
+            <div class="prate"><span class="stars">★★★★½</span> 4.6 (655)</div>
+            <div class="pprice"><b>$349.99</b></div>
+            <div class="pship">Free 2-day shipping</div>
+            <div class="pactions"><button class="btn btn-orange add">Add to cart</button><button class="btn btn-white cmp" type="button">Compare</button></div>
+          </div>
+        </article>
+        <article class="pcard" data-cat="pc" data-price="2499.99" data-rate="4.8">
+          <div class="pthumb"><span class="pbadge new">New</span><img src="assets/p-gamingpc.webp" alt="NEXUS Vector gaming desktop with glass side panel" loading="lazy"></div>
+          <div class="pbody">
+            <span class="pbrand">NEXUS</span>
+            <a class="pname" href="#">NEXUS Vector RTX 5080 Gaming PC — Core Ultra 7 265K, 32GB DDR5, 2TB Gen4 NVMe</a>
+            <div class="prate"><span class="stars">★★★★½</span> 4.8 (128)</div>
+            <div class="pprice"><b>$2499.99</b></div>
+            <div class="pship">Free shipping</div>
+            <div class="pactions"><button class="btn btn-orange add">Add to cart</button><button class="btn btn-white cmp" type="button">Compare</button></div>
+          </div>
+        </article>
+        <article class="pcard" data-cat="laptop" data-price="1799.99" data-rate="4.7">
+          <div class="pthumb"><img src="assets/p-laptop.webp" alt="ASUS ROG Zephyrus G14 gaming laptop" loading="lazy"></div>
+          <div class="pbody">
+            <span class="pbrand">ASUS</span>
+            <a class="pname" href="#">ASUS ROG Zephyrus G14 (2026) — Ryzen 9 8945HS, RTX 5070, 14" 3K 120Hz OLED</a>
+            <div class="prate"><span class="stars">★★★★½</span> 4.7 (394)</div>
+            <div class="pprice"><b>$1799.99</b></div>
+            <div class="pship">Free 2-day shipping</div>
+            <div class="pactions"><button class="btn btn-orange add">Add to cart</button><button class="btn btn-white cmp" type="button">Compare</button></div>
+          </div>
+        </article>
+        <article class="pcard" data-cat="ws" data-price="4299.99" data-rate="4.9">
+          <div class="pthumb"><img src="assets/p-workstation.webp" alt="NEXUS Forge Threadripper workstation tower" loading="lazy"></div>
+          <div class="pbody">
+            <span class="pbrand">NEXUS</span>
+            <a class="pname" href="#">NEXUS Forge TR Workstation — Threadripper 7970X, 128GB ECC DDR5, 4TB NVMe</a>
+            <div class="prate"><span class="stars">★★★★½</span> 4.9 (57)</div>
+            <div class="pprice"><b>$4299.99</b></div>
+            <div class="pship">Free freight</div>
+            <div class="pactions"><button class="btn btn-orange add">Add to cart</button><button class="btn btn-white cmp" type="button">Compare</button></div>
+          </div>
+        </article>
+        <article class="pcard" data-cat="mini" data-price="799.99" data-rate="4.5">
+          <div class="pthumb"><span class="pbadge new">New</span><img src="assets/p-minipc.webp" alt="Beelink SER9 Pro mini PC" loading="lazy"></div>
+          <div class="pbody">
+            <span class="pbrand">BEELINK</span>
+            <a class="pname" href="#">Beelink SER9 Pro Mini PC — Ryzen AI 9 HX 370, 32GB LPDDR5X, 1TB NVMe</a>
+            <div class="prate"><span class="stars">★★★★½</span> 4.5 (901)</div>
+            <div class="pprice"><b>$799.99</b></div>
+            <div class="pship">Free shipping</div>
+            <div class="pactions"><button class="btn btn-orange add">Add to cart</button><button class="btn btn-white cmp" type="button">Compare</button></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ combos ============ -->
+  <section class="sec" id="combos">
+    <div class="sec-head">
+      <div>
+        <h2>Build a combo, save more</h2>
+        <p>Buy the parts together — the discount is applied in the cart.</p>
+      </div>
+      <a class="link" href="#">More options →</a>
+    </div>
+
+    <div class="builder" id="builder">
+      <div class="bg-grid" aria-hidden="true"></div>
+
+      <div class="bld-list">
+        <div class="bld-step" data-p="589.99" data-name="Core Ultra 9 285K">
+          <button class="bld-tick on" type="button" aria-pressed="true"></button>
+          <span class="bld-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M10 3v3M14 3v3M10 18v3M14 18v3M3 10h3M3 14h3M18 10h3M18 14h3"/></svg></span>
+          <span class="bld-txt"><b>Processor</b><i>Core Ultra 9 285K · 24C/24T</i></span>
+          <span class="bld-price">$589.99</span>
+        </div>
+
+        <div class="bld-step" data-p="449.99" data-name="Z890-E WIFI">
+          <button class="bld-tick on" type="button" aria-pressed="true"></button>
+          <span class="bld-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><rect x="6.5" y="7.5" width="5" height="5" rx="1"/><path d="M14.5 8h4M14.5 11h4M6.5 16h12"/></svg></span>
+          <span class="bld-txt"><b>Motherboard</b><i>Z890-E WIFI · LGA 1851</i></span>
+          <span class="bld-price">$449.99</span>
+        </div>
+
+        <div class="bld-step" data-p="109.99" data-name="DDR5 6000 32GB">
+          <button class="bld-tick on" type="button" aria-pressed="true"></button>
+          <span class="bld-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="7" width="19" height="8" rx="1.5"/><path d="M6 15v3M10 15v3M14 15v3M18 15v3M6 10.5h2M11 10.5h2M16 10.5h2"/></svg></span>
+          <span class="bld-txt"><b>Memory</b><i>DDR5-6000 CL30 · 32GB</i></span>
+          <span class="bld-price">$109.99</span>
+        </div>
+
+        <div class="bld-step" data-p="749.99" data-name="RTX 5070 Ti">
+          <button class="bld-tick" type="button" aria-pressed="false"></button>
+          <span class="bld-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="7" width="20" height="9" rx="2"/><circle cx="8" cy="11.5" r="2.4"/><circle cx="15" cy="11.5" r="2.4"/><path d="M6 16v3M18 16v3"/></svg></span>
+          <span class="bld-txt"><b>Graphics</b><i>MSI RTX 5070 Ti · 16GB</i></span>
+          <span class="bld-price">$749.99</span>
+        </div>
+      </div>
+
+      <aside class="bld-sum">
+        <span class="bld-kicker" id="bldKick">LIVE TOTAL</span>
+        <div class="bld-total"><b id="bldTotal">$819.98</b><s id="bldWas">$872.98</s></div>
+        <div class="bld-save"><span id="bldSaveLbl">You save</span> <b id="bldSave">$53.00</b></div>
+        <p class="bld-note" id="bldNote">10% off from three parts · free assembly</p>
+        <button class="btn combo-add" id="bldAdd" type="button">Add the bundle</button>
+        <span class="bld-hint" id="bldHint" data-fa="۳ قطعه انتخاب شده">3 parts selected</span>
+      </aside>
+    </div>
+
+  </section>
+
+  <!-- ============ categories ============ -->
+  <section class="sec">
+    <div class="sec-head">
+      <div><h2>Shop by category</h2><p>Everything for the build, from the case to the cable.</p></div>
+    </div>
+    <div class="cats">
+      <a class="cat" href="#deals"><span class="ico"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="10" rx="2"/><circle cx="8" cy="12" r="2.4"/><circle cx="16" cy="12" r="2.4"/></svg></span><b>Graphics Cards</b><span>214 items</span></a>
+      <a class="cat" href="#deals"><span class="ico"><svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></span><b>Processors</b><span>96 items</span></a>
+      <a class="cat" href="#deals"><span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="8" rx="1.5"/><path d="M7 8v8M11 8v8M15 8v8"/></svg></span><b>Memory</b><span>138 items</span></a>
+      <a class="cat" href="#deals"><span class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 4v16"/><circle cx="15" cy="12" r="2"/></svg></span><b>Storage</b><span>302 items</span></a>
+      <a class="cat" href="#deals"><span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.5"/><path d="M12 4v4M12 16v4M4 12h4M16 12h4"/></svg></span><b>Cooling</b><span>87 items</span></a>
+      <a class="cat" href="#deals"><span class="ico"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 6h6M9 10h6M9 14h3"/></svg></span><b>Cases</b><span>64 items</span></a>
+    </div>
+  </section>
+
+  <!-- ============ trust ============ -->
+  <section class="trust">
+    <div><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg><div><b>Free 2-day shipping</b><span>On orders over $35</span></div></div>
+    <div><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg><div><b>30-day returns</b><span>No restocking fee</span></div></div>
+    <div><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.2-2.9 7.6-7 9-4.1-1.4-7-4.8-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg><div><b>3-year warranty</b><span>Handled in-house</span></div></div>
+    <div><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"/></svg><div><b>Real support</b><span>Answered by builders</span></div></div>
+  </section>
+
+  <!-- ============ tech magazine ============ -->
+  <section class="section mag" id="magazine">
+    <div class="wrap">
+      <div class="mag-head">
+        <div class="mag-title">
+          <div class="mag-row"><span class="mag-kicker">NEXUS MAG</span><span class="mag-issue">Issue 04 · Nov 2026</span></div>
+          <h2>Tech magazine</h2>
+          <p>Bench notes, teardowns and the arguments we have at the bench — written by the people who build the machines.</p>
+        </div>
+        <a class="mag-all" href="magazine.html">All articles →</a>
+      </div>
+
+      <div class="mag-grid">
+        <a class="mag-lead" href="story.html?id=rtx-super">
+          <div class="mag-shot">
+            <img src="assets/rtx.webp" alt="GeForce RTX 5090 on a black background" loading="lazy">
+            <span class="mag-cat">Graphics</span>
+          </div>
+          <div class="mag-body">
+            <h3>The 575W question nobody answers</h3>
+            <p>Thirty power phases, a bigger die and a cooler the size of a paperback. What the RTX 50 board means for your case, your PSU and your electricity bill.</p>
+            <div class="mag-meta"><span class="mag-av">NX</span><b>NEXUS Desk</b><i>·</i><span>7 min read</span><i>·</i><span>Hardware</span></div>
+          </div>
+        </a>
+
+        <div class="mag-list">
+          <a class="mag-item" href="story.html?id=last-of-us">
+            <div class="mag-thumb"><img src="assets/tlou.webp" alt="Ellie with a guitar" loading="lazy"></div>
+            <div>
+              <span class="mag-cat mag-cat--plain">Games</span>
+              <h4>Two Last of Us projects, neither is Part III</h4>
+              <p>What the studio confirmed, what the show is doing, and what to play while you wait.</p>
+              <div class="mag-meta"><span>6 min read</span></div>
+            </div>
+          </a>
+
+          <a class="mag-item" href="story.html?id=ssd-prices">
+            <div class="mag-thumb"><img src="assets/nvme.webp" alt="NVMe M.2 drive" loading="lazy"></div>
+            <div>
+              <span class="mag-cat mag-cat--plain">Storage</span>
+              <h4>NVMe throttling: the five-minute fix</h4>
+              <p>Your drive is not slow. It is hot, and the heatsink on it is decorative.</p>
+              <div class="mag-meta"><span>4 min read</span></div>
+            </div>
+          </a>
+
+          <a class="mag-item" href="story.html?id=gta6">
+            <div class="mag-thumb"><img src="assets/gta6.webp" alt="Vice City at night" loading="lazy"></div>
+            <div>
+              <span class="mag-cat mag-cat--plain">Games</span>
+              <h4>GTA VI pre-loads are live</h4>
+              <p>One week out, and the download is the only thing between you and Vice City.</p>
+              <div class="mag-meta"><span>3 min read</span></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section sponsor" id="sponsor">
+    <div class="wrap">
+      <article class="sp-card">
+        <div class="sp-shot">
+          <img src="assets/sponsor.webp" alt="Nexus staff assembling and benchmarking a build in the Rotterdam workshop"
+               loading="lazy" onerror="this.closest('.sponsor').style.display='none'">
+        </div>
+        <div class="sp-body">
+          <span class="sp-tag">OUR TEAM</span>
+          <h3>The people behind every build</h3>
+          <p>Twelve engineers, one bench. Every machine is assembled, cable-managed and burnt in for 48 hours
+             before it leaves Rotterdam — by someone whose name is on the work order.</p>
+          <ul class="sp-stats">
+            <li><b>12</b><span>engineers</span></li>
+            <li><b>48h</b><span>burn-in</span></li>
+            <li><b>5yr</b><span>warranty</span></li>
+          </ul>
+          <a class="sp-cta" href="#support">Talk to the team →</a>
+        </div>
+      </article>
+
+      <article class="sp-card sp-card--film">
+        <div class="sp-shot">
+          <video class="sp-video" poster="assets/promo-poster.webp" muted loop playsinline preload="none"
+                 aria-label="Nexus workshop film — the team behind every build">
+            <source src="assets/promo-web.mp4" type="video/mp4">
+          </video>
+          <span class="sp-live"><i></i>FILM</span>
+          <button class="sp-sound" type="button" aria-label="Unmute film">♪</button>
+        </div>
+        <div class="sp-body">
+          <span class="sp-tag">ON FILM</span>
+          <h3>Every build, filmed end to end</h3>
+          <p>No renders, no stock footage. Parts staged, cables routed, first boot logged — straight
+             off the Rotterdam bench, by the engineers whose names go on the work order.</p>
+          <ul class="sp-stats">
+            <li><b>48h</b><span>on the bench</span></li>
+            <li><b>12</b><span>engineers</span></li>
+            <li><b>0</b><span>stock clips</span></li>
+          </ul>
+          <button class="sp-cta sp-cta--play" type="button" data-play>Play with sound ♪</button>
+        </div>
+      </article>
+
+      <article class="sp-card sp-card--club" id="club">
+        <div class="sp-shot">
+          <img src="assets/club.webp" alt="Nexus customer club — members earning points and rewards"
+               loading="lazy">
+          <span class="sp-live sp-live--club"><i></i>CLUB</span>
+        </div>
+        <div class="sp-body">
+          <span class="sp-tag">NEXUS CLUB</span>
+          <h3>Points on every part you buy</h3>
+          <p>Join the customer club and every order pays you back — points on hardware, bonuses on
+             reviews, and a tier that unlocks earlier drops and free shipping.</p>
+          <ul class="sp-stats">
+            <li><b>1:1</b><span>point per $1</span></li>
+            <li><b>4</b><span>tiers</span></li>
+            <li><b>Free</b><span>shipping at Silver</span></li>
+          </ul>
+          <button class="sp-cta" type="button" data-join>Join the club →</button>
+        </div>
+      </article>
+
+      <article class="sp-card sp-card--game" id="game-offer">
+        <div class="sp-shot">
+          <img src="assets/game.webp" alt="Nexus gaming PC ready for GTA VI, with GTA V and Red Dead Redemption 2 installed"
+               loading="lazy">
+        </div>
+        <div class="sp-body">
+          <span class="sp-tag">LAUNCH OFFER</span>
+          <h3>GTA VI-ready — playable today</h3>
+          <p>Rockstar still hasn't announced the PC build. So we do the next best thing: a machine specced
+             for day one, drivers locked and benchmarked, with GTA V and Red Dead Redemption 2 installed and
+             tuned before it ships. When VI lands, your box is already waiting.</p>
+          <ul class="sp-stats">
+            <li><b>2</b><span>games installed</span></li>
+            <li><b>4h</b><span>setup &amp; tuning</span></li>
+            <li><b>Free</b><span>lifetime support</span></li>
+          </ul>
+          <button class="sp-cta" type="button" data-call>Book a build →</button>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<!-- ============ footer ============ -->
+
+  <section class="section feat-strip" id="featured">
+    <div class="wrap">
+      <div class="feat-head">
+        <h2>Sponsor site</h2>
+        <p>Partners we vouch for — opened here in full, no redirects.</p>
+      </div>
+
+      <a class="feat-card" href="https://mramlaki.ir/" target="_blank" rel="noopener">
+        <div class="feat-shot">
+          <img src="assets/mramlaki-cover.webp" alt="Mr. Amlaki — Iranian real-estate market analysis" loading="lazy">
+        </div>
+        <div class="feat-body">
+          <span class="feat-tag">Sponsored</span>
+          <h3>Mr. Amlaki</h3>
+          <p>Real-estate market analysis, agent training and the latest housing-economy news from Iran.</p>
+          <span class="feat-url">mramlaki.ir</span>
+          <span class="feat-go">Visit the site →</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h5>Shop</h5>
+        <ul>
+          <li><a href="#deals">Today's Deals</a></li>
+          <li><a href="#deals">Graphics Cards</a></li>
+          <li><a href="#deals">Processors</a></li>
+          <li><a href="#deals">Memory &amp; Storage</a></li>
+          <li><a href="#deals">Cooling</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#combos">Combo Builder</a></li>
+          <li><a href="#">PC Builder</a></li>
+          <li><a href="#">Trade-In</a></li>
+          <li><a href="#">Business</a></li>
+          <li><a href="#">Gift Cards</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Support</h5>
+        <ul>
+          <li><a href="#">Order Status</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Warranty</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Affiliates</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Cookie Settings</a></li>
+          <li><a href="#">Accessibility</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="foot-logo"><span class="logo-mark" style="width:26px;height:26px;font-size:13px">N</span> NEXUS</div>
+      <div class="pay"><span>VISA</span><span>MC</span><span>AMEX</span><span>PAYPAL</span><span>KLARNA</span></div>
+      <div>© 2026 NEXUS Retail Inc. Prices and availability are sample data.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ all articles — lives inside index.html so the link cannot 404 ============ -->
+<section class="allarts" id="allArts" hidden>
+  <div class="wrap">
+    <div class="aa-head">
+      <div>
+        <span class="aa-kick">NEXUS MAG</span>
+        <h2 class="aa-title" data-en="All articles" data-fa="همهٔ مقاله‌ها">All articles</h2>
+        <p class="aa-sub" data-en="Every piece in issue 04 — bench notes, teardowns and the numbers behind them." data-fa="همهٔ مطالب شمارهٔ ۰۴ — یادداشت‌های بنچ، بازکردن قطعات و عددهای پشتشان.">Every piece in issue 04 — bench notes, teardowns and the numbers behind them.</p>
+      </div>
+      <div class="aa-actions">
+        <a class="aa-full" href="magazine.html" data-en="Open the full magazine →" data-fa="بازکردن مجلهٔ کامل ←">Open the full magazine →</a>
+        <button class="aa-close" type="button" aria-label="Close">✕</button>
+      </div>
+    </div>
+    <div class="aa-grid">
+      <a class="aa-card" href="story.html?id=ram-450">
+        <span class="aa-shot"><img src="assets/dc.webp" alt="" loading="lazy"></span>
+        <span class="aa-body">
+          <b class="aa-tag" data-en="MEMORY MARKET" data-fa="بازار حافظه">MEMORY MARKET</b>
+          <h3 class="aa-t" data-en="RAM is up 450% — and it has repriced every part on this page" data-fa="رم ۴۵۰٪ گران شده — و قیمت هر قطعهٔ این صفحه را عوض کرده">RAM is up 450% — and it has repriced every part on this page</h3>
+        </span>
+      </a>
+      <a class="aa-card" href="story.html?id=last-of-us">
+        <span class="aa-shot"><img src="assets/tlou.webp" alt="" loading="lazy"></span>
+        <span class="aa-body">
+          <b class="aa-tag" data-en="GAMES" data-fa="بازی">GAMES</b>
+          <h3 class="aa-t" data-en="Two Last of Us projects confirmed — neither is Part III" data-fa="دو پروژهٔ آخرین بازمانده تأیید شد — هیچ‌کدام Part III نیست">Two Last of Us projects confirmed — neither is Part III</h3>
+        </span>
+      </a>
+      <a class="aa-card" href="story.html?id=gta6">
+        <span class="aa-shot"><img src="assets/gta6.webp" alt="" loading="lazy"></span>
+        <span class="aa-body">
+          <b class="aa-tag" data-en="GAMES" data-fa="بازی">GAMES</b>
+          <h3 class="aa-t" data-en="GTA VI pre-loads are live — one week out" data-fa="پیش‌بارگیری GTA VI باز شد؛ انتشار ۱۹ نوامبر">GTA VI pre-loads are live — one week out</h3>
+        </span>
+      </a>
+      <a class="aa-card" href="story.html?id=steam-machine">
+        <span class="aa-shot"><img src="assets/steam.webp" alt="" loading="lazy"></span>
+        <span class="aa-body">
+          <b class="aa-tag" data-en="HARDWARE" data-fa="سخت‌افزار">HARDWARE</b>
+          <h3 class="aa-t" data-en="The Steam Machine costs $1,049 — Valve said why" data-fa="استیم ماشین ۱۰۴۹ دلار شد — و والو دلیلش را گفت">The Steam Machine costs $1,049 — Valve said why</h3>
+        </span>
+      </a>
+      <a class="aa-card" href="story.html?id=rtx-super">
+        <span class="aa-shot"><img src="assets/rtx.webp" alt="" loading="lazy"></span>
+        <span class="aa-body">
+          <b class="aa-tag" data-en="GRAPHICS" data-fa="کارت گرافیک">GRAPHICS</b>
+          <h3 class="aa-t" data-en="The RTX 50 Super refresh is on ice" data-fa="تازه‌سازی RTX 50 Super روی یخ رفت">The RTX 50 Super refresh is on ice</h3>
+        </span>
+      </a>
+      <a class="aa-card" href="story.html?id=ssd-prices">
+        <span class="aa-shot"><img src="assets/nvme.webp" alt="" loading="lazy"></span>
+        <span class="aa-body">
+          <b class="aa-tag" data-en="STORAGE" data-fa="ذخیره‌سازی">STORAGE</b>
+          <h3 class="aa-t" data-en="NAND follows DRAM up — SSDs are next" data-fa="NAND هم دنبال DRAM می‌رود؛ SSD گران می‌شود">NAND follows DRAM up — SSDs are next</h3>
+        </span>
+      </a>
+      <a class="aa-card" href="story.html?id=nova-lake">
+        <span class="aa-shot"><img src="assets/intel.webp" alt="" loading="lazy"></span>
+        <span class="aa-body">
+          <b class="aa-tag" data-en="CPUS" data-fa="پردازنده">CPUS</b>
+          <h3 class="aa-t" data-en="Intel puts desktop first again: Nova Lake" data-fa="اینتل دسکتاپ را دوباره اول می‌گذارد: Nova Lake">Intel puts desktop first again: Nova Lake</h3>
+        </span>
+      </a>
+      <a class="aa-card" href="story.html?id=zen6">
+        <span class="aa-shot"><img src="assets/n-zen6.webp" alt="" loading="lazy"></span>
+        <span class="aa-body">
+          <b class="aa-tag" data-en="CPUS" data-fa="پردازنده">CPUS</b>
+          <h3 class="aa-t" data-en="AMD confirms Zen 6 on 2nm — and Zen 7 already exists on paper" data-fa="ای‌ام‌دی زن ۶ روی ۲ نانومتر را تأیید کرد — و زن ۷ هم روی کاغذ وجود دارد">AMD confirms Zen 6 on 2nm — and Zen 7 already exists on paper</h3>
+        </span>
+      </a>
+      <a class="aa-card" href="story.html?id=olympic-ridge">
+        <span class="aa-shot"><img src="assets/n-socket.webp" alt="" loading="lazy"></span>
+        <span class="aa-body">
+          <b class="aa-tag" data-en="CPUS" data-fa="پردازنده">CPUS</b>
+          <h3 class="aa-t" data-en="Ryzen “Olympic Ridge” slips to 2027 — AM5 gets one more year" data-fa="رایزن «المپیک ریج» به ۲۰۲۷ افتاد — AM5 یک سال دیگر زنده می‌ماند">Ryzen “Olympic Ridge” slips to 2027 — AM5 gets one more year</h3>
+        </span>
+      </a>
+      <a class="aa-card" href="story.html?id=ddr6-2027">
+        <span class="aa-shot"><img src="assets/n-ddr6.webp" alt="" loading="lazy"></span>
+        <span class="aa-body">
+          <b class="aa-tag" data-en="MEMORY" data-fa="حافظه">MEMORY</b>
+          <h3 class="aa-t" data-en="DDR6 heads for 2027 mass production — DDR5 is not done yet" data-fa="DDR6 به تولید انبوه ۲۰۲۷ می‌رسد — ولی DDR5 هنوز تمام نشده">DDR6 heads for 2027 mass production — DDR5 is not done yet</h3>
+        </span>
+      </a>
+      <a class="aa-card" href="story.html?id=lpddr6">
+        <span class="aa-shot"><img src="assets/n-lpddr6.webp" alt="" loading="lazy"></span>
+        <span class="aa-body">
+          <b class="aa-tag" data-en="MEMORY" data-fa="حافظه">MEMORY</b>
+          <h3 class="aa-t" data-en="LPDDR6 is now a published standard — phones get the bandwidth first" data-fa="LPDDR6 استاندارد رسمی شد — پهنای باند اول به گوشی‌ها می‌رسد">LPDDR6 is now a published standard — phones get the bandwidth first</h3>
+        </span>
+      </a>
+      <a class="aa-card" href="story.html?id=switch2-17m">
+        <span class="aa-shot"><img src="assets/n-handheld.webp" alt="" loading="lazy"></span>
+        <span class="aa-body">
+          <b class="aa-tag" data-en="GAMES" data-fa="بازی">GAMES</b>
+          <h3 class="aa-t" data-en="Switch 2 passes 17.3 million units — faster than any console before it" data-fa="سوییچ ۲ از ۱۷.۳ میلیون دستگاه گذشت — سریع‌تر از هر کنسول قبلی">Switch 2 passes 17.3 million units — faster than any console before it</h3>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- ============ cart ============ -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <div class="dhead"><h3>Your cart</h3><button class="dclose" id="dclose" aria-label="Close">×</button></div>
+  <div class="dbody" id="dbody"></div>
+  <div class="dfoot">
+    <div class="dsum"><span>Subtotal</span><b id="dsum">$0.00</b></div>
+    <button class="btn btn-orange" id="checkout">Checkout</button>
+  </div>
+</aside>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function () {
+  "use strict";
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return [].slice.call((r || document).querySelectorAll(s)); };
+  var FX = 160000;
+  window.__isFa = function () { return document.documentElement.lang === "fa"; };
+  var FA_DIGITS = "۰۱۲۳۴۵۶۷۸۹";
+  var faD = function (s) { return String(s).replace(/[0-9]/g, function (d) { return FA_DIGITS[+d]; }); };
+  var money = function (n) {
+    var v = Number(n) || 0;
+    if (window.__isFa()) {
+      var t = Math.round(v * FX);
+      /* full toman, always — the “million toman” short form made prices jump
+         on first paint when the second formatter took over */
+      return faD(t.toLocaleString("en-US")) + " تومان";
+    }
+    return "$" + v.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
+  window.__money = money;
+
+  /* ---------- cart ---------- */
+  var cart = [];
+  function findItem(name) { for (var i = 0; i < cart.length; i++) if (cart[i].name === name) return cart[i]; return null; }
+  function addToCart(name, price, img, qty) {
+    qty = qty || 1;
+    var it = findItem(name);
+    if (it) it.qty += qty; else cart.push({ name: name, price: price, img: img, qty: qty });
+    renderCart(); toast("Added to cart"); openCart();
+  }
+  function renderCart() {
+    var n = 0, sum = 0;
+    cart.forEach(function (i) { n += i.qty; sum += i.qty * i.price; });
+    var _cc = $("#cartCount"); _cc.textContent = n; _cc.hidden = (n === 0);
+    $("#dsum").textContent = money(sum);
+    var box = $("#dbody");
+    if (!cart.length) { box.innerHTML = '<div class="dempty">Your cart is empty.<br>Add a component to get started.</div>'; return; }
+    box.innerHTML = cart.map(function (i, idx) {
+      return '<div class="ci"><img src="' + i.img + '" alt="">' +
+        '<div class="ci-main"><div class="ci-name">' + i.name + '</div>' +
+        '<div class="ci-row"><b>' + money(i.price * i.qty) + '</b>' +
+        '<div style="display:flex;align-items:center;gap:8px">' +
+        '<div class="qty"><button data-dec="' + idx + '">−</button><span>' + i.qty + '</span><button data-inc="' + idx + '">+</button></div>' +
+        '<a class="ci-x" data-del="' + idx + '">remove</a></div></div></div></div>';
+    }).join("");
+  }
+  $("#dbody").addEventListener("click", function (e) {
+    var t = e.target, i;
+    if (t.dataset.inc !== undefined) { cart[+t.dataset.inc].qty++; renderCart(); }
+    if (t.dataset.dec !== undefined) { i = +t.dataset.dec; cart[i].qty--; if (cart[i].qty < 1) cart.splice(i, 1); renderCart(); }
+    if (t.dataset.del !== undefined) { cart.splice(+t.dataset.del, 1); renderCart(); }
+  });
+
+  function openCart() { $("#drawer").classList.add("on"); $("#scrim").classList.add("on"); $("#drawer").setAttribute("aria-hidden", "false"); }
+  function closeCart() { $("#drawer").classList.remove("on"); $("#scrim").classList.remove("on"); $("#drawer").setAttribute("aria-hidden", "true"); }
+  $("#cartBtn").addEventListener("click", openCart);
+  $("#dclose").addEventListener("click", closeCart);
+  $("#scrim").addEventListener("click", closeCart);
+  $("#checkout").addEventListener("click", function () {
+    if (!cart.length) { toast("Your cart is empty"); return; }
+    if (window.NXGate && !window.NXGate(function () {
+      toast(document.documentElement.lang === "fa" ? "حساب تأیید شد — ادامهٔ پرداخت" : "Account verified — continue to payment");
+    })) return;
+    toast(document.documentElement.lang === "fa" ? "حساب تأیید شد — ادامهٔ پرداخت" : "Account verified — continue to payment");
+  });
+
+  /* ---------- toast ---------- */
+  var tId;
+  function T(s) { return window.__lang === "fa" && FA[s] ? FA[s] : s; }
+  function toast(msg) {
+    var el = $("#toast");
+    el.textContent = T(msg); el.classList.add("on");
+    clearTimeout(tId); tId = setTimeout(function () { el.classList.remove("on"); }, 2200);
+  }
+
+  /* ---------- product actions ---------- */
+  $$(".pcard").forEach(function (card) {
+    var btn = $(".add", card);
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      var name = $(".pname", card).textContent.trim();
+      var price = parseFloat(card.dataset.price);
+      var img = $(".pthumb img", card).getAttribute("src");
+      addToCart(name, price, img);
+    });
+  });
+  $$(".combo-add").forEach(function (b, i) {
+    b.addEventListener("click", function () {
+      var combo = i === 0
+        ? [["Intel Core Ultra 9 285K", 589.99, "assets/p-cpu-ultra9.webp"], ["ASUS ROG Strix Z890-E", 449.99, "assets/mobo.webp"], ["CORSAIR Vengeance 32GB DDR5", 124.99, "assets/ram.webp"]]
+        : [["Intel Core i7-14700K", 390.99, "assets/cpu.webp"], ["ASUS Z790 GAMING WIFI7", 169.99, "assets/hero-rig.webp"], ["CORSAIR Vengeance 32GB DDR5", 124.99, "assets/ram.webp"]];
+      combo.forEach(function (p) { addToCart(p[0], p[1], p[2]); });
+    });
+  });
+
+  /* ---------- filter + sort ---------- */
+  var state = { cat: "all", q: "", min: null, max: null, sort: "pop" };
+
+  /* the five shelf groups — chips and the top nav filter by group, the sidebar by sub-category */
+  var GROUPS = {
+    parts:    ["gpu", "cpu", "mobo", "mem", "psu"],
+    storage:  ["ssd", "hdd", "nas", "usb"],
+    coolcase: ["cool", "fan", "case", "paste"],
+    per:      ["kb", "mouse", "mon", "headset"],
+    systems:  ["pc", "laptop", "ws", "mini"]
+  };
+  function inCat(card, cat) {
+    if (cat === "all" || !cat) return true;
+    if (cat.indexOf("grp:") === 0) {
+      var g = GROUPS[cat.slice(4)];
+      return !!g && g.indexOf(card.dataset.cat) > -1;
+    }
+    return card.dataset.cat === cat;
+  }
+
+  function apply() {
+    var cards = $$(".pcard"), shown = 0;
+    cards.forEach(function (c) {
+      var okCat = inCat(c, state.cat);
+      var price = parseFloat(c.dataset.price);
+      var okMin = state.min === null || price >= state.min;
+      var okMax = state.max === null || price <= state.max;
+      var okQ = !state.q || c.textContent.toLowerCase().indexOf(state.q) > -1;
+      var show = okCat && okMin && okMax && okQ;
+      c.style.display = show ? "" : "none";
+      if (show) shown++;
+    });
+    var grid = $("#pgrid");
+    var list = cards.filter(function (c) { return c.style.display !== "none"; });
+    list.sort(function (a, b) {
+      if (state.sort === "low") return +a.dataset.price - +b.dataset.price;
+      if (state.sort === "high") return +b.dataset.price - +a.dataset.price;
+      if (state.sort === "rate") return +b.dataset.rate - +a.dataset.rate;
+      return 0;
+    }).forEach(function (c) { grid.appendChild(c); });
+    var fa = document.documentElement.lang === "fa";
+    $("#resCount").textContent = fa
+      ? shown + " نتیجه"
+      : shown + (shown === 1 ? " result" : " results");
+
+    var empty = document.getElementById("noRes");
+    if (!empty) {
+      empty = document.createElement("div");
+      empty.id = "noRes";
+      empty.className = "nores";
+      grid.parentNode.insertBefore(empty, grid.nextSibling);
+      empty.addEventListener("click", function (e) {
+        if (!e.target.closest(".btn-clear")) return;
+        state.q = ""; state.cat = "all"; state.min = null; state.max = null;
+        var si = document.getElementById("searchIn"); if (si) si.value = "";
+        var sc = document.getElementById("searchCat"); if (sc) sc.value = "all";
+        $$(".chip").forEach(function (c) { c.classList.toggle("on", c.dataset.f === "all"); });
+        apply();
+      });
+    }
+    if (shown === 0) {
+      empty.innerHTML = '<b>' + (fa ? "نتیجه‌ای پیدا نشد" : "No results found") + '</b>'
+        + '<span>' + (fa ? "عبارت یا فیلتر دیگری را امتحان کن." : "Try another search term, or clear the filters.") + '</span>'
+        + '<button class="btn-clear">' + (fa ? "پاک کردن فیلترها" : "Clear filters") + '</button>';
+      empty.style.display = "block";
+    } else {
+      empty.style.display = "none";
+    }
+  }
+
+  $("#chips").addEventListener("click", function (e) {
+    var b = e.target.closest(".chip"); if (!b) return;
+    $$(".chip").forEach(function (x) { x.classList.remove("on"); });
+    b.classList.add("on");
+    state.cat = b.dataset.f;
+    $$(".fcat").forEach(function (cb) { cb.checked = false; });
+    apply();
+  });
+  $$(".fcat").forEach(function (cb) {
+    cb.addEventListener("change", function () {
+      var on = $$(".fcat:checked").map(function (x) { return x.value; });
+      state.cat = on.length === 1 ? on[0] : "all";
+      $$(".chip").forEach(function (x) { x.classList.toggle("on", x.dataset.f === state.cat); });
+      if (on.length > 1) {
+        $$(".pcard").forEach(function (c) {
+          c.style.display = on.indexOf(c.dataset.cat) > -1 ? "" : "none";
+        });
+        var n = $$(".pcard").filter(function (c) { return c.style.display !== "none"; }).length;
+        $("#resCount").textContent = document.documentElement.lang === "fa" ? n + " نتیجه" : n + " results";
+      } else apply();
+    });
+  });
+  $("#applyPrice").addEventListener("click", function () {
+    var a = $("#pmin").value, b = $("#pmax").value;
+    state.min = a === "" ? null : parseFloat(a);
+    state.max = b === "" ? null : parseFloat(b);
+    apply();
+  });
+  $("#sortSel").addEventListener("change", function (e) { state.sort = e.target.value; apply(); });
+
+  /* ---------- search ---------- */
+  function runSearch() {
+    state.q = $("#searchIn").value.trim().toLowerCase();
+    var cat = $("#searchCat").value;
+    state.cat = cat === "all" ? state.cat : cat;
+    if (cat !== "all") {
+      $$(".chip").forEach(function (x) { x.classList.toggle("on", x.dataset.f === cat); });
+    }
+    apply();
+    document.getElementById("deals").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+  $("#searchBtn").addEventListener("click", runSearch);
+  $("#searchIn").addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); runSearch(); } });
+  var scEl = document.getElementById("searchCat");
+  if (scEl) scEl.addEventListener("change", function () {
+    state.cat = this.value;
+    apply();
+  });
+
+  $$(".cnav a[data-cat], .mega a[data-cat]").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      var c = a.dataset.cat;
+      state.cat = c; state.q = "";
+      $$(".chip").forEach(function (x) { x.classList.toggle("on", x.dataset.f === c); });
+      apply();
+      document.getElementById("deals").scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+
+  /* ---------- countdown ---------- */
+  /* 40-day event window, persisted per visitor */
+  var KEY_END = "nexus-event-end";
+  var end = 0;
+  try { end = parseInt(localStorage.getItem(KEY_END) || "0", 10); } catch (e) {}
+  if (!end || end < Date.now()) {
+    end = Date.now() + 40 * 24 * 3600 * 1000;
+    try { localStorage.setItem(KEY_END, String(end)); } catch (e) {}
+  }
+  var pad = function (n) { return String(n).padStart(2, "0"); };
+  setInterval(function () {
+    var ms = Math.max(0, end - Date.now());
+    var s = Math.floor(ms / 1000);
+    var dd = Math.floor(s / 86400);
+    $("#t-d").textContent = String(dd);
+    $("#t-h").textContent = pad(Math.floor((s % 86400) / 3600));
+    $("#t-m").textContent = pad(Math.floor((s % 3600) / 60));
+    $("#t-s").textContent = pad(s % 60);
+  }, 1000);
+
+  /* ---------- language ---------- */
+  var FA = {
+    "Components & Storage": "قطعات و ذخیره‌سازی",
+    "Computer Systems": "سیستم‌های کامپیوتری",
+    "Computer Peripherals": "لوازم جانبی کامپیوتر",
+    "Server & Components": "سرور و قطعات",
+    "30-day returns": "۳۰ روز بازگشت کالا",
+    "3-year warranty": "۳ سال گارانتی",
+    "Real support": "پشتیبانی واقعی",
+    "Answered by builders": "پاسخ از خود سازنده‌ها",
+    "On orders over $35": "برای سفارش‌های بالای ۳۵ دلار",
+    "No restocking fee": "بدون هزینهٔ بازپس",
+    "Handled in-house": "درون شرکت انجام می‌شود",
+    "Shop": "فروشگاه",
+    "Services": "خدمات",
+    "Company": "شرکت",
+    "Legal": "حقوقی",
+    "Added to cart": "به سبد اضافه شد",
+    "Your cart": "سبد خرید",
+    "All Products": "همهٔ محصولات",
+    "Graphics Cards": "کارت گرافیک",
+    "Processors": "پردازنده",
+    "Memory": "حافظه",
+    "Storage": "ذخیره‌سازی",
+    "Cooling": "خنک‌کننده",
+    "Cases": "کیس",
+    "Power Supplies": "منبع تغذیه",
+    "Monitors": "نمایشگر",
+    "Peripherals": "لوازم جانبی",
+    "Laptops": "لپ‌تاپ",
+    "Server": "سرور",
+    "Today's Deals": "پیشنهادهای امروز",
+    "Combo Builder": "سازندهٔ پکیج",
+    "Partners": "همکاران",
+  "Magazine": "مجله",
+    "Support": "پشتیبانی",
+    "Account": "حساب",
+    "Lists": "لیست‌ها",
+    "Cart": "سبد خرید",
+    "Add to cart": "افزودن به سبد",
+    "4★ & up": "۴ ستاره و بالاتر",
+    "3★ & up": "۳ ستاره و بالاتر",
+    "d": "روز",
+    "Free freight": "ارسال باربری رایگان",
+    "Free 2-day shipping": "ارسال رایگان دو روزه",
+    "Buy the parts together — the discount is applied in the cart.": "قطعات را با هم بخر — تخفیف در سبد اعمال می‌شود.",
+    "Processor": "پردازنده",
+    "Motherboard": "مادربرد",
+    "Everything for the build, from the case to the cable.": "هر چیزی که برای ساخت لازم است، از کیس تا کابل.",
+    "214 items": "۲۱۴ کالا",
+    "96 items": "۹۶ کالا",
+    "138 items": "۱۳۸ کالا",
+    "302 items": "۳۰۲ کالا",
+    "87 items": "۸۷ کالا",
+    "64 items": "۶۴ کالا",
+    "3 min read": "۳ دقیقه مطالعه",
+    "4 min read": "۴ دقیقه مطالعه",
+    "5 min read": "۵ دقیقه مطالعه",
+    "6 min read": "۶ دقیقه مطالعه",
+    "8 min read": "۸ دقیقه مطالعه",
+    "48h": "۴۸ ساعت",
+    "5yr": "۵ سال",
+    "4h": "۴ ساعت",
+    "Free": "رایگان",
+    "FILM": "فیلم",
+    "CLUB": "باشگاه",
+    "Memory & Storage": "حافظه و ذخیره‌سازی",
+    "PC Builder": "سیستم‌ساز",
+    "Trade-In": "معاوضه",
+    "Business": "سازمانی",
+    "Gift Cards": "کارت هدیه",
+    "Order Status": "وضعیت سفارش",
+    "Returns": "مرجوعی",
+    "Warranty": "گارانتی",
+    "Contact Us": "تماس با ما",
+    "About": "دربارهٔ ما",
+    "Careers": "فرصت‌های شغلی",
+    "Press": "رسانه",
+    "Affiliates": "همکاری در فروش",
+    "Terms of Use": "شرایط استفاده",
+    "Privacy Policy": "حریم خصوصی",
+    "Cookie Settings": "تنظیمات کوکی",
+    "Accessibility": "دسترس‌پذیری",
+    "© 2026 NEXUS Retail Inc. Prices and availability are sample data.": "© ۲۰۲۶ نکسوس ریتیل — قیمت‌ها و موجودی نمونه هستند.",
+    "Your cart is empty.": "سبد خریدت خالی است.",
+    "Add a component to get started.": "برای شروع یک قطعه اضافه کن.",
+    "Compare": "مقایسه",
+    "Clear": "پاک کردن",
+    "Search GPUs, CPUs, memory, monitors…": "جست‌وجوی قطعه، برند یا مدل…",
+    "$ min": "حداقل $",
+    "$ max": "حداکثر $",
+    "Black November": "بلک نوامبر",
+    "Daily Doorbusters": "حراج‌های روزانه",
+    "— fresh deals drop at 9am PT": "— پیشنهادهای تازه ساعت ۹ صبح به‌وقت پاسیفیک",
+    "Today's Deals": "پیشنهادهای امروز",
+    "Combo Builder": "پکیج‌ساز",
+    "All Products": "همهٔ محصولات",
+    "Graphics Cards": "کارت گرافیک",
+    "Processors": "پردازنده",
+    "Motherboards": "مادربرد",
+    "Memory": "حافظه",
+    "Power Supplies": "منبع تغذیه",
+    "SSDs": "حافظهٔ SSD",
+    "Hard Drives": "هارد دیسک",
+    "NAS & Enclosures": "NAS و جعبه",
+    "USB Flash": "فلش USB",
+    "CPU Coolers": "خنک‌کنندهٔ پردازنده",
+    "Case Fans": "فن کیس",
+    "PC Cases": "کیس کامپیوتر",
+    "Thermal Paste": "خمیر حرارتی",
+    "Keyboards": "کیبورد",
+    "Mice": "ماوس",
+    "Monitors": "نمایشگر",
+    "Headsets": "هدست",
+    "Gaming PCs": "سیستم گیمینگ",
+    "Laptops": "لپ‌تاپ",
+    "Workstations": "ورک‌استیشن",
+    "Mini PCs": "مینی PC",
+    "Components": "قطعات",
+    "Storage": "ذخیره‌سازی",
+    "Cooling & Cases": "خنک‌کننده و کیس",
+    "Peripherals": "لوازم جانبی",
+    "Systems": "سیستم‌ها",
+    "Cooling": "خنک‌کننده",
+    "Cases": "کیس",
+    "Server & Components": "سرور و قطعات",
+    "Compare": "مقایسه",
+    "Add combo": "افزودن پکیج",
+    "Your cart": "سبد خرید",
+    "Subtotal": "جمع کل",
+    "Checkout": "تسویه حساب",
+    "Shop all deals": "همهٔ تخفیف‌ها",
+    "Build a combo": "ساخت پکیج",
+    "Shop by category": "خرید بر اساس دسته",
+    "Combo up & save": "پکیج ببند، بیشتر صرفه‌جویی کن",
+  "Build a combo, save more": "پکیج ببند، بیشتر صرفه‌جویی کن",
+    "Shop the category": "مشاهدهٔ دسته",
+    "Free shipping": "ارسال رایگان",
+    "Free 2-day shipping": "ارسال رایگان ۲ روزه",
+    "All": "همه",
+    "Power": "منبع تغذیه",
+  "Black November": "بلک نوامبر",
+  "Daily Doorbusters": "تخفیف‌های روزانه",
+  "— fresh deals drop at 9am PT": "— هر روز ۹ صبح تخفیف تازه",
+  "Components": "قطعات",
+  "CPUs / Processors": "پردازنده",
+  "Motherboards": "مادربرد",
+  "SSDs": "حافظهٔ SSD",
+  "Hard Drives": "هارد دیسک",
+  "NAS & Enclosures": "NAS و جعبه",
+  "USB Flash": "فلش USB",
+  "Cooling & Cases": "خنک‌کننده و کیس",
+  "CPU Coolers": "خنک‌کنندهٔ پردازنده",
+  "Case Fans": "فن کیس",
+  "PC Cases": "کیس کامپیوتر",
+  "Thermal Paste": "خمیر حرارتی",
+  "Keyboards": "کیبورد",
+  "Mice": "ماوس",
+  "Headsets": "هدست",
+  "Systems": "سیستم‌ها",
+  "Gaming PCs": "سیستم گیمینگ",
+  "Workstations": "ورک‌استیشن",
+  "Mini PCs": "مینی PC",
+  "Up to": "تا",
+  "56% off": "۵۶٪ تخفیف",
+  "58% off": "۵۸٪ تخفیف",
+  "60% off": "۶۰٪ تخفیف",
+  "36% off": "۳۶٪ تخفیف",
+  "components & storage": "قطعات و ذخیره‌سازی",
+  "GPUs, motherboards, memory and SSDs — the biggest pool of the event. Every card bin-tested before it ships.": "کارت گرافیک، مادربرد، حافظه و SSD — بزرگ‌ترین بازار رویداد. هر کارت پیش از ارسال بنچ‌تست می‌شود.",
+  "408 ITEMS": "۴۰۸ کالا",
+  "153 ITEMS": "۱۵۳ کالا",
+  "157 ITEMS": "۱۵۷ کالا",
+  "41 ITEMS": "۴۱ کالا",
+  "Up to 56% off": "تا ۵۶٪ تخفیف",
+  "Up to 58% off": "تا ۵۸٪ تخفیف",
+  "Up to 60% off": "تا ۶۰٪ تخفیف",
+  "Up to 36% off": "تا ۳۶٪ تخفیف",
+  "GPUs, motherboards, memory and SSDs — the biggest pool of the event.": "کارت گرافیک، مادربرد، حافظه و SSD — بزرگ‌ترین بازار رویداد.",
+  "Prebuilt gaming rigs, laptops and workstations, configured and ready.": "سیستم‌های گیمینگ آماده، لپ‌تاپ و ورک‌استیشن، پیکربندی‌شده و آمادهٔ کار.",
+  "Keyboards, mice and headsets from $9.99 — the deepest cuts of the month.": "کیبورد، ماوس و هدست از ۹.۹۹ دلار — عمیق‌ترین تخفیف‌های ماه.",
+  "Rackmount, enterprise storage and networking for the home lab.": "سخت‌افزار رک، ذخیره‌سازی سازمانی و شبکه برای آزمایشگاه خانگی.",
+  "Shop the category →": "مشاهدهٔ دسته ←",
+  "Verified prices. Stock counts refreshed every 15 minutes.": "قیمت‌های راستی‌آزمایی‌شده. موجودی هر ۱۵ دقیقه به‌روز می‌شود.",
+  "Ends in": "پایان تا",
+  "All deals →": "همهٔ تخفیف‌ها ←",
+  "10 results": "۱۰ نتیجه",
+  "Sort: Popular": "مرتب‌سازی: محبوب",
+  "Price: low to high": "ارزان به گران",
+  "Price: high to low": "گران به ارزان",
+  "Top rated": "بیشترین امتیاز",
+  "OUR TEAM": "تیم ما",
+  "The people behind every build": "کسانی که پشت هر سیستم می‌ایستند",
+  "Twelve engineers, one bench. Every machine is assembled, cable-managed and burnt in for 48 hours before it leaves Rotterdam — by someone whose name is on the work order.": "دوازده مهندس، یک میز کار. هر سیستم اسمبل می‌شود، کابل‌بندی می‌شود و ۴۸ ساعت پیش از ترک روتردام تست می‌شود — به دست کسی که نامش روی برگهٔ کار است.",
+  "engineers": "مهندس",
+  "burn-in": "تست",
+  "warranty": "گارانتی",
+  "Talk to the team →": "گفت‌وگو با تیم ←",
+  "SHOWREEL": "نمایش فیلم",
+  "ON FILM": "روی فیلم",
+  "Every build, filmed end to end": "هر سیستم، از اول تا آخر روی فیلم",
+  "No renders, no stock footage. Parts staged, cables routed, first boot logged — straight off the Rotterdam bench, by the engineers whose names go on the work order.":
+    "بدون رندر، بدون فیلم آماده. قطعات چیده می‌شوند، کابل‌ها مرتب می‌شوند و اولین بوت ثبت می‌شود — مستقیم از میز کار روتردام، به دست همان مهندس‌هایی که نامشان روی برگهٔ کار می‌رود.",
+  "on the bench": "روی میز کار",
+  "engineers": "مهندس",
+  "stock clips": "فیلم آماده",
+  "NEXUS CLUB": "باشگاه نکسوس",
+  "Points on every part you buy": "برای هر قطعه‌ای که می‌خری، امتیاز بگیر",
+  "Join the customer club and every order pays you back — points on hardware, bonuses on reviews, and a tier that unlocks earlier drops and free shipping.":
+    "به باشگاه مشتریان بپیوند و هر سفارش برایت بازمی‌گردد — امتیاز روی سخت‌افزار، امتیاز اضافه برای نظر دادن، و سطحی که دسترسی زودتر به تخفیف‌ها و ارسال رایگان می‌دهد.",
+  "point per $1": "امتیاز برای هر دلار",
+  "tiers": "سطح عضویت",
+  "shipping at Silver": "ارسال از سطح نقره‌ای",
+  "Join the club →": "عضویت در باشگاه ←",
+  "LAUNCH OFFER": "پیشنهاد ویژه",
+  "NEXUS MAG": "مجلهٔ نکسوس",
+  "Issue 04 · Nov 2026": "شمارهٔ ۰۴ · آبان ۱۴۰۵",
+  "Tech magazine": "مجلهٔ تکنولوژی",
+  "The 575W question nobody answers": "پرسش ۵۷۵ واتی که کسی جوابش را نمی‌دهد",
+  "Thirty power phases, a bigger die and a cooler the size of a paperback. What the RTX 50 board means for your case, your PSU and your electricity bill.":
+    "سی فاز تغذیه، دای بزرگ‌تر و خنک‌کننده‌ای به اندازهٔ یک کتاب جیبی. برد RTX 50 برای کیس، پاور و قبض برق تو چه معنایی دارد.",
+  "Two Last of Us projects, neither is Part III": "دو پروژهٔ لست آو اس، هیچ‌کدام پارک سوم نیست",
+  "What the studio confirmed, what the show is doing, and what to play while you wait.":
+    "استودیو چه چیزی را تأیید کرد، سریال چه می‌کند، و تا آن موقع چه بازی‌ای بکنی.",
+  "NVMe throttling: the five-minute fix": "افت سرعت NVMe: راه‌حل پنج‌دقیقه‌ای",
+  "Your drive is not slow. It is hot, and the heatsink on it is decorative.":
+    "درایو کند نیست؛ داغ است و هیت‌سینک رویش تزئینی است.",
+  "GTA VI pre-loads are live": "پیش‌بارگیری GTA VI باز شد",
+  "7 min read": "۷ دقیقه مطالعه",
+  "Hardware": "سخت‌افزار",
+  "NEXUS Desk": "تحریریهٔ نکسوس",
+  "Games": "بازی",
+  "Storage": "ذخیره‌سازی",
+  "Graphics": "کارت گرافیک",
+  "One week out, and the download is the only thing between you and Vice City.":
+    "یک هفته مانده، و تنها چیزی که بین تو و وایس سیتی است همان دانلود است.",
+  "Bench notes, teardowns and the arguments we have at the bench — written by the people who build the machines.":
+    "یادداشت‌های بنچ، بازکردن قطعات و بحث‌هایی که سر میز کار داریم — نوشتهٔ همان کسانی که سیستم‌ها را می‌سازند.",
+  "All articles →": "همهٔ مقاله‌ها ←",
+  "Deep dive": "تحلیل عمیق",
+  "The bottleneck hiding in your cooling loop": "گلوگاهی که در مسیر خنک‌کاری پنهان شده",
+  "A bigger radiator fixes nothing if the air never leaves the case. We chased where heat actually stalls — and the fix costs less than one extra fan.":
+    "رادیاتور بزرگ‌تر هیچ چیزی را درست نمی‌کند اگر هوا از کیس بیرون نرود. دنبال این رفتیم که گرما واقعاً کجا می‌ماند — و راه‌حلش از قیمت یک فن هم کمتر است.",
+  "8 min read": "۸ دقیقه مطالعه",
+  "Bench": "میز کار",
+  "Memory": "حافظه",
+  "DDR5 timings, without the marketing": "تایمینگ DDR5، بدون بازی تبلیغاتی",
+  "What CL30 actually buys you in games — and where the number stops mattering.":
+    "CL30 در بازی واقعاً چه چیزی به تو می‌دهد — و کجا این عدد دیگر مهم نیست.",
+  "6 min read": "۶ دقیقه مطالعه",
+  "Storage": "ذخیره‌سازی",
+  "NVMe throttling: the five-minute fix": "افت سرعت NVMe: راه‌حل پنج‌دقیقه‌ای",
+  "Your drive isn’t slow. It’s hot, and the heatsink on it is basically decorative.":
+    "درایو تو کند نیست. داغ است، و هیت‌سینک روی آن تقریباً تزئینی است.",
+  "4 min read": "۴ دقیقه مطالعه",
+  "Peripherals": "لوازم جانبی",
+  "Why your 8K mouse still misses": "چرا ماوس ۸K تو هنوز خطا می‌زند",
+  "Polling rate is the headline. Sensor lift-off distance is the actual story.":
+    "نرخ پولینگ تیتر خبرهاست؛ فاصلهٔ لیفت-آف سنسور، اصل ماجراست.",
+  "5 min read": "۵ دقیقه مطالعه",
+
+  "GTA VI-ready — playable today": "آمادهٔ GTA VI — همین امروز بازی کن",
+  "Rockstar still hasn't announced the PC build. So we do the next best thing: a machine specced for day one, drivers locked and benchmarked, with GTA V and Red Dead Redemption 2 installed and tuned before it ships. When VI lands, your box is already waiting.":
+    "راک‌استار هنوز نسخهٔ PC را معرفی نکرده. پس بهترین کار ممکن را می‌کنیم: سیستمی که برای روز اول بسته شده، درایورهایش قفل و بنچمارک شده، و GTA V و Red Dead Redemption 2 پیش از ارسال نصب و تنظیم شده‌اند. وقتی VI بیاید، سیستم تو از قبل آماده است.",
+  "games installed": "بازی نصب‌شده",
+  "setup & tuning": "نصب و تنظیم",
+  "lifetime support": "پشتیبانی همیشگی",
+  "Book a build →": "رزرو مشاوره ←",
+
+
+  "The bench, in motion": "میز کار، در حرکت",
+  "Eight seconds inside the Rotterdam workshop — assembly, cable routing and the first boot. Filmed by the same engineers whose names go on the work order.": "هشت ثانیه داخل کارگاه روتردام — اسمبل، مرتب‌کردن کابل‌ها و اولین بوت. کار همان مهندس‌هایی که نامشان روی برگهٔ کار می‌رود.",
+  "runtime": "مدت",
+  "master": "کیفیت",
+  "Play with sound ♪": "پخش با صدا ♪",
+
+  "Brand": "برند",
+  "Featured site": "سایت اسپانسر",
+  "Sponsor site": "سایت اسپانسر",
+  "Partners we vouch for — opened here in full, no redirects.": "همکارانی که پشتشان می‌ایستیم — کامل و مستقیم، بدون ریدایرکت.",
+  "Sponsored": "تبلیغ",
+  "Mr. Amlaki": "مستر املاکی",
+  "Real-estate market analysis, agent training and the latest housing-economy news from Iran.": "تحلیل بازار املاک، آموزش مشاورین مسکن و تازه‌ترین اخبار اقتصاد مسکن.",
+  "Visit the site →": "ورود به سایت ←",
+  "Category": "دسته‌بندی",
+  "Price": "قیمت",
+  "Apply": "اعمال",
+  "Customer rating": "امتیاز مشتریان",
+  "Shipping": "ارسال",
+  "In stock": "موجود",
+  "More options →": "گزینه‌های بیشتر ←",
+  "Buy the parts together — the discount is applied in cart.": "قطعات را با هم بخر — تخفیف در سبد اعمال می‌شود.",
+  "10 results": "۱۰ نتیجه",
+  "Best Seller": "پرفروش",
+  "New": "جدید",
+  "Sale": "حراج",
+  "Compare": "مقایسه",
+  "Add to cart": "افزودن به سبد",
+  };
+  var orig = new Map();
+  var lang = "en";
+
+  function collect() {
+    var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) {
+        var p = n.parentElement;
+        if (!p || /^(SCRIPT|STYLE|NOSCRIPT)$/.test(p.tagName)) return NodeFilter.FILTER_REJECT;
+        return n.nodeValue.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    var n; while (n = w.nextNode()) orig.set(n, n.nodeValue);
+    $$(".chip").forEach(function (c) {
+      if (!c.dataset.en) c.dataset.en = c.textContent.trim();
+    });
+  }
+  /* anything the scripts build after first paint still gets translated */
+  function trNode(n) {
+    var p = n.parentElement;
+    if (!p || /^(SCRIPT|STYLE|NOSCRIPT|TEXTAREA)$/.test(p.tagName)) return;
+    var raw = n.nodeValue, key = raw.trim().replace(/\s+/g, " ");
+    if (!key || !/[A-Za-z]/.test(key)) return;
+    var tr = FA[key];
+    if (tr) n.nodeValue = (/^\s/.test(raw) ? " " : "") + tr + (/\s$/.test(raw) ? " " : "");
+  }
+  function trTree(root) {
+    if (!root) return;
+    if (root.nodeType === 3) { trNode(root); return; }
+    if (root.nodeType !== 1) return;
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), n;
+    while (n = w.nextNode()) trNode(n);
+  }
+  function autoTranslate() {
+    if (window.__lang !== "fa") return;
+    trTree(document.body);
+  }
+  window.__nxTranslate = autoTranslate;
+  new MutationObserver(function (recs) {
+    if (window.__lang !== "fa") return;
+    for (var i = 0; i < recs.length; i++) {
+      var added = recs[i].addedNodes;
+      for (var j = 0; j < added.length; j++) trTree(added[j]);
+    }
+  }).observe(document.body, { childList: true, subtree: true });
+
+  function setLang(l) {
+    lang = l; window.__lang = l;
+    try { localStorage.setItem("nexus-lang", l); } catch (e) {}
+    var html = document.documentElement;
+    var _y = window.scrollY;
+    html.classList.add("lang-switching");
+    html.dir = l === "fa" ? "rtl" : "ltr";
+    html.lang = l === "fa" ? "fa" : "en";
+    orig.forEach(function (v, node) {
+      var key = v.trim().replace(/\s+/g, " ");
+      var tr = l === "fa" ? FA[key] : null;
+      if (tr) {
+        var lead = /^\s/.test(v) ? " " : "", trail = /\s$/.test(v) ? " " : "";
+        node.nodeValue = lead + tr + trail;
+      } else node.nodeValue = v;
+    });
+    $("#langBtn").innerHTML = l === "fa"
+      ? '<span class="flag flag-gb"></span><b>EN</b>'
+      : '<span class="flag flag-ir"></span><b>فا</b>';
+    $$(".chip").forEach(function (c) {
+      var k = (c.dataset.en || "").trim();
+      c.textContent = l === "fa" && FA[k] ? FA[k] : c.dataset.en;
+    });
+    var si = document.getElementById("searchIn");
+    if (si) si.placeholder = l === "fa" ? FA["Search GPUs, CPUs, memory, monitors…"] : "Search GPUs, CPUs, memory, monitors…";
+    var pmin = document.getElementById("pmin"), pmax = document.getElementById("pmax");
+    if (pmin) pmin.placeholder = l === "fa" ? FA["$ min"] : "$ min";
+    if (pmax) pmax.placeholder = l === "fa" ? FA["$ max"] : "$ max";
+    autoTranslate();
+    setTimeout(autoTranslate, 400);
+    renderCart();
+    if (window.__pricePaint) window.__pricePaint();
+    if (window.__acctRebuild) window.__acctRebuild();
+    if (window.__paintAllArticles) window.__paintAllArticles();
+    window.scrollTo(0, _y);
+    requestAnimationFrame(function () {
+      window.scrollTo(0, _y);
+      html.classList.remove("lang-switching");
+    });
+  }
+  collect();
+  /* the store remembers the language — magazine.html and story.html read the same key */
+  var savedLang = null;
+  try { savedLang = localStorage.getItem("nexus-lang"); } catch (e) {}
+  if (savedLang === "fa") setLang("fa");
+
+  $("#langBtn").addEventListener("click", function () { setLang(lang === "fa" ? "en" : "fa"); });
+
+  renderCart();
+  apply();
+})();
+
+/* ---------------- NEXUS AI assistant v2 ---------------- */
+(function () {
+  var isFa = function () { return document.documentElement.lang === "fa"; };
+  var L = function (en, fa) { return isFa() ? fa : en; };
+
+  var S = { n: 3, sort: "rate", stock: false };
+  try { Object.assign(S, JSON.parse(localStorage.getItem("nexus-ai") || "{}")); } catch (e) {}
+  var save = function () { try { localStorage.setItem("nexus-ai", JSON.stringify(S)); } catch (e) {} };
+
+  function products() {
+    return [].slice.call(document.querySelectorAll(".pcard")).map(function (c) {
+      var nm = c.querySelector(".pname");
+      var im = c.querySelector("img");
+      return {
+        el: c,
+        name: nm ? nm.textContent.trim() : "",
+        price: parseFloat(c.dataset.price || "0"),
+        cat: c.dataset.cat || "",
+        rate: parseFloat(c.dataset.rate || "0"),
+        img: im ? im.getAttribute("src") : ""
+      };
+    });
+  }
+
+  var MAP = [
+    ["gpu",     /(gpu|graphics|geforce|radeon|rtx|gtx|گرافیک)/],
+    ["cpu",     /(cpu|processor|ryzen|core ultra|core i[3579]|threadripper|پردازنده)/],
+    ["mobo",    /(motherboard|mainboard|b650|x870|z790|z890|مادربرد)/],
+    ["ssd",     /(ssd|nvme|m\.2|اس\s?اس\s?دی)/],
+    ["hdd",     /(hdd|hard drive|hard disk|هارد)/],
+    ["nas",     /(nas|synology|enclosure|جعبه|ذخیره‌ساز شبکه)/],
+    ["usb",     /(usb|flash drive|thumb drive|فلش)/],
+    ["mem",     /(ram|memory|ddr[45]|رم|حافظه)/],
+    ["cool",    /(aio|liquid cooler|cpu cooler|کولر|خنک‌کننده)/],
+    ["fan",     /(case fan|case fans|فن کیس|فن)/],
+    ["paste",   /(thermal paste|thermal compound|خمیر)/],
+    ["case",    /(case|chassis|tower|کیس)/],
+    ["psu",     /(psu|power supply|watt|پاور|منبع تغذیه)/],
+    ["mon",     /(monitor|display|qhd|4k|oled|نمایشگر|مانیتور)/],
+    ["kb",      /(keyboard|کیبورد)/],
+    ["mouse",   /(mouse|ماوس|موس)/],
+    ["headset", /(headset|headphone|هدست|هدفون)/],
+    ["pc",      /(gaming pc|prebuilt|desktop pc|سیستم گیمینگ|کامپیوتر کامل)/],
+    ["laptop",  /(laptop|notebook|لپ‌تاپ|لپ تاپ)/],
+    ["ws",      /(workstation|ورک‌استیشن|ورک استیشن)/],
+    ["mini",    /(mini pc|مینی)/]
+  ];
+
+  function norm(s) {
+    return String(s).toLowerCase().replace(/[۰-۹]/g, function (d) {
+      return String(d.charCodeAt(0) - 0x06f0);
+    });
+  }
+
+  function answer(q) {
+    var t = norm(q), budget = null, cat = null;
+    var bm = t.match(/(?:under|below|less than|زیر|تا|کمتر از|بودجه)\s*\$?\s*(\d{2,5})/);
+    if (bm) budget = parseFloat(bm[1]);
+    if (!budget) { var nm = t.match(/\$\s*(\d{2,5})/); if (nm) budget = parseFloat(nm[1]); }
+    for (var i = 0; i < MAP.length; i++) if (MAP[i][1].test(t)) { cat = MAP[i][0]; break; }
+
+    var all = products();
+    var list = all.filter(function (p) {
+      if (cat && p.cat !== cat) return false;
+      if (budget && p.price > budget) return false;
+      return true;
+    });
+    /* nothing inside the budget for that category? widen the budget, keep the category */
+    if (!list.length && budget) list = all.filter(function (p) { return cat ? p.cat === cat : true; });
+    /* still nothing: show the closest thing rather than an empty answer */
+    if (!list.length) list = all.slice();
+
+    list.sort(S.sort === "price"
+      ? function (a, b) { return a.price - b.price; }
+      : function (a, b) { return b.rate - a.rate || a.price - b.price; });
+
+    return { items: list.slice(0, S.n), budget: budget, cat: cat, inBudget: !!(budget && list.length && list.every(function (p) { return p.price <= budget; })) };
+  }
+
+  /* ------- markup ------- */
+  var fab = document.createElement("button");
+  fab.className = "ai-fab";
+  fab.innerHTML =
+    '<span class="fab-orb"><span class="fab-ring"></span><svg viewBox="0 0 32 32" class="fab-bot"><defs><linearGradient id="fait" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eaf4ff"/><stop offset="1" stop-color="#9cc7ff"/></linearGradient></defs><rect x="6.5" y="10" width="19" height="14" rx="6" fill="#08121f" stroke="url(#fait)" stroke-width="1.6"/><path d="M16 4.5v5" stroke="#9cc7ff" stroke-width="1.6" stroke-linecap="round"/><circle cx="16" cy="3.6" r="1.9" fill="#57c7ff"/><circle cx="12.9" cy="16.6" r="1.5" fill="#57c7ff"/><circle cx="19.1" cy="16.6" r="1.5" fill="#57c7ff"/><path d="M13.4 20.2c1.6 1.2 3.6 1.2 5.2 0" stroke="#4fd2ff" stroke-width="1.5" stroke-linecap="round" fill="none"/><rect x="12" y="20.6" width="8" height="1.6" rx=".8" fill="#2b7bff" opacity=".7"/></svg></span>' +
+    '<span class="fab-txt"><b class="fab-l1"></b><i class="fab-l2">NEXUS</i><em class="fab-l3"></em></span>' +
+    '<span class="fab-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span>';
+  fab.setAttribute("aria-label", "Open the NEXUS assistant");
+
+  var panel = document.createElement("div");
+  panel.className = "ai-panel";
+  panel.innerHTML =
+    '<div class="ai-head">' +
+      '<div class="ai-av">'
+      + '<svg viewBox="0 0 48 48" width="21" height="21" aria-hidden="true">'
+      + '<path d="M24 3.2 42.4 13.6v20.8L24 44.8 5.6 34.4V13.6z" fill="#fff"/>'
+      + '<path d="M17 33.5V15l14 18V15" fill="none" stroke="#0b63ce" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+      + '</div>' +
+      '<div class="ai-ht"><b>' + L("NEXUS AI", "نکسوس هوشمند") + '</b>' +
+      '<small>' + L("Shopping assistant", "دستیار خرید") + '</small></div>' +
+      '<button class="ai-gear" aria-label="Settings">' +
+        '<svg viewBox="0 0 24 24" width="17" height="17"><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.7"/>' +
+        '<path d="M12 3.4v2.2M12 18.4v2.2M20.6 12h-2.2M5.6 12H3.4M18.1 5.9l-1.6 1.6M7.5 16.5l-1.6 1.6M18.1 18.1l-1.6-1.6M7.5 7.5 5.9 5.9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>' +
+      '</button>' +
+      '<button class="ai-x" aria-label="Close">&times;</button>' +
+    '</div>' +
+    '<div class="ai-set">' +
+      '<label><span>' + L("Results", "تعداد") + '</span><select data-k="n"><option value="3">3</option><option value="5">5</option></select></label>' +
+      '<label><span>' + L("Sort", "ترتیب") + '</span><select data-k="sort"><option value="rate">' + L("Top rated", "بیشترین امتیاز") + '</option><option value="price">' + L("Lowest price", "ارزان‌ترین") + '</option></select></label>' +
+    '</div>' +
+    '<div class="ai-log"></div>' +
+    '<div class="ai-chips"></div>' +
+    '<form class="ai-form">' +
+      '<input type="text" placeholder="' + L("e.g. GPU under $800", "مثلاً کارت گرافیک زیر ۸۰۰ دلار") + '">' +
+      '<button type="submit">' + L("Ask", "بپرس") + '</button>' +
+    '</form>';
+
+  document.body.appendChild(fab);
+  document.body.appendChild(panel);
+
+  var log = panel.querySelector(".ai-log");
+  var input = panel.querySelector("input");
+  var setRow = panel.querySelector(".ai-set");
+
+  panel.querySelector('[data-k="n"]').value = String(S.n);
+  panel.querySelector('[data-k="sort"]').value = S.sort;
+  panel.querySelector(".ai-set").addEventListener("change", function (e) {
+    var k = e.target.dataset.k;
+    if (!k) return;
+    S[k] = k === "n" ? parseInt(e.target.value, 10) : e.target.value;
+    save();
+  });
+
+  panel.querySelector(".ai-gear").addEventListener("click", function () {
+    setRow.classList.toggle("on");
+  });
+
+  var CHIP_DEFS = [
+    ["gpu", "GPU under $800", "کارت گرافیک زیر ۸۰۰ دلار"],
+    ["ssd", "Best SSD", "بهترین اس‌اس‌دی"],
+    ["mon", "4K monitor", "مانیتور 4K"],
+    ["laptop", "Gaming laptop", "لپ‌تاپ گیمینگ"],
+    ["headset", "Headset", "هدست"]
+  ];
+  var chips = panel.querySelector(".ai-chips");
+
+  function paintChips() {
+    chips.innerHTML = "";
+    CHIP_DEFS.forEach(function (c) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "ai-chip";
+      b.textContent = isFa() ? c[2] : c[1];
+      b.onclick = function () { ask(b.textContent); };
+      chips.appendChild(b);
+    });
+  }
+
+  function money(n) {
+    if (!isFa()) return "$" + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    var t = Math.round(n * 160000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return t.replace(/\d/g, function (d) { return "۰۱۲۳۴۵۶۷۸۹"[+d]; }) + " تومان";
+  }
+
+  /* every visible string in the panel, re-applied whenever the page language flips */
+  function syncLang() {
+    var ht = panel.querySelector(".ai-ht b"), hs = panel.querySelector(".ai-ht small");
+    if (ht) ht.textContent = L("NEXUS AI", "نکسوس هوشمند");
+    if (hs) hs.textContent = L("Shopping assistant", "دستیار خرید");
+    var labs = panel.querySelectorAll(".ai-set label span");
+    if (labs[0]) labs[0].textContent = L("Results", "تعداد");
+    if (labs[1]) labs[1].textContent = L("Sort", "ترتیب");
+    var sortOpts = panel.querySelectorAll('[data-k="sort"] option');
+    if (sortOpts[0]) sortOpts[0].textContent = L("Top rated", "بیشترین امتیاز");
+    if (sortOpts[1]) sortOpts[1].textContent = L("Lowest price", "ارزان‌ترین");
+    input.placeholder = L("e.g. GPU under $800", "مثلاً کارت گرافیک زیر ۸۰۰ دلار");
+    panel.querySelector(".ai-form button").textContent = L("Ask", "بپرس");
+    panel.querySelector(".ai-gear").setAttribute("aria-label", L("Settings", "تنظیمات"));
+    panel.querySelector(".ai-x").setAttribute("aria-label", L("Close", "بستن"));
+    fab.setAttribute("aria-label", L("Open the NEXUS assistant", "باز کردن دستیار نکسوس"));
+    var l1 = fab.querySelector(".fab-l1"), l3 = fab.querySelector(".fab-l3");
+    if (l1) l1.textContent = L("Smart assistant", "دستیار هوشمند");
+    if (l3) l3.textContent = L("Ask me anything", "سوال داری؟ من اینجام");
+    paintChips();
+    /* the conversation is rebuilt in the new language the next time it opens */
+    log.innerHTML = "";
+    delete log.dataset.done;
+    if (panel.classList.contains("open")) greet();
+  }
+
+  function bubble(html, who) {
+    var d = document.createElement("div");
+    d.className = "ai-msg " + who;
+    d.innerHTML = html;
+    log.appendChild(d);
+    log.scrollTop = log.scrollHeight;
+    return d;
+  }
+
+  function greet() {
+    if (log.dataset.done) return;
+    log.dataset.done = "1";
+    bubble(L("Hi — I can find parts by budget or spec. What are you building?",
+             "سلام — بر اساس بودجه یا مشخصات قطعه پیدا می‌کنم. چه چیزی می‌سازی؟"), "bot");
+  }
+
+  function render(r) {
+    if (!r.items.length) {
+      bubble(L("Nothing on the shelf matches that yet — tell me a budget or a part name.",
+               "هنوز چیزی با این مشخصات روی قفسه نیست — بودجه یا نام قطعه را بگو."), "bot");
+      return;
+    }
+    var intro = r.budget && r.inBudget
+      ? L("Under $" + r.budget + ", these are the strongest picks:",
+          "زیر " + r.budget + " دلار، این‌ها بهترین گزینه‌ها هستند:")
+      : (r.budget
+          ? L("Nothing sits under $" + r.budget + " there — closest picks:",
+              "زیر " + r.budget + " دلار چیزی در این دسته نیست — نزدیک‌ترین گزینه‌ها:")
+          : L("Here is what I would shortlist:", "پیشنهاد من این‌هاست:"));
+
+    var wrap = document.createElement("div");
+    wrap.className = "ai-cards";
+    r.items.forEach(function (p) {
+      var row = document.createElement("div");
+      row.className = "ai-card";
+      row.innerHTML = '<img src="' + p.img + '" alt="">' +
+        '<div><b>' + p.name.slice(0, 58) + (p.name.length > 58 ? "…" : "") + '</b>' +
+        '<span>' + money(p.price) + '</span></div>';
+      var b = document.createElement("button");
+      b.className = "ai-add";
+      b.textContent = L("Add", "افزودن");
+      b.onclick = function () {
+        var btn = p.el.querySelector(".add");
+        if (btn) btn.click();
+        b.textContent = L("Added", "شد");
+        b.disabled = true;
+      };
+      row.appendChild(b);
+      wrap.appendChild(row);
+    });
+    bubble(intro, "bot").appendChild(wrap);
+  }
+
+  function ask(q) {
+    if (!q || !q.trim()) return;
+    bubble(q.replace(/</g, "&lt;"), "me");
+    var th = bubble('<span class="ai-think">•••</span>', "bot");
+    setTimeout(function () { th.remove(); render(answer(q)); }, 420);
+  }
+
+  fab.setAttribute("aria-expanded", "false");
+  fab.setAttribute("aria-haspopup", "dialog");
+  panel.setAttribute("role", "dialog");
+  panel.setAttribute("aria-label", "NEXUS assistant");
+
+  fab.addEventListener("click", function () {
+    panel.classList.add("open");
+    fab.setAttribute("aria-expanded", "true");
+    greet();
+    setTimeout(function () { input.focus(); }, 60);
+  });
+  function closePanel() {
+    panel.classList.remove("open");
+    fab.setAttribute("aria-expanded", "false");
+  }
+  panel.querySelector(".ai-x").addEventListener("click", closePanel);
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && panel.classList.contains("open")) closePanel();
+  });
+  panel.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    ask(input.value);
+    input.value = "";
+  });
+
+  syncLang();
+  new MutationObserver(syncLang).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+})();
+
+/* ---------------- account modal ---------------- */
+(function () {
+  var isFa = function () { return document.documentElement.lang === "fa"; };
+  var L = function (en, fa) { return isFa() ? fa : en; };
+  var LOGO = '<svg viewBox="0 0 48 48" width="44" height="44" aria-hidden="true">'
+    + '<path d="M24 3.2 42.4 13.6v20.8L24 44.8 5.6 34.4V13.6z" fill="#0b63ce"/>'
+    + '<path d="M17 33.5V15l14 18V15" fill="none" stroke="#fff" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  var wrap = document.createElement("div");
+  wrap.className = "acct-scrim";
+  document.body.appendChild(wrap);
+
+  function build() {
+    wrap.innerHTML =
+      '<div class="acct-card" role="dialog" aria-modal="true">' +
+        '<button class="acct-x" aria-label="Close">&times;</button>' +
+        '<div class="acct-mark">' + LOGO + '</div>' +
+        '<h3>' + L("Sign in or join NEXUS", "ورود یا عضویت در نکسوس") + '</h3>' +
+        '<p class="acct-sub">' + L("Your cart, orders and warranty in one place.", "سبد خرید، سفارش‌ها و گارانتی، یک‌جا.") + '</p>' +
+        '<form class="acct-form" novalidate>' +
+          '<div class="acct-row">' +
+            '<label><span>' + L("First name", "نام") + '</span><input name="fn" autocomplete="given-name"></label>' +
+            '<label><span>' + L("Last name", "نام خانوادگی") + '</span><input name="ln" autocomplete="family-name"></label>' +
+          '</div>' +
+          '<label><span>' + L("Email or mobile", "ایمیل یا موبایل") + '</span><input name="id" autocomplete="username"></label>' +
+          '<label><span>' + L("Password", "رمز عبور") + '</span><input name="pw" type="password" autocomplete="current-password"></label>' +
+          '<p class="acct-err" hidden></p>' +
+          '<button class="acct-go" type="submit">' + L("Sign in / Create account", "ورود / ساخت حساب") + '</button>' +
+        '</form>' +
+      '</div>';
+    bind();
+  }
+
+  function close() { wrap.classList.remove("on"); document.documentElement.style.overflow = ""; }
+  function open() {
+    wrap.classList.add("on");
+    document.documentElement.style.overflow = "hidden";
+    setTimeout(function () { var i = wrap.querySelector("input"); if (i) i.focus(); }, 80);
+  }
+
+  window.__openAccount = function () { open(); };
+  function bind() {
+    wrap.querySelector(".acct-x").onclick = close;
+    wrap.querySelector(".acct-form").addEventListener("submit", submit);
+  }
+
+  function submit(e) {
+    e.preventDefault();
+    var f = e.target, err = wrap.querySelector(".acct-err");
+    var fn = f.fn.value.trim(), ln = f.ln.value.trim(), id = f.id.value.trim(), pw = f.pw.value;
+    function fail(m) { err.textContent = m; err.hidden = false; }
+    if (!fn || !ln || !id || !pw) return fail(L("Please fill every field.", "همهٔ فیلدها را پر کن."));
+    var isMail = /^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(id);
+    var isPhone = /^[+\d][\d\s()-]{7,}$/.test(id);
+    if (!isMail && !isPhone) return fail(L("Enter a valid email or mobile number.", "ایمیل یا شمارهٔ موبایل معتبر وارد کن."));
+    if (pw.length < 8) return fail(L("Password needs at least 8 characters.", "رمز عبور حداقل ۸ کاراکتر باشد."));
+    err.hidden = true;
+    try { localStorage.setItem("nexus-user", JSON.stringify({ fn: fn, ln: ln, id: id })); } catch (e2) {}
+    var b = document.getElementById("acctBtn");
+    if (b) { var lb = b.querySelector("b"); if (lb) lb.textContent = fn; }
+    close();
+    if (typeof window.toast === "function") window.toast(L("Welcome, ", "خوش آمدی، ") + fn);
+    if (typeof window.__afterAuth === "function") { var cb = window.__afterAuth; window.__afterAuth = null; setTimeout(cb, 160); }
+  }
+
+  wrap.addEventListener("click", function (e) { if (e.target === wrap) close(); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+  var btn = document.getElementById("acctBtn");
+  if (btn) btn.addEventListener("click", function (e) { e.preventDefault(); open(); });
+
+  window.__acctRebuild = function () {
+    var wasOpen = wrap.classList.contains("on");
+    build();
+    if (wasOpen) wrap.classList.add("on");
+  };
+  build();
+})();
+
+</script>
+
+
+<script>
+(function(){
+  var KEY="nexus-mode";
+  var saved=null; try{ saved=localStorage.getItem(KEY); }catch(e){}
+  if(saved==="dark") document.documentElement.setAttribute("data-mode","dark");
+  function apply(mode){
+    if(mode==="dark") document.documentElement.setAttribute("data-mode","dark");
+    else document.documentElement.removeAttribute("data-mode");
+    var b=document.getElementById("modeBtn");
+    if(b) b.querySelector("b").textContent = mode==="dark" ? "Day" : "Night";
+    try{ localStorage.setItem(KEY, mode); }catch(e){}
+  }
+  document.addEventListener("click", function(e){
+    if(!e.target.closest("#modeBtn")) return;
+    var dark = document.documentElement.getAttribute("data-mode")==="dark";
+    apply(dark ? "light" : "dark");
+  });
+  document.addEventListener("DOMContentLoaded", function(){
+    apply(document.documentElement.getAttribute("data-mode")==="dark" ? "dark":"light");
+  });
+  setTimeout(function(){
+    apply(document.documentElement.getAttribute("data-mode")==="dark" ? "dark":"light");
+  },50);
+})();
+</script>
+<script>
+/* live suggestions under the search field */
+(function(){
+  var wrap = document.querySelector('.search');
+  var inp = document.getElementById('searchIn');
+  if(!wrap || !inp) return;
+
+  var box = document.createElement('div');
+  box.className = 'sug';
+  wrap.appendChild(box);
+
+  function items(){
+    return [].slice.call(document.querySelectorAll('.pcard')).map(function(c){
+      var n=c.querySelector('.pname'), im=c.querySelector('img');
+      return {el:c, name:n?n.textContent.trim():'', price:c.dataset.price||'', img:im?im.getAttribute('src'):''};
+    });
+  }
+  function hide(){ box.classList.remove('on'); box.innerHTML=''; }
+
+  inp.addEventListener('input', function(){
+    var q = inp.value.trim().toLowerCase();
+    if(q.length < 2) return hide();
+    var hits = items().filter(function(p){ return p.name.toLowerCase().indexOf(q) > -1; }).slice(0,5);
+    if(!hits.length){ hide(); return; }
+    box.innerHTML = hits.map(function(p,i){
+      return '<button class="sug-row" data-i="'+i+'"><img src="'+p.img+'" alt=""><span>'+p.name.slice(0,64)+'</span><b>$'+p.price+'</b></button>';
+    }).join('');
+    box.classList.add('on');
+    box.querySelectorAll('.sug-row').forEach(function(row,i){
+      row.onclick = function(){
+        hide();
+        var el = hits[i].el;
+        var y = el.getBoundingClientRect().top + window.scrollY - 110;
+        window.scrollTo({top:y, behavior:'smooth'});
+        el.classList.add('hit');
+        setTimeout(function(){ el.classList.remove('hit'); }, 1600);
+      };
+    });
+  });
+
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('.search')) hide();
+  });
+  inp.addEventListener('keydown', function(e){ if(e.key==='Escape') hide(); });
+})();
+</script>
+
+<script>
+(function(){
+  /* ---- short loading bar on language switch ---- */
+  var bar=document.createElement("div"); bar.className="nx-progress"; document.body.appendChild(bar);
+  window.__nxLoading=function(ms){
+    bar.classList.remove("run"); void bar.offsetWidth;
+    bar.style.transitionDuration=(ms||430)+"ms";
+    bar.classList.add("run");
+    setTimeout(function(){ bar.classList.remove("run"); }, (ms||430)+140);
+  };
+  document.addEventListener("click", function(e){
+    if(e.target.closest("#langBtn")) window.__nxLoading(430);
+  }, true);
+
+  /* ---- wishlist / Lists ---- */
+  var KEY="nexus-list";
+  function load(){ try{ return JSON.parse(localStorage.getItem(KEY)||"[]"); }catch(e){ return []; } }
+  function save(a){ try{ localStorage.setItem(KEY, JSON.stringify(a)); }catch(e){} }
+  function isFa(){ return document.documentElement.lang==="fa"; }
+  var L=function(en,fa){ return isFa()?fa:en; };
+
+  var drawer=document.createElement("aside");
+  drawer.className="list-drawer";
+  drawer.innerHTML='<div class="ld-head"><b></b><button class="ld-x">&times;</button></div><div class="ld-body"></div>';
+  document.body.appendChild(drawer);
+  var scrim=document.createElement("div"); scrim.className="ld-scrim"; document.body.appendChild(scrim);
+
+  function render(){
+    var items=load();
+    drawer.querySelector(".ld-head b").textContent = L("Your lists","لیست‌های من") + " (" + items.length + ")";
+    var body=drawer.querySelector(".ld-body");
+    if(!items.length){
+      body.innerHTML='<p class="ld-empty">'+L("Nothing saved yet. Tap ♡ on a product to keep it here.","هنوز چیزی ذخیره نشده. روی ♡ یک محصول بزن.")+'</p>';
+    } else {
+      body.innerHTML=items.map(function(p,i){
+        return '<div class="ld-row"><img src="'+p.img+'" alt=""><div><b>'+p.name+'</b><span>$'+p.price+'</span></div>'
+             + '<button class="ld-del" data-i="'+i+'">'+L("Remove","حذف")+'</button></div>';
+      }).join("");
+    }
+  }
+  function open(){ render(); drawer.classList.add("on"); scrim.classList.add("on"); }
+  function close(){ drawer.classList.remove("on"); scrim.classList.remove("on"); }
+  scrim.onclick=close;
+  drawer.querySelector(".ld-x").onclick=close;
+  drawer.addEventListener("click", function(e){
+    var d=e.target.closest(".ld-del"); if(!d) return;
+    var a=load(); a.splice(+d.dataset.i,1); save(a); render(); paint();
+  });
+
+  /* hearts on every product card */
+  function paint(){
+    var saved=load().map(function(x){return x.name;});
+    document.querySelectorAll(".pcard").forEach(function(c){
+      var n=c.querySelector(".pname"); if(!n) return;
+      var on=saved.indexOf(n.textContent.trim())>-1;
+      var hb=c.querySelector(".heart");
+      if(!hb){
+        hb=document.createElement("button");
+        hb.className="heart"; hb.type="button"; hb.setAttribute("aria-label","Save");
+        hb.innerHTML='<svg viewBox="0 0 24 24" width="15" height="15"><path d="M12 20s-7-4.6-7-9.4A4.1 4.1 0 0 1 12 7a4.1 4.1 0 0 1 7 3.6C19 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>';
+        c.querySelector(".pthumb") ? c.querySelector(".pthumb").appendChild(hb) : c.prepend(hb);
+        hb.onclick=function(ev){
+          ev.preventDefault(); ev.stopPropagation();
+          var nm=n.textContent.trim(), a=load();
+          var idx=a.map(function(x){return x.name;}).indexOf(nm);
+          if(idx>-1){ a.splice(idx,1); } else { a.push({name:nm, price:c.dataset.price||"", img:(c.querySelector("img")||{}).getAttribute?c.querySelector("img").getAttribute("src"):""}); }
+          save(a); paint(); if(drawer.classList.contains("on")) render();
+        };
+      }
+      hb.classList.toggle("on",on);
+    });
+    var badge=document.getElementById("listsCount");
+    if(badge){ var n=load().length; badge.textContent=String(n); badge.hidden = n===0; }
+  }
+
+  /* delegated: survives re-renders and works on any element carrying the id */
+  document.addEventListener("click", function(e){
+    var t = e.target.closest && e.target.closest("#listsBtn, [data-lists]");
+    if(!t) return;
+    e.preventDefault();
+    if(drawer.classList.contains("on")) close(); else open();
+  });
+  window.__openLists = open;
+
+  document.addEventListener("DOMContentLoaded", paint);
+  setTimeout(paint,150);
+
+  /* footer: dead links get a real destination */
+  document.querySelectorAll("footer a[href='#']").forEach(function(a){
+    var t=a.textContent.trim();
+    a.addEventListener("click", function(e){
+      e.preventDefault();
+      var map={ "Today's Deals":"#deals", "Combo Builder":"#combo", "Computer Systems":"#deals",
+                "Laptops":"#deals", "GPUs":"#deals", "Support":"#support", "About":"#featured" };
+      var target=map[t];
+      if(target && document.querySelector(target)){
+        document.querySelector(target).scrollIntoView({behavior:"smooth"});
+      } else {
+        a.classList.add("flash"); setTimeout(function(){a.classList.remove("flash");},900);
+      }
+    });
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var isFa=function(){return document.documentElement.lang==="fa";};
+  var L=function(en,fa){return isFa()?fa:en;};
+
+  /* ---------- support message ---------- */
+  var m=document.createElement("div");
+  m.id="supportModal"; m.className="sup-scrim";
+  m.innerHTML=
+    '<div class="sup-card">'+
+      '<button class="sup-x" aria-label="Close">&times;</button>'+
+      '<h3></h3><p class="sup-sub"></p>'+
+      '<form class="sup-form">'+
+        '<label><span></span><input name="who" autocomplete="name"></label>'+
+        '<label><span></span><input name="mail" autocomplete="email"></label>'+
+        '<label><span></span><textarea name="msg" rows="4"></textarea></label>'+
+        '<p class="sup-err" hidden></p>'+
+        '<button class="sup-go" type="submit"></button>'+
+      '</form>'+
+      '<p class="sup-ok" hidden></p>'+
+    '</div>';
+  document.body.appendChild(m);
+
+  function labels(){
+    m.querySelector("h3").textContent = L("Message support","پیام به پشتیبانی");
+    m.querySelector(".sup-sub").textContent = L("A real engineer answers, usually within 4 hours.","یک مهندس واقعی پاسخ می‌دهد، معمولاً زیر ۴ ساعت.");
+    var sp=m.querySelectorAll(".sup-form label span");
+    sp[0].textContent=L("Your name","نام شما");
+    sp[1].textContent=L("Email","ایمیل");
+    sp[2].textContent=L("How can we help?","چه کمکی می‌توانیم بکنیم؟");
+    m.querySelector(".sup-go").textContent=L("Send message","ارسال پیام");
+    m.querySelector(".sup-ok").textContent=L("Sent — we will reply by email.","ارسال شد — با ایمیل پاسخ می‌دهیم.");
+  }
+  labels();
+
+  function openSup(){ labels(); m.classList.add("on"); document.documentElement.style.overflow="hidden"; setTimeout(function(){var i=m.querySelector("input");i&&i.focus();},80); }
+  function closeSup(){ m.classList.remove("on"); document.documentElement.style.overflow=""; }
+  m.querySelector(".sup-x").onclick=closeSup;
+  m.addEventListener("click",function(e){ if(e.target===m) closeSup(); });
+  document.addEventListener("keydown",function(e){ if(e.key==="Escape") closeSup(); });
+
+  m.querySelector(".sup-form").addEventListener("submit",function(e){
+    e.preventDefault();
+    var f=e.target, err=m.querySelector(".sup-err"), ok=m.querySelector(".sup-ok");
+    var who=f.who.value.trim(), mail=f.mail.value.trim(), msg=f.msg.value.trim();
+    if(!who||!mail||!msg){ err.textContent=L("Please fill every field.","همهٔ فیلدها را پر کن."); err.hidden=false; return; }
+    if(!/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(mail)){ err.textContent=L("Enter a valid email.","ایمیل معتبر وارد کن."); err.hidden=false; return; }
+    err.hidden=true;
+    try{ localStorage.setItem("nexus-support", JSON.stringify({who:who,mail:mail,msg:msg,at:Date.now()})); }catch(e2){}
+    m.querySelector(".sup-form").reset();
+    ok.hidden=false;
+    setTimeout(function(){ ok.hidden=true; closeSup(); }, 2200);
+  });
+
+  ["supportLink"].forEach(function(id){
+    var el=document.getElementById(id);
+    if(el) el.addEventListener("click",function(e){ e.preventDefault(); openSup(); });
+  });
+  document.querySelectorAll("footer a, .foot a").forEach(function(a){
+    if(a.textContent.trim()==="Support") a.addEventListener("click",function(e){ e.preventDefault(); openSup(); });
+  });
+  window.__openSupport = openSup;
+})();
+
+/* ---- currency: every $ figure follows the active language ---- */
+(function(){
+  function tag(){
+    var sel = ".pprice,.old,.psave,.save,.combo-total,.ld-price,.ci-row strong,.drow strong,.ai-card b,.[data-price]";
+    document.querySelectorAll(".pprice b,.pprice s,.pprice strong,.old,.psave,.save,.combo-total,.ld-price,.ci-row strong,.drow strong,.ai-card b,[data-usd]").forEach(function(el){
+      if(el.dataset.usd !== undefined) return;
+      var txt = (el.textContent || "").trim();
+      var m = txt.match(/^\$\s?([\d,]+(?:\.\d+)?)$/);
+      if(m) el.dataset.usd = String(parseFloat(m[1].replace(/,/g,"")));
+    });
+  }
+  function paint(){
+    tag();
+    document.querySelectorAll("[data-usd]").forEach(function(el){
+      var v = parseFloat(el.dataset.usd);
+      if(isNaN(v) || !window.__money) return;
+      el.textContent = window.__money(v);
+    });
+  }
+  function paintPromo(){
+    document.querySelectorAll(".promo").forEach(function(el){
+      if(!el.dataset.phrase) el.dataset.phrase = (el.textContent || "").trim();
+      var m = el.dataset.phrase.match(/^Save \$([\d.,]+)/);
+      if(!m || !window.__money) return;
+      var v = parseFloat(m[1].replace(/,/g, ""));
+      el.textContent = window.__isFa() ? "صرفه‌جویی " + window.__money(v) : el.dataset.phrase;
+    });
+  }
+  var _paint = paint;
+  paint = function(){ _paint(); paintPromo(); };
+  window.__pricePaint = paint;
+  document.addEventListener("DOMContentLoaded", paint);
+  setTimeout(paint, 400);
+  setTimeout(paint, 1200);
+})();
+
+</script>
+<script>
+/* --------- currency: USD in English, Toman in Persian --------- */
+(function () {
+  var FX = 160000;
+  function fa(s) { return String(s).replace(/\d/g, function (d) { return "۰۱۲۳۴۵۶۷۸۹"[d]; }); }
+  function isFa() { return document.documentElement.lang === "fa"; }
+  function toman(n) { return fa(Math.round(n * FX).toLocaleString("en-US")) + " تومان"; }
+  function usd(n) { return "$" + n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+  function tag() {
+    document.querySelectorAll("span,strong,b,div,em,i").forEach(function (el) {
+      if (el.children.length) return;
+      var t = el.textContent.trim();
+      var m = t.match(/^\$([\d,]+(?:\.\d+)?)$/);
+      if (m) { el.dataset.usd = m[1].replace(/,/g, ""); return; }
+      var s = t.match(/^Save \$([\d,]+(?:\.\d+)?)$/);
+      if (s) { el.dataset.saveUsd = s[1].replace(/,/g, ""); }
+    });
+  }
+  function paint() {
+    document.querySelectorAll("[data-usd]").forEach(function (el) {
+      var n = parseFloat(el.dataset.usd);
+      el.textContent = isFa() ? toman(n) : usd(n);
+    });
+    document.querySelectorAll("[data-save-usd]").forEach(function (el) {
+      var n = parseFloat(el.dataset.saveUsd);
+      el.textContent = isFa() ? "صرفه‌جویی " + toman(n) : "Save " + usd(n);
+    });
+  }
+  window.__paintPrices = paint;
+  document.addEventListener("click", function (e) {
+    if (e.target.closest && e.target.closest("#langBtn,#lang")) { setTimeout(function () { tag(); paint(); }, 120); }
+  });
+  setTimeout(function () { tag(); paint(); }, 700);
+})();
+</script>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce) return;
+  function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
+  ready(function(){
+    var targets = document.querySelectorAll('h2, .evt h4, .cat, .pcard, .mag-lead, .mag-item');
+    targets.forEach(function(el,i){ el.classList.add('rev'); el.style.transitionDelay = Math.min(i%8,7)*40 + 'ms'; });
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {rootMargin:'0px 0px -8% 0px', threshold:0.08});
+    targets.forEach(function(el){ io.observe(el); });
+    // first paint: already-visible items
+    setTimeout(function(){ targets.forEach(function(el){ var r=el.getBoundingClientRect(); if(r.top < innerHeight*0.92) el.classList.add('in'); }); }, 60);
+    /* safety net: never leave text hidden if the observer misses */
+    setTimeout(function(){ targets.forEach(function(el){ el.classList.add('in'); }); }, 3500);
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.hero-slide'));
+  var dots=[].slice.call(document.querySelectorAll('.dots i'));
+  if(!slides.length) return;
+  var i=0, timer=null;
+  function go(k){
+    i=(k+slides.length)%slides.length;
+    slides.forEach(function(s,n){ s.classList.toggle('on', n===i); });
+    dots.forEach(function(d,n){ d.classList.toggle('on', n===i); });
+  }
+  function start(){ stop(); timer=setInterval(function(){ go(i+1); }, 4500); }
+  function stop(){ if(timer){ clearInterval(timer); timer=null; } }
+  dots.forEach(function(d,n){
+    d.addEventListener('click', function(){ go(n); start(); });
+    d.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); go(n); start(); } });
+  });
+  var hero=document.querySelector('.hero');
+  if(hero){ hero.addEventListener('mouseenter', stop); hero.addEventListener('mouseleave', start); }
+  go(0); start();
+})();
+</script>
+<script>
+/* ---------- account gate + phone request ---------- */
+(function () {
+  var isFa = function () { return document.documentElement.lang === "fa"; };
+  var L = function (en, fa) { return isFa() ? fa : en; };
+
+  function currentUser() {
+    try { return JSON.parse(localStorage.getItem("nexus-user") || "null"); } catch (e) { return null; }
+  }
+
+  /* returns true when an account already exists; otherwise opens the modal
+     and defers `then` until sign-in finishes */
+  window.NXGate = function (then) {
+    var u = currentUser();
+    if (u && u.id) return true;
+    window.__afterAuth = then;
+    if (window.__openAccount) window.__openAccount();
+    return false;
+  };
+
+  /* phone modal */
+  var wrap = document.createElement("div");
+  wrap.className = "acct-scrim";
+  wrap.id = "phoneModal";
+  document.body.appendChild(wrap);
+
+  function render() {
+    var u = currentUser() || {};
+    var pre = /^[+\d]/.test(u.id || "") ? u.id : "";
+    wrap.innerHTML =
+      '<div class="acct-card" role="dialog" aria-modal="true">' +
+        '<button class="acct-x" type="button" aria-label="' + L("Close", "بستن") + '">×</button>' +
+        '<div class="acct-mark">☎</div>' +
+        '<h3>' + L("Talk to the team", "گفت‌وگو با تیم") + '</h3>' +
+        '<p class="acct-sub">' + L("Leave a number and an engineer calls you back — usually within 4 hours.", "شماره‌ات را بگذار؛ یک مهندس تماس می‌گیرد — معمولاً زیر ۴ ساعت.") + '</p>' +
+        '<form class="acct-form" novalidate>' +
+          '<label><span>' + L("Mobile number", "شماره موبایل") + '</span>' +
+            '<input name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="0912 345 6789" value="' + pre + '"></label>' +
+          '<p class="acct-err" hidden></p>' +
+          '<button class="acct-go" type="submit">' + L("Request a call", "درخواست تماس") + '</button>' +
+        '</form>' +
+      '</div>';
+    wrap.querySelector(".acct-x").onclick = close;
+    wrap.querySelector(".acct-form").addEventListener("submit", send);
+    setTimeout(function () { var i = wrap.querySelector("input"); if (i) i.focus(); }, 80);
+  }
+
+  function send(e) {
+    e.preventDefault();
+    var f = e.target, err = wrap.querySelector(".acct-err");
+    var tel = (f.tel.value || "").replace(/[\s()-]/g, "");
+    if (!/^(\+?\d{9,15})$/.test(tel)) {
+      err.textContent = L("Enter a valid mobile number.", "شمارهٔ موبایل معتبر وارد کن.");
+      err.hidden = false; return;
+    }
+    err.hidden = true;
+    try {
+      var u = currentUser() || {};
+      u.phone = tel;
+      localStorage.setItem("nexus-user", JSON.stringify(u));
+      var list = JSON.parse(localStorage.getItem("nexus-calls") || "[]");
+      list.push({ tel: tel, at: Date.now() });
+      localStorage.setItem("nexus-calls", JSON.stringify(list));
+    } catch (e2) {}
+    close();
+    if (typeof window.toast === "function")
+      window.toast(L("Thanks — an engineer will call you.", "ممنون — یک مهندس تماس می‌گیرد."));
+  }
+
+  function open() { render(); wrap.classList.add("on"); document.documentElement.style.overflow = "hidden"; }
+  function close() { wrap.classList.remove("on"); document.documentElement.style.overflow = ""; }
+
+  wrap.addEventListener("click", function (e) { if (e.target === wrap) close(); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+
+  var callBtn = document.querySelector("[data-call]");
+  if (callBtn) callBtn.addEventListener("click", function () {
+    var go = function () { if (window.__openCall) window.__openCall(); };
+    if (!window.NXGate || window.NXGate(go)) go();
+  });
+
+  var join = document.querySelector("[data-join]");
+  if (join) join.addEventListener("click", function () {
+    if (window.__openAccount) window.__openAccount();
+  });
+
+  var cta = document.querySelector(".sp-cta");
+  if (cta) cta.addEventListener("click", function (e) {
+    e.preventDefault();
+    if (window.NXGate(open)) open();
+  });
+
+  window.__acctRebuild2 = render;
+  window.__openCall = open;
+})();
+
+</script>
+<script>
+/* ---- sponsor film: play only while visible, audio on demand ---- */
+(function () {
+  var v = document.querySelector(".sp-video");
+  if (!v) return;
+  var snd = document.querySelector(".sp-sound");
+  /* motion runs by default; an explicit html[data-motion="off"] opts out.
+     (Relying on the OS switch silently killed every effect for some users.) */
+  var reduce = document.documentElement.getAttribute("data-motion") === "off";
+
+  function play() {
+    var pr = v.play();
+    if (pr && pr.catch) pr.catch(function () {});
+  }
+  if (!reduce && "IntersectionObserver" in window) {
+    new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) { if (!snd || !snd.classList.contains("on")) play(); }
+        else v.pause();
+      });
+    }, { threshold: 0.25 }).observe(v);
+  } else if (!reduce) {
+    play();
+  }
+
+  var cta = document.querySelector("[data-play]");
+  if (cta) cta.addEventListener("click", function () {
+    v.muted = false;
+    if (snd) { snd.classList.add("on"); snd.textContent = "\u2715"; snd.setAttribute("aria-label", "Mute film"); }
+    play();
+  });
+
+  if (snd) snd.addEventListener("click", function () {
+    v.muted = !v.muted;
+    snd.classList.toggle("on", !v.muted);
+    snd.textContent = v.muted ? "\u266a" : "\u2715";
+    snd.setAttribute("aria-label", v.muted ? "Unmute film" : "Mute film");
+    if (!v.muted) play();
+  });
+
+  v.addEventListener("error", function () {
+    var f = v.closest(".sp-film");
+    if (f) f.style.display = "none";
+  });
+})();
+</script>
+<script>
+/* ---------- motion layer: tilt, sheen, fly-to-cart, header shrink, ripple, theme reveal ---------- */
+(function () {
+  var reduce = window.matchMedia("(prefers-reduced-motion:reduce)").matches;
+
+  /* 7. shrink the masthead after the fold */
+  var mast = document.querySelector(".mast");
+  if (mast) {
+    var onScroll = function () {
+      if (window.scrollY > 80) mast.classList.add("compact");
+      else mast.classList.remove("compact");
+    };
+    onScroll();
+    addEventListener("scroll", onScroll, { passive: true });
+  }
+
+  /* 21 / 22 / 23. pointer tilt + light sheen on product cards */
+  if (!reduce && matchMedia("(hover:hover)").matches) {
+    document.querySelectorAll(".pcard").forEach(function (card) {
+      var raf = 0;
+      card.addEventListener("pointermove", function (e) {
+        if (raf) return;
+        raf = requestAnimationFrame(function () {
+          raf = 0;
+          var r = card.getBoundingClientRect();
+          var px = (e.clientX - r.left) / r.width;
+          var py = (e.clientY - r.top) / r.height;
+          card.classList.add("tilting");
+          card.style.setProperty("--ry", ((px - .5) * 7).toFixed(2) + "deg");
+          card.style.setProperty("--rx", ((0.5 - py) * 7).toFixed(2) + "deg");
+          card.style.setProperty("--mx", (px * 100).toFixed(1) + "%");
+          card.style.setProperty("--my", (py * 100).toFixed(1) + "%");
+        });
+      });
+      card.addEventListener("pointerleave", function () {
+        card.classList.remove("tilting");
+        card.style.setProperty("--ry", "0deg");
+        card.style.setProperty("--rx", "0deg");
+      });
+    });
+  }
+
+  /* 33. fly to cart */
+  function flyToCart(fromImg) {
+    if (reduce || !fromImg) return;
+    var cart = document.getElementById("cartBtn");
+    if (!cart) return;
+    var a = fromImg.getBoundingClientRect();
+    var b = cart.getBoundingClientRect();
+    var ghost = document.createElement("img");
+    ghost.src = fromImg.currentSrc || fromImg.src;
+    ghost.className = "fly-ghost";
+    ghost.style.left = a.left + "px";
+    ghost.style.top = a.top + "px";
+    ghost.style.width = a.width + "px";
+    ghost.style.height = a.height + "px";
+    document.body.appendChild(ghost);
+
+    var dx = (b.left + b.width / 2) - (a.left + a.width / 2);
+    var dy = (b.top + b.height / 2) - (a.top + a.height / 2);
+
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        ghost.style.transform = "translate(" + dx + "px," + dy + "px) scale(.12) rotate(-8deg)";
+        ghost.style.opacity = ".35";
+        ghost.style.borderRadius = "50%";
+      });
+    });
+    setTimeout(function () {
+      ghost.remove();
+      var c = document.getElementById("cartCount");
+      if (c) { c.classList.remove("bump"); void c.offsetWidth; c.classList.add("bump"); }
+    }, 520);
+  }
+
+  /* hold the add for one beat so the eye can follow the item, then run the real add */
+  var allowAdd = false, pending = false;
+  document.addEventListener("click", function (e) {
+    var add = e.target.closest(".add, [data-add]");
+    if (!add || allowAdd) return;
+    var card = add.closest(".pcard");
+    var img = card && card.querySelector(".pthumb img");
+    if (reduce || !img) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+    if (pending) return;
+    pending = true;
+    flyToCart(img);
+    setTimeout(function () {
+      allowAdd = true;
+      add.click();
+      pending = false;
+      setTimeout(function () { allowAdd = false; }, 0);
+    }, 520);
+  }, true);
+
+  /* 77. ripple */
+  document.addEventListener("pointerdown", function (e) {
+    if (reduce) return;
+    var btn = e.target.closest(".btn");
+    if (!btn) return;
+    var r = btn.getBoundingClientRect();
+    var d = Math.max(r.width, r.height) * 2.2;
+    var s = document.createElement("span");
+    s.className = "rip";
+    s.style.width = s.style.height = d + "px";
+    s.style.left = (e.clientX - r.left - d / 2) + "px";
+    s.style.top = (e.clientY - r.top - d / 2) + "px";
+    btn.appendChild(s);
+    setTimeout(function () { s.remove(); }, 620);
+  });
+
+  /* 58. circular reveal when the theme flips */
+  /* theme toggle: deliberately plain — the View Transition reveal froze older
+     machines on a page this tall, so it is disabled. */
+})();
+</script>
+<script>
+/* ============ PRODUCT CARDS 2.0: live timer, stock meter, working compare ============ */
+(function () {
+  var CAT = { gpu:"GPU", cpu:"CPU", mobo:"MAINBOARD", mem:"MEMORY",
+              ssd:"SSD", hdd:"HARD DRIVE", nas:"NAS", usb:"USB FLASH",
+              cool:"COOLING", fan:"CASE FAN", case:"CASE", paste:"THERMAL PASTE",
+              kb:"KEYBOARD", mouse:"MOUSE", mon:"DISPLAY", headset:"HEADSET",
+              pc:"GAMING PC", laptop:"LAPTOP", ws:"WORKSTATION", mini:"MINI PC",
+              per:"GEAR" };
+  var isFa = function(){ return document.documentElement.lang === "fa"; };
+  var T = function(en, fa){ return isFa() ? fa : en; };
+  var CAT_FA = { gpu:"کارت گرافیک", cpu:"پردازنده", mobo:"مادربرد", mem:"حافظه",
+                 psu:"منبع تغذیه", ssd:"SSD", hdd:"هارد دیسک", nas:"NAS", usb:"فلش USB",
+                 cool:"خنک‌کننده", fan:"فن کیس", case:"کیس", paste:"خمیر حرارتی",
+                 kb:"کیبورد", mouse:"ماوس", mon:"نمایشگر", headset:"هدست",
+                 pc:"سیستم گیمینگ", laptop:"لپ‌تاپ", ws:"ورک‌استیشن", mini:"مینی PC" };
+  function catLabel(cat){
+    return isFa() ? (CAT_FA[cat] || "سخت‌افزار") : (CAT[cat] || "Hardware");
+  }
+
+  function faDigits(s){ return String(s).replace(/[0-9]/g, function(d){ return "۰۱۲۳۴۵۶۷۸۹"[+d]; }); }
+  function num(s){ return isFa() ? faDigits(s) : s; }
+
+  var cards = [].slice.call(document.querySelectorAll(".pcard"));
+
+  /* ---------- stamp category, stock and a deal countdown on every card ---------- */
+  var ends = [];
+  cards.forEach(function (card, i) {
+    var cat = card.getAttribute("data-cat") || "per";
+    var body = card.querySelector(".pbody");
+    if (!body || card.querySelector(".pmeta")) return;
+
+    var meta = document.createElement("div");
+    meta.className = "pmeta";
+    var pc = document.createElement("span");
+    pc.className = "pcat";
+    pc.dataset.c = cat;
+    pc.innerHTML = "<i></i>" + catLabel(cat);
+    var pt = document.createElement("span");
+    pt.className = "ptimer";
+    pt.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></svg><em>00:00:00</em>';
+    meta.appendChild(pc);
+    meta.appendChild(pt);
+    body.insertBefore(meta, body.firstChild);
+
+    /* stock meter for discounted items only — nothing fake on full-price gear */
+    var off = card.querySelector(".pbadge");
+    if (off) {
+      var left = 4 + ((i * 7) % 18);
+      var total = 40;
+      var wrap = document.createElement("div");
+      wrap.className = "pstock";
+      wrap.innerHTML = '<div class="pstock-bar' + (left < 9 ? " low" : "") + '">' +
+                       '<i style="width:' + Math.round(left / total * 100) + '%"></i></div>' +
+                       '<div class="pstock-txt"><span class="left-n" data-left="' + left + '"></span>' +
+                       '<span class="deal-lbl"></span></div>';
+      wrap.querySelector(".left-n").textContent = T(left + " left at this price", left + " عدد مانده");
+      wrap.querySelector(".deal-lbl").textContent = T("Deal stock", "تخفیف");
+      var rate = body.querySelector(".prate");
+      if (rate) rate.parentNode.insertBefore(wrap, rate.nextSibling);
+    }
+
+    ends.push(Date.now() + (2 + (i % 9)) * 3600e3 + ((i * 37) % 60) * 60e3);
+  });
+
+  function pad(n){ return (n < 10 ? "0" : "") + n; }
+  function tick() {
+    var live = [].slice.call(document.querySelectorAll(".ptimer"));
+    live.forEach(function (el, i) {
+      var ms = Math.max(0, ends[i] - Date.now());
+      var s = Math.floor(ms / 1000);
+      var hh = pad(Math.floor(s / 3600)), mm = pad(Math.floor(s % 3600 / 60)), ss = pad(s % 60);
+      el.querySelector("em").textContent = num(hh) + ":" + num(mm) + ":" + num(ss);
+      el.classList.toggle("urgent", ms < 3600e3);
+    });
+  }
+  if (cards.length) { tick(); setInterval(tick, 1000); }
+
+  new MutationObserver(function () {
+    document.querySelectorAll(".pcat").forEach(function (el) {
+      var c = el.dataset.c;
+      if (c) el.innerHTML = "<i></i>" + catLabel(c);
+    });
+  }).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+
+  /* ---------- compare ---------- */
+  var picked = [];
+  document.querySelectorAll(".pcard .pactions").forEach(function (row) {
+    var b = row.querySelector("button:not(.add)");
+    if (!b) return;
+    b.className = "cmp";
+    b.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h7M4 17h7M17 4v7m0 0 3-3m-3 3-3-3M17 20v-7"/></svg>' +
+                  '<span>' + T("Compare", "مقایسه") + "</span>";
+    b.setAttribute("data-cmp", "");
+  });
+
+  var tray = document.createElement("div");
+  tray.className = "cmp-tray";
+  tray.innerHTML = '<div class="cmp-slots"></div><b></b>' +
+                   '<button class="cmp-go" disabled></button><button class="cmp-clear"></button>';
+  document.body.appendChild(tray);
+  var slots = tray.querySelector(".cmp-slots");
+  var label = tray.querySelector("b");
+  var go = tray.querySelector(".cmp-go");
+  var clear = tray.querySelector(".cmp-clear");
+
+  function syncTray() {
+    slots.innerHTML = "";
+    picked.forEach(function (c) {
+      var s = document.createElement("div"); s.className = "cmp-slot";
+      var im = document.createElement("img");
+      im.src = c.querySelector(".pthumb img").getAttribute("src");
+      s.appendChild(im); slots.appendChild(s);
+    });
+    for (var i = picked.length; i < 3; i++) {
+      var e = document.createElement("div"); e.className = "cmp-slot"; slots.appendChild(e);
+    }
+    label.textContent = num(picked.length + "/3");
+    go.textContent = T("Compare", "مقایسه");
+    go.disabled = picked.length < 2;
+    clear.textContent = T("Clear", "پاک کردن");
+    tray.classList.toggle("on", picked.length > 0);
+  }
+
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest("[data-cmp]");
+    if (!btn) return;
+    var card = btn.closest(".pcard");
+    var i = picked.indexOf(card);
+    if (i > -1) { picked.splice(i, 1); btn.classList.remove("on"); }
+    else {
+      if (picked.length >= 3) return;
+      picked.push(card); btn.classList.add("on");
+    }
+    syncTray();
+  });
+
+  clear.addEventListener("click", function () {
+    picked.forEach(function (c) { var b = c.querySelector("[data-cmp]"); if (b) b.classList.remove("on"); });
+    picked = []; syncTray();
+  });
+
+  /* comparison sheet */
+  var ov = document.createElement("div");
+  ov.className = "cmp-ov";
+  document.body.appendChild(ov);
+
+  function row(labelEn, labelFa, values) {
+    return '<div class="cmp-rowh">' + T(labelEn, labelFa) + "</div>" + values.map(function (v) {
+      return "<div>" + v + "</div>";
+    }).join("");
+  }
+
+  go.addEventListener("click", function () {
+    var cols = picked.length;
+    var table = document.createElement("div");
+    table.className = "cmp-table";
+    table.style.setProperty("--cols", cols);
+
+    var heads = picked.map(function (c) {
+      var img = c.querySelector(".pthumb img");
+      return '<div><img class="cmp-thumb" src="' + img.getAttribute("src") + '" alt="">' +
+             '<div class="cmp-name" style="margin-top:8px">' + c.querySelector(".pname").textContent + "</div></div>";
+    }).join("");
+    table.innerHTML = '<div class="cmp-rowh">' + T("Model", "مدل") + "</div>" + heads;
+    table.innerHTML += row("Brand", "برند", picked.map(function (c) { return c.querySelector(".pbrand").textContent; }));
+    table.innerHTML += row("Category", "دسته", picked.map(function (c) {
+      return (CAT[c.getAttribute("data-cat")] || "Hardware");
+    }));
+    table.innerHTML += row("Price", "قیمت", picked.map(function (c) {
+      return "<b>" + c.querySelector(".pprice b").textContent + "</b>";
+    }));
+    table.innerHTML += row("Rating", "امتیاز", picked.map(function (c) {
+      return c.querySelector(".prate").textContent.trim();
+    }));
+    table.innerHTML += row("Shipping", "ارسال", picked.map(function (c) {
+      return c.querySelector(".pship") ? c.querySelector(".pship").textContent : "—";
+    }));
+
+    ov.innerHTML = '<div class="cmp-box" role="dialog" aria-modal="true">' +
+      '<div class="cmp-head"><h3>' + T("Compare parts", "مقایسهٔ قطعات") + '</h3>' +
+      '<button class="cmp-x" aria-label="Close">&times;</button></div>' + table.outerHTML + "</div>";
+    ov.classList.add("on");
+  });
+
+  ov.addEventListener("click", function (e) {
+    if (e.target === ov || e.target.classList.contains("cmp-x")) ov.classList.remove("on");
+  });
+  addEventListener("keydown", function (e) { if (e.key === "Escape") ov.classList.remove("on"); });
+
+  /* keep labels bilingual when the store language flips */
+  var lastLang = isFa();
+  new MutationObserver(function () {
+    if (isFa() === lastLang) return;
+    lastLang = isFa();
+    /* category stamps are rebuilt by the observer above */
+    document.querySelectorAll("[data-cmp] span").forEach(function (s) {
+      s.textContent = T("Compare", "مقایسه");
+    });
+    document.querySelectorAll(".pstock-txt").forEach(function (st) {
+      var n = st.querySelector(".left-n"), l = st.querySelector(".deal-lbl");
+      if (n) { var v = n.getAttribute("data-left"); n.textContent = T(v + " left at this price", v + " عدد مانده"); }
+      if (l) l.textContent = T("Deal stock", "تخفیف");
+    });
+    syncTray();
+  }).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+
+  syncTray();
+})();
+</script>
+<script>
+/* ---------- per-card deal timer + working compare ---------- */
+(function () {
+  var fa = function () { return document.documentElement.lang === "fa"; };
+  var PERSIAN = ["۰","۱","۲","۳","۴","۵","۶","۷","۸","۹"];
+  function digits(s) {
+    return fa() ? s.replace(/\d/g, function (d) { return PERSIAN[+d]; }) : s;
+  }
+
+  /* ---- compare ---- */
+  var picked = [];
+  var bar = document.createElement("div");
+  bar.className = "cmpbar";
+  bar.innerHTML = '<span class="cnt">0</span><div class="thumbs"></div><button class="go" type="button">Compare</button><button class="clr" type="button">Clear</button>';
+  document.body.appendChild(bar);
+
+  var modal = document.createElement("div");
+  modal.className = "cmpmodal";
+  modal.innerHTML = '<div class="panel"><button class="x" type="button" aria-label="Close">&times;</button><h3>Compare</h3><div class="cmpbody"></div></div>';
+  document.body.appendChild(modal);
+
+  function data(card) {
+    var g = function (sel) { var n = card.querySelector(sel); return n ? n.textContent.trim() : "—"; };
+    var img = card.querySelector(".pthumb img");
+    return {
+      name: g(".pname"), brand: g(".pbrand"), price: g(".pprice b"),
+      rate: g(".prate"), ship: g(".pship"), cat: card.dataset.cat || "—",
+      img: img ? img.getAttribute("src") : ""
+    };
+  }
+
+  function render() {
+    bar.querySelector(".cnt").textContent = picked.length + "/3";
+    bar.querySelector(".thumbs").innerHTML = picked.map(function (c) {
+      var im = c.querySelector(".pthumb img");
+      return im ? '<img src="' + im.getAttribute("src") + '" alt="">' : "";
+    }).join("");
+    bar.classList.toggle("show", picked.length > 0);
+  }
+
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest(".cmp");
+    if (btn) {
+      var card = btn.closest(".pcard");
+      var at = picked.indexOf(card);
+      if (at > -1) { picked.splice(at, 1); btn.classList.remove("on"); card.classList.remove("cmp-on"); }
+      else if (picked.length < 3) { picked.push(card); btn.classList.add("on"); card.classList.add("cmp-on"); }
+      render();
+      return;
+    }
+    if (e.target.closest(".cmpbar .clr")) {
+      picked.forEach(function (c) {
+        c.classList.remove("cmp-on");
+        var b = c.querySelector(".cmp"); if (b) b.classList.remove("on");
+      });
+      picked = []; render(); return;
+    }
+    if (e.target.closest(".cmpbar .go")) {
+      if (!picked.length) return;
+      var rows = [
+        ["Product", function (d) { return '<img src="' + d.img + '" alt="">'; }],
+        ["Brand", function (d) { return d.brand; }],
+        ["Category", function (d) { return d.cat.toUpperCase(); }],
+        ["Price", function (d) { return "<b>" + d.price + "</b>"; }],
+        ["Rating", function (d) { return d.rate; }],
+        ["Shipping", function (d) { return d.ship; }]
+      ];
+      var html = '<table class="cmptable"><tbody>';
+      rows.forEach(function (r) {
+        html += "<tr><th>" + r[0] + "</th>";
+        picked.forEach(function (c) { html += "<td>" + r[1](data(c)) + "</td>"; });
+        html += "</tr>";
+      });
+      html += "</tbody></table>";
+      modal.querySelector(".cmpbody").innerHTML = html;
+      modal.classList.add("on");
+      return;
+    }
+    if (e.target.closest(".cmpmodal .x") || e.target.classList.contains("cmpmodal")) {
+      modal.classList.remove("on");
+    }
+  }, true);
+})();
+</script>
+<script>
+/* the assistant button text follows the page language */
+(function () {
+  function sync() {
+    var fa = document.documentElement.lang === "fa";
+    var l1 = document.querySelector(".fab-l1"), l3 = document.querySelector(".fab-l3");
+    if (l1) l1.textContent = fa ? "دستیار هوشمند" : "Smart assistant";
+    if (l3) l3.textContent = fa ? "سوال داری؟ من اینجام" : "Ask me anything";
+    var fab = document.querySelector(".ai-fab");
+    if (fab) fab.setAttribute("aria-label", fa ? "باز کردن دستیار نکسوس" : "Open the NEXUS assistant");
+  }
+  new MutationObserver(sync).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+  setTimeout(sync, 400);
+})();
+</script>
+<script>
+/* ---------- live combo builder ---------- */
+(function () {
+  var wrap = document.getElementById("builder");
+  if (!wrap) return;
+  var steps = [].slice.call(wrap.querySelectorAll(".bld-step"));
+  var totalEl = document.getElementById("bldTotal");
+  var wasEl = document.getElementById("bldWas");
+  var saveEl = document.getElementById("bldSave");
+  var hint = document.getElementById("bldHint");
+  var fa = function () { return document.documentElement.lang === "fa"; };
+  var money = function (n) {
+    if (!fa()) return "$" + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    var t = Math.round(n * 160000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return t.replace(/\d/g, function (d) { return "۰۱۲۳۴۵۶۷۸۹"[+d]; }) + " تومان";
+  };
+
+  function recalc() {
+    var picked = steps.filter(function (s) { return s.classList.contains("picked"); });
+    var sum = picked.reduce(function (a, s) { return a + parseFloat(s.dataset.p); }, 0);
+    var rate = picked.length >= 3 ? 0.10 : (picked.length === 2 ? 0.05 : 0);
+    var now = sum * (1 - rate);
+    totalEl.textContent = money(now);
+    wasEl.textContent = money(sum);
+    saveEl.textContent = money(sum - now);
+    var n = fa() ? String(picked.length).replace(/\d/g, function (d) { return "۰۱۲۳۴۵۶۷۸۹"[+d]; }) : picked.length;
+    var kick = document.getElementById("bldKick");
+    if (kick) kick.textContent = fa() ? "مجموع زنده" : "LIVE TOTAL";
+    var addBtn = document.getElementById("bldAdd");
+    if (addBtn) addBtn.textContent = fa() ? "افزودن پکیج به سبد" : "Add the bundle";
+    var note = document.getElementById("bldNote");
+    if (note) note.textContent = fa()
+      ? "۱۰٪ تخفیف خودکار از سه قطعه · مونتاژ و تست رایگان"
+      : "10% off from three parts · free assembly and burn-in";
+    var lbl = document.getElementById("bldSaveLbl");
+    if (lbl) lbl.textContent = fa() ? "صرفه‌جویی" : "You save";
+    hint.textContent = (fa() ? n + " قطعه انتخاب شده" : n + " parts selected") +
+                       (rate ? " · " + (fa() ? String(rate * 100).replace(/\d/g, function (d) { return "۰۱۲۳۴۵۶۷۸۹"[+d]; }) + "٪ تخفیف" : (rate * 100) + "% off") : "");
+  }
+
+  steps.forEach(function (s) {
+    var tick = s.querySelector(".bld-tick");
+    if (tick.classList.contains("on")) s.classList.add("picked");
+    var flip = function (e) {
+      if (e) e.preventDefault();
+      var on = !s.classList.contains("picked");
+      s.classList.toggle("picked", on);
+      tick.classList.toggle("on", on);
+      tick.setAttribute("aria-pressed", on ? "true" : "false");
+      recalc();
+      saveEl.classList.remove("save-pop");
+      void saveEl.offsetWidth;
+      saveEl.classList.add("save-pop");
+    };
+    tick.addEventListener("click", flip);
+    s.addEventListener("click", function (e) { if (!e.target.closest(".bld-tick")) flip(e); });
+  });
+
+  recalc();
+  new MutationObserver(recalc).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+})();
+</script>
+
+
+
+
+<script>
+/* "All articles" opens a list that ships inside index.html, so it works even when
+   the page is opened on its own. If magazine.html is reachable we still go there. */
+(function () {
+  var panel = document.getElementById("allArts");
+  if (!panel) return;
+  var isFa = function () { return document.documentElement.lang === "fa"; };
+  var $ = function (s) { return panel.querySelector(s); };
+
+  function paint() {
+    var fa = isFa();
+    panel.querySelectorAll("[data-en]").forEach(function (el) {
+      el.textContent = fa ? el.dataset.fa : el.dataset.en;
+    });
+    $(".aa-close").setAttribute("aria-label", fa ? "بستن" : "Close");
+  }
+  function open(fallback) {
+    paint();
+    panel.hidden = false;
+    panel.classList.toggle("is-fallback", !!fallback);
+    document.documentElement.classList.add("aa-open");
+    var y = panel.getBoundingClientRect().top + window.scrollY - 12;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }
+  function close() {
+    panel.hidden = true;
+    document.documentElement.classList.remove("aa-open");
+  }
+  window.__openAllArticles = open;
+  window.__paintAllArticles = paint;
+
+  $(".aa-close").addEventListener("click", close);
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !panel.hidden) close();
+  });
+
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest(".mag-all");
+    if (!a) return;
+    var href = a.getAttribute("href") || "magazine.html";
+    e.preventDefault();
+    if (location.protocol === "file:") { open(false); return; }  /* fetch is blocked on file:// */
+    fetch(href, { method: "HEAD" }).then(function (r) {
+      if (r && r.ok) location.href = href; else open(true);
+    }).catch(function () { open(true); });
+  });
+
+  if (location.hash === "#all-articles") open(false);
+})();
+</script>
+
+</body>
+</html>

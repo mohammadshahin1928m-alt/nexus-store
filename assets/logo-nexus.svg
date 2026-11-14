@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="NEXUS">
+  <defs>
+    <linearGradient id="nx" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3d9bff"/>
+      <stop offset="0.55" stop-color="#0b63ce"/>
+      <stop offset="1" stop-color="#083f86"/>
+    </linearGradient>
+    <linearGradient id="nxLight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".55"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity=".06"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <path d="M24 3.2 42.4 13.6v20.8L24 44.8 5.6 34.4V13.6z" fill="url(#nx)"/>
+  <path d="M24 3.2 42.4 13.6v20.8L24 44.8 5.6 34.4V13.6z" fill="url(#nxLight)"/>
+
+  <path d="M17 33.5V15l14 18V15"
+        fill="none" stroke="#fff" stroke-width="4.4"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <circle cx="34.5" cy="12.4" r="3.1" fill="#b9dcff"/>
+</svg>

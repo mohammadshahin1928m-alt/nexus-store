@@ -1,0 +1,754 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NEXUS MAG — the hardware magazine</title>
+<meta name="description" content="NEXUS MAG: hardware deep dives, thermals, memory timing and build guides from the people who assemble the machines.">
+<link rel="icon" href="assets/logo-nexus.svg">
+<link rel="stylesheet" href="assets/fonts.css?v=1">
+<link rel="preload" as="image" href="assets/gpu-cut.webp">
+<style>
+:root{
+  --brand:#0b63ce; --brand-d:#0a52ab; --brand-soft:#e7f0fd;
+  --navy:#0a1a2e; --ink:#0d1b2a; --muted:#5b6b80;
+  --bg:#e9eef7; --card:#ffffff; --line:#d7e0ee;
+  --radius:18px;
+  --font:"Inter","Estedad","B Yekan",system-ui,sans-serif;
+}
+html[data-mode="dark"]{
+  --ink:#e8eefb; --muted:#9aabc4; --bg:#080f1c; --card:#0e1a2b;
+  --line:#1d2c42; --brand-soft:#12243c; --brand:#4d9cf7;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink); font-family:var(--font);
+  -webkit-font-smoothing:antialiased; line-height:1.6;
+  background-image:radial-gradient(circle at 12% -10%, rgba(11,99,206,.10), transparent 45%),
+                   radial-gradient(circle at 92% 0%, rgba(120,80,255,.08), transparent 40%);
+  background-attachment:fixed;
+}
+html[lang="fa"] body{font-family:"Estedad","B Yekan","Vazirmatn",Tahoma,sans-serif;font-size:106%}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+
+/* ---------- header ---------- */
+.mhead{
+  position:sticky; top:0; z-index:50;
+  backdrop-filter:blur(18px) saturate(1.4); -webkit-backdrop-filter:blur(18px) saturate(1.4);
+  background:color-mix(in srgb, var(--card) 78%, transparent);
+  border-bottom:1px solid var(--line);
+}
+html[data-mode="dark"] .mhead{ background:rgba(8,15,28,.78); }
+.mhead .wrap{ display:flex; align-items:center; gap:22px; height:68px; }
+.brand{ display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.14em; font-size:14px; }
+
+.logo{ display:flex; align-items:center; gap:8px; flex-shrink:0; }
+.logo-mark{ width:38px; height:38px; display:grid; place-items:center; }
+.logo-mark svg{ width:38px; height:38px; display:block; }
+.logo-word{ font-size:20px; font-weight:800; letter-spacing:.06em; color:var(--ink); }
+.logo-word span{ color:var(--brand); }
+
+.nav{ display:flex; gap:22px; margin-inline-start:14px; font-size:14px; font-weight:600; }
+.nav a{ color:var(--muted); padding:6px 0; position:relative; }
+.nav a:hover{ color:var(--ink); }
+.nav a.on{ color:var(--ink); }
+.nav a.on::after{ content:""; position:absolute; inset-inline:0; bottom:-2px; height:2px; background:var(--brand); border-radius:2px; }
+.tools{ margin-inline-start:auto; display:flex; align-items:center; gap:8px; }
+.tbtn{
+  display:inline-flex; align-items:center; gap:6px; height:36px; padding:0 12px;
+  border:1px solid var(--line); border-radius:10px; background:var(--card);
+  color:var(--ink); font:inherit; font-size:13px; font-weight:600; cursor:pointer;
+  transition:.18s border-color,.18s transform;
+}
+.tbtn:hover{ border-color:var(--brand); transform:translateY(-1px); }
+.tbtn svg{ width:15px; height:15px; }
+.tbtn.primary{ background:var(--brand); border-color:var(--brand); color:#fff; }
+
+/* ---------- masthead ---------- */
+.mast{ padding:64px 0 12px; }
+.mast .row{ display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; }
+.kicker{ display:inline-flex; align-items:center; gap:10px; font-size:12px; font-weight:700; letter-spacing:.22em; color:var(--brand); }
+.kicker::before{ content:""; width:26px; height:2px; background:var(--brand); }
+.mast h1{
+  margin:14px 0 0; font-size:clamp(38px,6vw,74px); line-height:1.02; letter-spacing:-.03em; font-weight:800;
+}
+.mast h1 em{ font-style:normal; color:var(--brand); }
+.mast p{ margin:14px 0 0; max-width:56ch; color:var(--muted); font-size:16px; }
+.issue{ display:flex; gap:26px; flex-wrap:wrap; }
+.issue div{ display:flex; flex-direction:column; align-items:center; text-align:center; }
+.issue b{ font-size:24px; letter-spacing:-.02em; }
+.issue span{ font-size:11px; letter-spacing:.14em; color:var(--muted); font-weight:700; }
+.rule{ height:1px; background:var(--line); margin:26px 0 0; }
+
+/* ---------- cover story ---------- */
+.cover{
+  position:relative; margin:26px 0 0; border-radius:24px; overflow:hidden;
+  min-height:clamp(380px,52vw,540px); display:flex; align-items:flex-end;
+  box-shadow:0 40px 80px -50px rgba(8,20,40,.75);
+  isolation:isolate;
+}
+.cover img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-2; transition:transform 1.2s cubic-bezier(.2,.7,.3,1); }
+.cover:hover img{ transform:scale(1.04); }
+.cover::after{
+  content:""; position:absolute; inset:0; z-index:-1;
+  background:linear-gradient(180deg, rgba(6,14,26,.15) 0%, rgba(6,14,26,.55) 45%, rgba(6,14,26,.92) 100%);
+}
+.cover-body{ padding:clamp(22px,4vw,46px); color:#fff; max-width:760px; }
+.cover-body h2{ margin:12px 0 0; font-size:clamp(26px,3.6vw,46px); line-height:1.1; letter-spacing:-.025em; }
+.cover-body p{ margin:12px 0 0; color:#c8d6ea; font-size:15px; max-width:52ch; }
+.cat{
+  display:inline-flex; align-items:center; gap:7px; padding:5px 11px; border-radius:999px;
+  font-size:11px; font-weight:800; letter-spacing:.14em; text-transform:uppercase;
+  background:rgba(255,255,255,.14); color:#fff; border:1px solid rgba(255,255,255,.24);
+  backdrop-filter:blur(6px);
+}
+.cat i{ width:6px; height:6px; border-radius:50%; background:currentColor; }
+.meta{ display:flex; align-items:center; gap:12px; margin-top:16px; font-size:12.5px; color:#9fb2cc; }
+.meta .dot{ width:3px; height:3px; border-radius:50%; background:#7f93ae; }
+.avatar{ width:30px; height:30px; border-radius:50%; background:linear-gradient(135deg,#2b7bff,#8a5bff); display:grid; place-items:center; font-size:12px; font-weight:800; color:#fff; }
+.read{ margin-inline-start:auto; display:inline-flex; align-items:center; gap:8px; font-weight:700; color:#fff; }
+.read svg{ width:16px; height:16px; transition:transform .2s; }
+.cover:hover .read svg{ transform:translateX(4px); }
+html[dir="rtl"] .cover:hover .read svg{ transform:translateX(-4px) scaleX(-1); }
+html[dir="rtl"] .read svg{ transform:scaleX(-1); }
+
+
+/* ---------- ticker ---------- */
+.ticker{
+  overflow:hidden; border-bottom:1px solid var(--line);
+  background:linear-gradient(90deg,#0b3f8f,#0b63ce 60%,#5a3bd6);
+  color:#dce9ff; font-size:12px; letter-spacing:.06em;
+}
+.ticker-track{
+  display:flex; width:max-content; animation:slide 42s linear infinite;
+  padding:7px 0; white-space:nowrap;
+}
+.ticker-track span{ padding-inline-end:34px; }
+.ticker-track b{ color:#fff; margin-inline-end:10px; letter-spacing:.2em; }
+.ticker-track i{ opacity:.5; margin:0 8px; font-style:normal; }
+@keyframes slide{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
+@keyframes slideR{ from{transform:translateX(0)} to{transform:translateX(50%)} }
+html[dir="rtl"] .ticker-track{ animation-name:slideR; }
+.ticker:hover .ticker-track{ animation-play-state:paused; }
+
+/* ---------- wire / news ---------- */
+.wire-head{ display:flex; align-items:baseline; gap:14px; margin:44px 0 16px; }
+.wire-head h2{ margin:0; font-size:clamp(22px,2.4vw,30px); letter-spacing:-.025em; }
+.wire-head span{ color:var(--muted); font-size:13px; }
+.wire-head--gap{ margin-top:46px; }
+.wire{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; }
+.wire-card{
+  display:flex; flex-direction:column; background:var(--card); border:1px solid var(--line);
+  border-radius:var(--radius); overflow:hidden; transition:.25s transform,.25s box-shadow,.25s border-color;
+}
+.wire-card:hover{ transform:translateY(-6px); box-shadow:0 26px 50px -34px rgba(9,22,44,.6); border-color:color-mix(in srgb,var(--brand) 40%,var(--line)); }
+.wire-img{ position:relative; aspect-ratio:16/9; overflow:hidden; background:#0b1220; }
+.wire-img img{ width:100%; height:100%; object-fit:cover; transition:transform .9s cubic-bezier(.2,.7,.3,1); }
+.wire-card:hover .wire-img img{ transform:scale(1.06); }
+.wire-img .tag{
+  position:absolute; top:12px; inset-inline-start:12px; padding:4px 9px; border-radius:6px;
+  background:rgba(8,16,30,.72); color:#fff; font-size:10px; font-weight:800; letter-spacing:.16em;
+}
+.wire-body{ padding:18px 18px 20px; display:flex; flex-direction:column; gap:9px; flex:1; }
+.src{ display:flex; align-items:center; gap:8px; font-size:10.5px; font-weight:800; letter-spacing:.14em; color:var(--muted); }
+.src i{ width:7px; height:7px; border-radius:50%; background:#22c55e; box-shadow:0 0 0 3px rgba(34,197,94,.18); }
+.src .dot{ width:3px; height:3px; border-radius:50%; background:var(--muted); }
+.wire-body h3{ margin:0; font-size:17.5px; line-height:1.32; letter-spacing:-.015em; }
+.wire-card:hover h3{ color:var(--brand); }
+.wire-body p{ margin:0; color:var(--muted); font-size:13.5px; }
+.more{ margin-top:auto; padding-top:8px; font-size:12.5px; font-weight:800; color:var(--brand); }
+.wire-note{ margin:14px 0 0; font-size:12px; color:var(--muted); }
+
+@media (max-width:1000px){ .wire{ grid-template-columns:1fr; } }
+
+/* ---------- filters ---------- */
+.filters{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin:40px 0 22px; }
+.chip{
+  border:1px solid var(--line); background:var(--card); color:var(--muted);
+  padding:8px 15px; border-radius:999px; font:inherit; font-size:13px; font-weight:700; cursor:pointer;
+  transition:.18s all;
+}
+.chip:hover{ color:var(--ink); border-color:var(--brand); }
+.chip.on{ background:var(--brand); border-color:var(--brand); color:#fff; }
+.filters .count{ margin-inline-start:auto; font-size:12.5px; color:var(--muted); }
+
+
+/* language pill with flag */
+.flag{
+  width:17px; height:12px; border-radius:2.5px; flex:0 0 auto;
+  box-shadow:0 0 0 1px rgba(9,20,40,.18), 0 1px 2px rgba(9,20,40,.18);
+  background-size:100% 100%; background-repeat:no-repeat;
+}
+.flag-ir{ background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 20'><rect width='30' height='6.67' fill='%23239f40'/><rect y='6.67' width='30' height='6.67' fill='%23fff'/><rect y='13.33' width='30' height='6.67' fill='%23da0000'/><circle cx='15' cy='10' r='2.1' fill='none' stroke='%23da0000' stroke-width='.9'/></svg>"); }
+.flag-gb{ background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'><rect width='60' height='30' fill='%23012169'/><path d='M0 0l60 30M60 0L0 30' stroke='%23fff' stroke-width='6'/><path d='M0 0l60 30M60 0L0 30' stroke='%23C8102E' stroke-width='2.6'/><path d='M30 0v30M0 15h60' stroke='%23fff' stroke-width='10'/><path d='M30 0v30M0 15h60' stroke='%23C8102E' stroke-width='6'/></svg>"); }
+.tbtn{
+  display:inline-flex; align-items:center; gap:7px; height:38px; padding:0 12px 0 9px;
+  border-radius:999px; transition:border-color .2s, box-shadow .2s, transform .2s;
+}
+.tbtn:hover{ border-color:var(--brand); box-shadow:0 6px 18px -12px rgba(11,99,206,.8); transform:translateY(-1px); }
+.tbtn svg{ width:15px; height:15px; }
+
+/* ---------- article grid ---------- */
+.grid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; }
+.post{
+  background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  overflow:hidden; display:flex; flex-direction:column;
+  transition:transform .25s cubic-bezier(.2,.7,.3,1), box-shadow .25s, border-color .25s;
+}
+.post:hover{ transform:translateY(-6px); border-color:color-mix(in srgb,var(--brand) 40%, var(--line)); box-shadow:0 26px 50px -34px rgba(9,22,44,.6); }
+.post-img{ position:relative; aspect-ratio:16/10; overflow:hidden; background:#0b1220; }
+.post-img img{ width:100%; height:100%; object-fit:cover; transition:transform .9s cubic-bezier(.2,.7,.3,1); }
+.post:hover .post-img img{ transform:scale(1.06); }
+.post-img .cat{ position:absolute; top:12px; inset-inline-start:12px; background:rgba(8,16,30,.6); }
+.post-body{ padding:20px 20px 22px; display:flex; flex-direction:column; gap:10px; flex:1; }
+.post-body h3{ margin:0; font-size:19px; line-height:1.28; letter-spacing:-.015em; }
+.post:hover h3{ color:var(--brand); }
+.post-body p{ margin:0; color:var(--muted); font-size:14px; }
+.post-body .meta{ margin-top:auto; color:var(--muted); font-size:12px; padding-top:6px; }
+.post-body .meta .avatar{ width:24px; height:24px; font-size:10px; }
+
+
+
+/* last card fills the row so the grid never shows a hole */
+.wire-card--wide{ grid-column:1/-1; flex-direction:row; align-items:stretch; }
+.wire-card--wide .wire-img{ width:46%; aspect-ratio:auto; min-height:220px; flex-shrink:0; }
+.wire-card--wide .wire-body{ padding:26px 28px; }
+.wire-card--wide h3{ font-size:22px; }
+@media (max-width:820px){
+  .wire-card--wide{ flex-direction:column; }
+  .wire-card--wide .wire-img{ width:100%; aspect-ratio:16/9; min-height:0; }
+  .wire-card--wide .wire-body{ padding:18px; }
+}
+
+/* ---------- in brief ---------- */
+.briefs{
+  margin:26px 0 0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1px;
+  background:var(--line); border:1px solid var(--line); border-radius:16px; overflow:hidden;
+}
+.briefs-h{
+  grid-column:1/-1; padding:12px 18px; background:var(--card); font-size:11px; font-weight:800;
+  letter-spacing:.18em; color:var(--muted); text-transform:uppercase;
+}
+.briefs a{
+  background:var(--card); padding:16px 18px; display:flex; flex-direction:column; gap:6px;
+  transition:background .18s;
+}
+.briefs a:hover{ background:color-mix(in srgb,var(--brand) 7%,var(--card)); }
+.briefs b{ font-size:14px; line-height:1.35; letter-spacing:-.01em; }
+.briefs a:hover b{ color:var(--brand); }
+.briefs a span{ font-size:11px; color:var(--muted); font-weight:700; letter-spacing:.1em; }
+@media (max-width:980px){ .briefs{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:620px){ .briefs{ grid-template-columns:1fr; } }
+
+
+/* ---------- three numbers band ---------- */
+.signal{
+  margin:34px 0 0; padding:26px 26px 22px; border-radius:20px;
+  background:
+    radial-gradient(120% 140% at 0% 0%, rgba(255,255,255,.16), transparent 55%),
+    linear-gradient(120deg,#0b2f6b 0%,#0b63ce 45%,#5a3bd6 100%);
+  color:#eaf2ff; position:relative; overflow:hidden;
+}
+.signal::after{
+  content:""; position:absolute; inset:-40% -10% auto auto; width:420px; height:420px;
+  background:radial-gradient(circle,rgba(255,255,255,.22),transparent 60%);
+  animation:signalGlow 9s ease-in-out infinite alternate;
+}
+@keyframes signalGlow{ to{ transform:translate(-40px,30px) scale(1.15) } }
+.signal-head .kicker{ color:#bcd9ff; }
+.signal-head .kicker::before{ background:#bcd9ff; }
+.signal-head h3{ margin:8px 0 18px; font-size:clamp(20px,2.4vw,28px); letter-spacing:-.02em; }
+.signal-grid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; position:relative; z-index:1; }
+.signal-grid a{
+  display:block; padding:16px 18px; border-radius:14px;
+  background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18);
+  transition:transform .25s cubic-bezier(.16,1,.3,1), background .25s;
+}
+.signal-grid a:hover{ transform:translateY(-3px); background:rgba(255,255,255,.18); }
+.signal-grid b{ display:block; font-size:clamp(26px,3.4vw,40px); letter-spacing:-.03em; line-height:1; }
+.signal-grid span{ display:block; margin-top:8px; font-size:12.5px; color:#cfe1ff; }
+@media (max-width:760px){ .signal-grid{ grid-template-columns:1fr; } }
+
+/* ---------- newsletter ---------- */
+.news{
+  margin:52px 0 0; border-radius:24px; padding:clamp(26px,4vw,44px);
+  background:linear-gradient(120deg,#0b3f8f,#0b63ce 55%,#6b3dff);
+  color:#fff; display:flex; align-items:center; gap:32px; flex-wrap:wrap;
+  box-shadow:0 40px 80px -50px rgba(11,99,206,.8); position:relative; overflow:hidden;
+}
+.news::before{
+  content:""; position:absolute; inset:-40% -10% auto auto; width:520px; height:520px;
+  background:radial-gradient(circle, rgba(255,255,255,.22), transparent 62%); pointer-events:none;
+}
+.news h3{ margin:0; font-size:clamp(22px,2.6vw,32px); letter-spacing:-.02em; }
+.news p{ margin:8px 0 0; color:#d6e4ff; font-size:14px; max-width:46ch; }
+.news form{ margin-inline-start:auto; display:flex; gap:10px; flex-wrap:wrap; }
+.news input{
+  height:46px; min-width:250px; padding:0 16px; border-radius:12px; border:1px solid rgba(255,255,255,.35);
+  background:rgba(255,255,255,.14); color:#fff; font:inherit; font-size:14px;
+}
+.news input::placeholder{ color:#cfdfff; }
+.news button{
+  height:46px; padding:0 20px; border-radius:12px; border:0; background:#fff; color:#0b3f8f;
+  font:inherit; font-weight:800; font-size:14px; cursor:pointer; transition:.18s transform;
+}
+.news button:hover{ transform:translateY(-2px); }
+
+/* ---------- footer ---------- */
+.foot{ padding:56px 0 40px; margin-top:56px; border-top:1px solid var(--line); color:var(--muted); font-size:13px; }
+.foot .wrap{ display:flex; gap:18px; align-items:center; flex-wrap:wrap; justify-content:space-between; }
+.foot a:hover{ color:var(--brand); }
+.foot .links{ display:flex; gap:18px; }
+
+/* ---------- responsive ---------- */
+@media (max-width:1000px){
+  .grid{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (max-width:720px){
+  .wrap{ padding:0 18px; }
+  .mhead .wrap{ height:60px; }
+  .nav{ display:none; }
+  .grid{ grid-template-columns:1fr; }
+  .mast{ padding:38px 0 8px; }
+  .read{ margin-inline-start:0; }
+  .news form{ margin-inline-start:0; width:100%; }
+  .news input{ flex:1; min-width:0; }
+  .meta{ flex-wrap:wrap; }
+  .filters .count{ width:100%; margin-inline-start:0; order:9; }
+}
+/* very small phones (320–380px): keep the mast head inside the viewport */
+@media (max-width:380px){
+  .wrap{ padding:0 12px; }
+  .mhead .wrap{ gap:10px; }
+  .logo{ gap:6px; }
+  .logo-mark{ width:32px; height:32px; }
+  .logo-mark svg{ width:32px; height:32px; }
+  .logo-word{ font-size:17px; letter-spacing:-.03em; }
+  .tools{ gap:5px; }
+  .tbtn{ font-size:12px; padding:0 10px 0 8px; height:34px; }
+  .tbtn.primary{ padding:0 10px; }
+  .tbtn.theme-sw{ width:auto; padding:0; }
+  .tsw{ width:54px; height:30px; }
+  .tsw .tsw-sun, .tsw .tsw-moon{ width:24px; height:24px; top:3px; }
+  .tsw .tsw-moon{ left:27px; }
+  .tsw-knob{ width:24px; height:24px; }
+  html[data-mode="dark"] .tsw-knob{ transform:translateX(21px); }
+  .mast h1{ font-size:30px; }
+}
+
+/* ---------- icon-only day / night switch ---------- */
+.tbtn.theme-sw{ background:transparent; border:0; padding:0; width:auto; }
+.tsw{
+  position:relative; width:62px; height:33px; border-radius:999px;
+  display:flex; align-items:center; justify-content:space-between; padding:0 9px;
+  background:linear-gradient(135deg,#e8effb,#d9e4f5);
+  border:1px solid var(--line); box-shadow:inset 0 1px 2px rgba(9,26,54,.12);
+  transition:background .35s, border-color .35s;
+}
+.tsw svg{ color:#8b9cb8; transition:color .3s,opacity .3s; z-index:2; }
+.tsw .tsw-sun{ color:#8a5a00; }
+.tsw-moon{ opacity:.55; }
+.tsw-knob{
+  position:absolute; top:3px; left:3px; width:27px; height:27px; border-radius:50%;
+  background:radial-gradient(circle at 34% 28%, #fff6cf, #ffd35c 52%, #eda32f);
+  box-shadow:0 2px 8px rgba(214,140,15,.55), inset 0 0 0 1px rgba(255,255,255,.55);
+  transition:transform .35s cubic-bezier(.34,1.56,.64,1), background .4s, box-shadow .4s;
+}
+html[data-mode="dark"] .tsw{ background:linear-gradient(135deg,#122238,#0a1523); border-color:rgba(120,180,255,.22); }
+html[data-mode="dark"] .tsw-knob{
+  transform:translateX(29px);
+  background:radial-gradient(circle at 34% 28%, #24384f, #0a1020 58%, #03060b);
+  box-shadow:0 4px 14px rgba(0,0,0,.9), 0 0 0 1.5px rgba(160,210,255,.45), inset 0 0 12px rgba(60,140,255,.22);
+}
+html[data-mode="dark"] .tsw-sun{ opacity:.4; }
+html[data-mode="dark"] .tsw-moon{ opacity:1; color:#9fc6ff; }
+.theme-sw:hover .tsw{ border-color:var(--brand); }
+
+
+/* icons are placed exactly under the knob centres */
+.tsw{ padding:0 !important; }
+.tsw .tsw-sun, .tsw .tsw-moon{
+  position:absolute; top:3px; width:27px; height:27px; display:grid; place-items:center;
+  pointer-events:none;
+}
+.tsw .tsw-sun{ left:3px; }
+.tsw .tsw-moon{ left:32px; }   /* 3 + 29 travel */
+
+</style>
+</head>
+<body>
+<header class="mhead">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="NEXUS home">
+      <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 48 48"><defs><linearGradient id="nxg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3d9bff"/><stop offset=".55" stop-color="#0b63ce"/><stop offset="1" stop-color="#083f86"/></linearGradient></defs><path d="M24 3.2 42.4 13.6v20.8L24 44.8 5.6 34.4V13.6z" fill="url(#nxg)"/><path d="M17 33.5V15l14 18V15" fill="none" stroke="#fff" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="34.5" cy="12.4" r="3.1" fill="#badcff"/></svg></span>
+      <span class="logo-word">NE<span>XUS</span></span>
+    </a>
+    <nav class="nav">
+      <a href="index.html" data-fa="فروشگاه">Store</a>
+      <a href="magazine.html" class="on" data-fa="مجله">Magazine</a>
+      <a href="index.html#support" data-fa="پشتیبانی">Support</a>
+    </nav>
+    <div class="tools">
+      <button class="tbtn" id="langBtn" type="button" aria-label="Switch language">
+        <span class="flag flag-ir" id="langFlag"></span>
+        <b id="langLbl">EN</b>
+      </button>
+      <button class="tbtn theme-sw" id="modeBtn" type="button" aria-label="Switch to dark mode"><span class="tsw" aria-hidden="true">
+  <svg class="tsw-sun" viewBox="0 0 24 24" width="15" height="15"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><g stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4L17 7M7 17l-1.6 1.6"/></g></svg>
+  <svg class="tsw-moon" viewBox="0 0 24 24" width="15" height="15"><path d="M20.5 14.2A8.6 8.6 0 0 1 9.8 3.5 8.6 8.6 0 1 0 20.5 14.2z" fill="currentColor"/></svg>
+  <span class="tsw-knob"></span>
+</span></button>
+      <a class="tbtn primary" href="index.html" data-fa="فروشگاه">Shop</a>
+    </div>
+  </div>
+</header>
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span data-fa="<b data-fa='داغ'>داغ</b> DDR5 ۴۵۰٪+ <i>·</i> پیش‌بارگیری GTA VI باز شد <i>·</i> استیم ماشین ۱۰۴۹ دلار <i>·</i> توقف RTX 50 Super <i>·</i> NAND ۵۰ تا ۷۵٪+ <i>·</i> Nova Lake اواخر ۲۰۲۶ <i>·</i>"><b data-fa="داغ">HOT</b> DDR5 +450% <i>·</i> GTA VI pre-loads live <i>·</i> Steam Machine $1,049 <i>·</i> RTX 50 Super shelved <i>·</i> NAND +50–75% <i>·</i> Nova Lake late 2026 <i>·</i></span>
+    <span data-fa="<b data-fa='داغ'>داغ</b> DDR5 ۴۵۰٪+ <i>·</i> پیش‌بارگیری GTA VI باز شد <i>·</i> استیم ماشین ۱۰۴۹ دلار <i>·</i> توقف RTX 50 Super <i>·</i> NAND ۵۰ تا ۷۵٪+ <i>·</i> Nova Lake اواخر ۲۰۲۶ <i>·</i>"><b data-fa="داغ">HOT</b> DDR5 +450% <i>·</i> GTA VI pre-loads live <i>·</i> Steam Machine $1,049 <i>·</i> RTX 50 Super shelved <i>·</i> NAND +50–75% <i>·</i> Nova Lake late 2026 <i>·</i></span>
+  </div>
+</div>
+
+
+<main>
+  <section class="mast">
+    <div class="wrap">
+      <div class="row">
+        <div>
+          <span class="kicker" data-fa="مجلهٔ نکسوس · شمارهٔ ۰۴">NEXUS MAG · ISSUE 04</span>
+          <h1 data-fa="اول اندازه بگیر، <em>بعد حرف بزن</em>">Measure it. <em>Then say it.</em></h1>
+          <p data-fa="شش نویسنده، یک میز کار، هیچ کیت مطبوعاتی. قطعه را خودمان می‌خریم، یک هفته اجرا می‌کنیم و بعد عددی را منتشر می‌کنیم که سالم از آزمون بیرون آمده.">
+            Six writers, one bench, no press kits. We buy the parts, run them for a week, and publish the number that survived.
+          </p>
+        </div>
+        <div class="issue">
+          <div><b data-fa="۲۴">24</b><span data-fa="مقاله">ARTICLES</span></div>
+          <div><b data-fa="۶">6</b><span data-fa="نویسنده">WRITERS</span></div>
+          <div><b data-fa="۱۴">14</b><span data-fa="روز یک‌بار">FORTNIGHTLY</span></div>
+        </div>
+      </div>
+      <div class="rule"></div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <a class="cover" href="story.html?id=ram-450" aria-label="Cover story">
+      <img src="assets/dc.webp" alt="Server memory modules">
+      <div class="cover-body">
+        <span class="cat" data-fa="بازار حافظه"><i></i>MEMORY MARKET</span>
+        <h2 data-fa="رم ۴۵۰٪ گران شده — و قیمت هر قطعهٔ این صفحه را عوض کرده">RAM is up 450% — and it has repriced every part on this page</h2>
+        <p data-fa="قیمت قرارداد یک تراشهٔ ۱۶ گیگابیتی DDR5 از ۸.۷ دلار به ۴۸ دلار رسیده. این تخفیف نیست، شوک عرضه است: چه بخریم، چه صبر کنیم.">
+          A 16Gb DDR5 chip went from $8.70 to $48 in a year. That is not a sale, it is a supply shock — what to buy now, and what to leave on the shelf.
+        </p>
+        <div class="meta">
+          <span class="avatar">NX</span>
+          <span data-fa="تحریریهٔ نکسوس">NEXUS Desk</span>
+          <span class="dot"></span>
+          <span data-fa="۵ دقیقه مطالعه">5 min read</span>
+          <span class="dot"></span>
+          <span data-fa="۱۲ نوامبر ۲۰۲۶">Nov 12, 2026</span>
+          <span class="read" data-fa="خواندن مقاله <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M5 12h14M13 6l6 6-6 6'/></svg>">Read the story
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </div>
+    </a>
+
+    <div class="wire-head">
+      <h2 data-fa="تازه از بازار">Latest from the wire</h2>
+      <span data-fa="دوازده گزارش تازه، با منبع">Twelve fresh reports, with sources</span>
+    </div>
+
+    <div class="wire">
+      <a class="wire-card" href="story.html?id=last-of-us">
+        <div class="wire-img"><img src="assets/tlou.webp" alt="Ellie with a guitar in The Last of Us Part II" loading="lazy"><span class="tag" data-fa="بازی">GAMES</span></div>
+        <div class="wire-body">
+          <div class="src"><i></i>NAUGHTY DOG<span class="dot"></span><span data-fa="سپتامبر ۲۰۲۶">Sep 2026</span></div>
+          <h3 data-fa="دو پروژهٔ آخرین بازمانده تأیید شد — هیچ‌کدام Part III نیست">Two Last of Us projects confirmed — neither is Part III</h3>
+          <p data-fa="در روز آخرین بازمانده، ناتی داگ گفت دو پروژه در دنیای بازی در مراحل بسیار ابتدایی‌اند.">On The Last of Us Day, Naughty Dog said two projects are in the very early stages.</p>
+          <span class="more" data-fa="خواندن گزارش ←">Read the report →</span>
+        </div>
+      </a>
+
+      <a class="wire-card" href="story.html?id=gta6">
+        <div class="wire-img"><img src="assets/gta6.webp" alt="Vice City skyline" loading="lazy"><span class="tag" data-fa="بازی">GAMES</span></div>
+        <div class="wire-body">
+          <div class="src"><i></i>GAMEWATCHER<span class="dot"></span><span data-fa="امروز">Today</span></div>
+          <h3 data-fa="پیش‌بارگیری GTA VI باز شد؛ انتشار ۱۹ نوامبر">GTA VI pre-loads are live — one week out</h3>
+          <p data-fa="دانلود از امروز باز شد. با اینترنت معمولی، امروز آخرین روز منطقی برای شروع است.">The download opened today. On an ordinary connection, today is the last sensible day to start.</p>
+          <span class="more" data-fa="خواندن گزارش ←">Read the report →</span>
+        </div>
+      </a>
+
+      <a class="wire-card" href="story.html?id=steam-machine">
+        <div class="wire-img"><img src="assets/steam.webp" alt="Steam Machine with controller" loading="lazy"><span class="tag" data-fa="سخت‌افزار">HARDWARE</span></div>
+        <div class="wire-body">
+          <div class="src"><i></i>BBC<span class="dot"></span><span data-fa="ژوئن ۲۰۲۶">Jun 2026</span></div>
+          <h3 data-fa="استیم ماشین ۱۰۴۹ دلار شد — و والو دلیلش را گفت">The Steam Machine costs $1,049 — Valve said why</h3>
+          <p data-fa="هزینهٔ قطعات، نه بلندپروازی. همان بحران حافظه به اتاق نشیمن هم رسید.">Component cost, not ambition. The same memory crunch reached the living room.</p>
+          <span class="more" data-fa="خواندن گزارش ←">Read the report →</span>
+        </div>
+      </a>
+
+      <a class="wire-card" href="story.html?id=rtx-super">
+        <div class="wire-img"><img src="assets/rtx.webp" alt="GeForce RTX 5090" loading="lazy"><span class="tag" data-fa="کارت گرافیک">GRAPHICS</span></div>
+        <div class="wire-body">
+          <div class="src"><i></i>PCMAG<span class="dot"></span><span data-fa="ژانویه ۲۰۲۶">Jan 2026</span></div>
+          <h3 data-fa="تازه‌سازی RTX 50 Super روی یخ رفت">The RTX 50 Super refresh is on ice</h3>
+          <p data-fa="انویدیا تازه‌سازی میان‌نسلی را متوقف کرد. کارتی که ارتقای بدیهی بود، نمی‌آید.">Nvidia paused the mid-cycle refresh. The obvious upgrade simply is not coming.</p>
+          <span class="more" data-fa="خواندن گزارش ←">Read the report →</span>
+        </div>
+      </a>
+
+      <a class="wire-card" href="story.html?id=ssd-prices">
+        <div class="wire-img"><img src="assets/nvme.webp" alt="NVMe M.2 drive" loading="lazy"><span class="tag" data-fa="ذخیره‌سازی">STORAGE</span></div>
+        <div class="wire-body">
+          <div class="src"><i></i>PCMAG<span class="dot"></span><span data-fa="نوامبر ۲۰۲۶">Nov 2026</span></div>
+          <h3 data-fa="NAND هم دنبال DRAM می‌رود؛ SSD گران می‌شود">NAND follows DRAM up — SSDs are next</h3>
+          <p data-fa="تولیدکنندگان NAND قیمت قرارداد را ۵۰ تا ۷۵ درصد بالا برده‌اند.">NAND makers pushed contract prices up 50–75%. Client drives follow with a lag.</p>
+          <span class="more" data-fa="خواندن گزارش ←">Read the report →</span>
+        </div>
+      </a>
+
+      <a class="wire-card" href="https://www.tomshardware.com/monitors/gaming-monitors" target="_blank" rel="noopener">
+        <div class="wire-img"><img src="assets/oled.webp" alt="OLED monitor on a dark desk" loading="lazy"><span class="tag" data-fa="نمایشگر">DISPLAYS</span></div>
+        <div class="wire-body">
+          <div class="src"><i></i>TOM'S HARDWARE<span class="dot"></span><span data-fa="این هفته">This week</span></div>
+          <h3 data-fa="OLED زیر ۵۰۰ دلار شد — و مانیتور LCD دیگر منطقی نیست">OLED dropped under $500 — LCD stops making sense</h3>
+          <p data-fa="پنل ۲۷ اینچ QHD با ۲۴۰ هرتز و ۰.۰۳ میلی‌ثانیه، حالا هم‌قیمت یک IPS خوب است.">A 27-inch QHD panel at 240Hz and 0.03ms now costs what a good IPS did.</p>
+          <span class="more" data-fa="خواندن گزارش ←">Read the report →</span>
+        </div>
+      </a>
+
+      <a class="wire-card" href="https://www.tomshardware.com/peripherals/keyboards" target="_blank" rel="noopener">
+        <div class="wire-img"><img src="assets/kb.webp" alt="RGB mechanical keyboard close-up" loading="lazy"><span class="tag" data-fa="جانبی">PERIPHERALS</span></div>
+        <div class="wire-body">
+          <div class="src"><i></i>TOM'S HARDWARE<span class="dot"></span><span data-fa="۳ روز پیش">3 days ago</span></div>
+          <h3 data-fa="کیبورد هال‌افکت استاندارد تازه شد">Hall-effect keyboards became the default</h3>
+          <p data-fa="تنظیم نقطهٔ فعال‌سازی با نرم‌افزار، مزیت واقعی است — نه نرخ پرش ۸۰۰۰ هرتز.">Adjustable actuation is the real feature — not the 8,000Hz polling badge.</p>
+          <span class="more" data-fa="خواندن گزارش ←">Read the report →</span>
+        </div>
+      </a>
+
+      <a class="wire-card wire-card--wide" href="story.html?id=nova-lake">
+        <div class="wire-img"><img src="assets/intel.webp" alt="Intel Core Ultra box and chip" loading="lazy"><span class="tag" data-fa="پردازنده">CPUS</span></div>
+        <div class="wire-body">
+          <div class="src"><i></i>EXTREMETECH<span class="dot"></span><span data-fa="اوت ۲۰۲۶">Aug 2026</span></div>
+          <h3 data-fa="اینتل دسکتاپ را دوباره اول می‌گذارد: Nova Lake">Intel puts desktop first again: Nova Lake</h3>
+          <p data-fa="Core Ultra 400 اواخر ۲۰۲۶ با سوکت تازه؛ نسخهٔ دسکتاپ پیش از سروری.">Core Ultra 400 lands late 2026 on a new socket — desktop before servers.</p>
+          <span class="more" data-fa="خواندن گزارش ←">Read the report →</span>
+        </div>
+      </a>
+
+      <a class="wire-card" href="story.html?id=zen6">
+        <div class="wire-img"><img src="assets/n-zen6.webp" alt="Processor die under blue light" loading="lazy"><span class="tag" data-fa="پردازنده">CPUS</span></div>
+        <div class="wire-body">
+          <div class="src"><i></i>TECHPOWERUP<span class="dot"></span><span data-fa="نوامبر ۲۰۲۵">Nov 2025</span></div>
+          <h3 data-fa="ای‌ام‌دی زن ۶ روی ۲ نانومتر را تأیید کرد — و زن ۷ هم روی کاغذ وجود دارد">AMD confirms Zen 6 on 2nm — and Zen 7 already exists on paper</h3>
+          <p data-fa="زن ۶ به ۲ نانومتر TSMC می‌رود: IPC بیشتر، بازدهی بهتر و بلوک هوش مصنوعی پهن‌تر. ماجرای سوکت دسکتاپ بعداً روشن می‌شود.">Zen 6 moves to TSMC 2nm with more IPC, better efficiency and a wider AI block. The desktop socket story comes later.</p>
+          <span class="more" data-fa="خواندن گزارش ←">Read the report →</span>
+        </div>
+      </a>
+
+      <a class="wire-card" href="story.html?id=olympic-ridge">
+        <div class="wire-img"><img src="assets/n-socket.webp" alt="Processor above an empty socket" loading="lazy"><span class="tag" data-fa="پردازنده">CPUS</span></div>
+        <div class="wire-body">
+          <div class="src"><i></i>TECHPOWERUP<span class="dot"></span><span data-fa="فوریه ۲۰۲۶">Feb 2026</span></div>
+          <h3 data-fa="رایزن «المپیک ریج» به ۲۰۲۷ افتاد — AM5 یک سال دیگر زنده می‌ماند">Ryzen “Olympic Ridge” slips to 2027 — AM5 gets one more year</h3>
+          <p data-fa="اسلایدهای نقشهٔ راه، عرضهٔ دسکتاپ زن ۶ را به ۲۰۲۷ می‌برند؛ یعنی عمر هر مادربرد AM5 که امروز می‌خری یک سال بیشتر می‌شود.">Roadmap slides put the Zen 6 desktop launch in 2027, which quietly extends the life of every AM5 board sold today.</p>
+          <span class="more" data-fa="خواندن گزارش ←">Read the report →</span>
+        </div>
+      </a>
+
+      <a class="wire-card" href="story.html?id=ddr6-2027">
+        <div class="wire-img"><img src="assets/n-ddr6.webp" alt="Two DDR5 memory modules" loading="lazy"><span class="tag" data-fa="حافظه">MEMORY</span></div>
+        <div class="wire-body">
+          <div class="src"><i></i>TRENDFORCE<span class="dot"></span><span data-fa="جولای ۲۰۲۵">Jul 2025</span></div>
+          <h3 data-fa="DDR6 به تولید انبوه ۲۰۲۷ می‌رسد — ولی DDR5 هنوز تمام نشده">DDR6 heads for 2027 mass production — DDR5 is not done yet</h3>
+          <p data-fa="سازندگان حافظه نمونه‌های DDR6 را نهایی می‌کنند، در حالی که تقاضای هوش مصنوعی خطوط DDR5 را پر نگه داشته. هر دو سال‌ها کنار هم فروخته می‌شوند.">Memory makers are finalising DDR6 prototypes while AI demand keeps DDR5 lines full. Expect both to be sold side by side.</p>
+          <span class="more" data-fa="خواندن گزارش ←">Read the report →</span>
+        </div>
+      </a>
+
+      <a class="wire-card" href="story.html?id=lpddr6">
+        <div class="wire-img"><img src="assets/n-lpddr6.webp" alt="LPDDR memory package on a phone board" loading="lazy"><span class="tag" data-fa="حافظه">MEMORY</span></div>
+        <div class="wire-body">
+          <div class="src"><i></i>JEDEC<span class="dot"></span><span data-fa="۲۰۲۵">2025</span></div>
+          <h3 data-fa="LPDDR6 استاندارد رسمی شد — پهنای باند اول به گوشی‌ها می‌رسد">LPDDR6 is now a published standard — phones get the bandwidth first</h3>
+          <p data-fa="استاندارد تازهٔ JESD209-6 گذرگاه را پهن‌تر و به زیرکانال تقسیم می‌کند؛ هدفش دقیقاً هوش مصنوعی روی دستگاه است.">The new JESD209-6 spec widens the bus and splits it into sub-channels, aimed squarely at on-device AI.</p>
+          <span class="more" data-fa="خواندن گزارش ←">Read the report →</span>
+        </div>
+      </a>
+
+      <a class="wire-card" href="story.html?id=switch2-17m">
+        <div class="wire-img"><img src="assets/n-handheld.webp" alt="Handheld console on a desk" loading="lazy"><span class="tag" data-fa="بازی">GAMES</span></div>
+        <div class="wire-body">
+          <div class="src"><i></i>NINTENDO LIFE<span class="dot"></span><span data-fa="فوریه ۲۰۲۶">Feb 2026</span></div>
+          <h3 data-fa="سوییچ ۲ از ۱۷.۳ میلیون دستگاه گذشت — سریع‌تر از هر کنسول قبلی">Switch 2 passes 17.3 million units — faster than any console before it</h3>
+          <p data-fa="نینتندو از ژوئن ۲۰۲۵ حدود ۱۷.۳۷ میلیون دستگاه فروخته و یک فصل کامل زودتر به پیش‌بینی خودش نزدیک شده.">Nintendo shipped 17.37 million units since June 2025 and is closing on its own forecast a full quarter early.</p>
+          <span class="more" data-fa="خواندن گزارش ←">Read the report →</span>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="briefs">
+      <span class="briefs-h" data-fa="کوتاه از صنعت">In brief</span>
+      <a href="https://www.techpowerup.com/forums/threads/nvidia-reportedly-informed-aibs-about-geforce-rtx-50-series-super-gpu-delay.345141/" target="_blank" rel="noopener">
+        <b data-fa="انویدیا کمبود RTX 50 را تا سال مالی ۲۰۲۷ تأیید کرد">Nvidia confirms RTX 50 shortages through fiscal 2027</b>
+        <span>TechPowerUp</span>
+      </a>
+      <a href="https://www.pcgamer.com/hardware/gaming-monitors/" target="_blank" rel="noopener">
+        <b data-fa="پنل OLED ارزان شد، نه مانیتور">OLED panels got cheaper, monitors did not</b>
+        <span>PC Gamer</span>
+      </a>
+      <a href="https://www.ign.com/articles/best-ps5-deals" target="_blank" rel="noopener">
+        <b data-fa="کنسول‌ها هم طعمهٔ بحران حافظه شدند">Consoles caught the memory tax too</b>
+        <span>IGN</span>
+      </a>
+      <a href="https://www.tomshardware.com/pc-components/gpus/lowest-gpu-prices-tracking" target="_blank" rel="noopener">
+        <b data-fa="RX 9070 XT هنوز نزدیک قیمت رسمی ۵۹۹ دلار است">RX 9070 XT still sells near its $599 list</b>
+        <span>Tom's Hardware</span>
+      </a>
+      <a href="story.html?id=shortage-2027">
+        <b data-fa="مدیر یک شرکت حافظه: کمبود ۲۰۲۷ بدتر می‌شود">A memory CEO warns the 2027 shortage is worse</b>
+        <span data-fa="گزارش ما">Our report</span>
+      </a>
+      <a href="https://finance.yahoo.com/technology/articles/memory-chip-ceo-warns-2027-163159125.html" target="_blank" rel="noopener">
+        <b data-fa="درآمد DRAM سال‌به‌سال ۳۶۹ درصد رشد کرد">DRAM revenue up 369% year over year</b>
+        <span>Yahoo Finance</span>
+      </a>
+          <a href="https://www.techpowerup.com/forums/threads/nvidia-reportedly-informed-aibs-about-geforce-rtx-50-series-super-gpu-delay.345141/" target="_blank" rel="noopener">
+        <b data-fa="انویدیا تولید RTX 50 را محدود نگه می‌دارد">Nvidia keeps RTX 50 volumes tight</b>
+        <span>TechPowerUp</span>
+      </a>
+      <a href="https://www.ign.com/articles/the-last-of-us" target="_blank" rel="noopener">
+        <b data-fa="سریال لست آو اس فصل سوم را می‌سازد">The Last of Us series is getting season three</b>
+        <span>IGN</span>
+      </a>
+      <a href="https://www.pcgamer.com/hardware/" target="_blank" rel="noopener">
+        <b data-fa="قیمت رم تا پایان سال بالا می‌رود">Memory prices keep climbing into year-end</b>
+        <span>PC Gamer</span>
+      </a>
+</div>
+
+    <div class="wire-note" data-fa="هر گزارش با زبان خودمان نوشته شده و به منبع اصلی لینک می‌خورد.">Every report is written in our own words and links to the original source.</div>
+
+    <section class="signal">
+      <div class="signal-head">
+        <span class="kicker" data-fa="سه عدد این هفته">THREE NUMBERS</span>
+        <h3 data-fa="این هفته در یک نگاه">The week, in three numbers</h3>
+      </div>
+      <div class="signal-grid">
+        <a href="story.html?id=ram-450">
+          <b>+450%</b>
+          <span data-fa="رشد قیمت یک تراشهٔ DDR5 در یازده ماه">One DDR5 die, eleven months</span>
+        </a>
+        <a href="story.html?id=steam-machine">
+          <b>$1,049</b>
+          <span data-fa="قیمت جعبهٔ اتاق نشیمن والو">Valve's living-room box</span>
+        </a>
+        <a href="story.html?id=gta6">
+          <b data-fa="۱۹ نوامبر">19 Nov</b>
+          <span data-fa="انتشار GTA VI — یک هفته دیگر">GTA VI lands, one week out</span>
+        </a>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <div class="wrap">
+        <span data-fa="© ۲۰۲۶ نکسوس — تحریریهٔ مجله">© 2026 NEXUS — magazine desk</span>
+        <div class="links">
+          <a href="index.html" data-fa="فروشگاه">Store</a>
+          <a href="index.html#support" data-fa="پشتیبانی">Support</a>
+          <a href="#" data-fa="خوراک RSS">RSS</a>
+        </div>
+      </div>
+    </footer>
+  </section>
+</main>
+<script>
+(function () {
+  var html = document.documentElement;
+
+  /* language: English text lives in the DOM, Persian in data-fa */
+  var LKEY = "nexus-lang";
+  function setLang(lang) {
+    var fa = lang === "fa";
+    html.lang = fa ? "fa" : "en";
+    html.dir = fa ? "rtl" : "ltr";
+    document.querySelectorAll("[data-fa]").forEach(function (el) {
+      if (el.dataset.en === undefined) el.dataset.en = el.innerHTML;
+      el.innerHTML = fa ? el.dataset.fa : el.dataset.en;
+    });
+    document.querySelectorAll("[data-fa-ph]").forEach(function (el) {
+      if (el.dataset.enPh === undefined) el.dataset.enPh = el.placeholder;
+      el.placeholder = fa ? el.dataset.faPh : el.dataset.enPh;
+    });
+    var lbl = document.getElementById("langLbl");
+    if (lbl) lbl.textContent = fa ? "فا" : "EN";
+    var fl = document.getElementById("langFlag");
+    if (fl) fl.className = "flag " + (fa ? "flag-ir" : "flag-gb");
+    var mlbl = document.getElementById("modeLbl");
+    if (mlbl) {
+      var dark = html.getAttribute("data-mode") === "dark";
+      mlbl.textContent = dark ? (fa ? "روز" : "Day") : (fa ? "شب" : "Night");
+    }
+    try { localStorage.setItem(LKEY, lang); } catch (e) {}
+  }
+  document.getElementById("langBtn").addEventListener("click", function () {
+    setLang(html.lang === "fa" ? "en" : "fa");
+  });
+
+  /* night mode shares the store key so both pages agree */
+  var MKEY = "nexus-mode";
+  function setMode(mode) {
+    if (mode === "dark") html.setAttribute("data-mode", "dark");
+    else html.removeAttribute("data-mode");
+    var b = document.getElementById("modeLbl");
+    if (b) b.textContent = mode === "dark" ? (html.lang === "fa" ? "روز" : "Day") : (html.lang === "fa" ? "شب" : "Night");
+    try { localStorage.setItem(MKEY, mode); } catch (e) {}
+  }
+  document.getElementById("modeBtn").addEventListener("click", function () {
+    setMode(html.getAttribute("data-mode") === "dark" ? "light" : "dark");
+  });
+
+  /* category filter */
+  var chips = [].slice.call(document.querySelectorAll(".chip"));
+  var posts = [].slice.call(document.querySelectorAll(".post"));
+  var count = document.getElementById("count");
+  chips.forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      chips.forEach(function (c) { c.classList.toggle("on", c === chip); });
+      var cat = chip.dataset.cat, shown = 0;
+      posts.forEach(function (p) {
+        var hit = cat === "all" || p.dataset.cat === cat;
+        p.hidden = !hit;
+        if (hit) shown++;
+      });
+      if (count) count.textContent = html.lang === "fa" ? shown + " مقاله" : shown + (shown === 1 ? " story" : " stories");
+    });
+  });
+
+  /* newsletter */
+  var form = document.getElementById("newsForm");
+  if (form) form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var btn = form.querySelector("button");
+    btn.textContent = html.lang === "fa" ? "ثبت شد ✓" : "Subscribed ✓";
+    btn.disabled = true;
+    form.querySelector("input").value = "";
+  });
+
+  /* restore preferences */
+  var savedLang = "en", savedMode = "light";
+  try { savedLang = localStorage.getItem(LKEY) || "en"; savedMode = localStorage.getItem(MKEY) || "light"; } catch (e) {}
+  setMode(savedMode);
+  if (savedLang === "fa") setLang("fa");
+})();
+</script>
+</body>
+</html>
